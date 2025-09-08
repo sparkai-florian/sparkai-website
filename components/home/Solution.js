@@ -5,7 +5,7 @@ import robotImage from '@/public/robot-dashboard.png'; // Update this with your 
 
 export default function SolutionIntro() {
   return (
-    <section className="bg-zinc-950 text-white py-20 px-6">
+    <section className="bg-[#FAFAF7] text-white py-20 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Text Side */}
         <div>

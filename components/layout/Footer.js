@@ -5,16 +5,23 @@ import {
   FaLinkedin,
   FaYoutube,
 } from 'react-icons/fa';
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-16 px-6">
+    <footer className="bg-[#FAFAF7] text-white py-16 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Brand + Tagline */}
         <div className="md:col-span-2">
-          <Link href="/" className="text-2xl font-bold text-[#d4ff00]">
-            SparkAI
-          </Link>
+          <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="SparkAI Logo"
+            width={140}
+            height={40}
+            priority
+          />
+        </Link>
           <p className="text-gray-400 mt-4 text-sm max-w-xs">
             Powerful AI chatbots that answer instantly — and never sleep.
           </p>

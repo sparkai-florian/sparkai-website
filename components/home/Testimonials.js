@@ -8,21 +8,21 @@ const testimonials = [
     company: 'estethica',
     quote:
       'SparkAI transformed the way we handle messages. Clients get answers instantly — and we save hours every day.',
-    image: '/profile-pic1.png',
+    image: '/icons/k.d.-pic.png',
   },
   {
     name: 'Njomza Belegu',
     company: 'noma dent',
     quote:
       'We had over 250 messages during our promotion. SparkAI handled all of them professionally — without stress.',
-    image: '/profile-pic1.png',
+    image: '/icons/n.b.h.-pic.png',
   },
   {
     name: 'Donat Begzati',
     company: 'dental plus',
     quote:
-      'It feels like we hired a new team member who works 24/7 and never makes a mistake. Incredible solution.',
-    image: '/profile-pic1.png',
+      'It feels like I finally have time to be with my family while everything runs smoothly. A freedom I didn’t think was possible.',
+    image: '/icons/d.b.-pic.png',
   },
 ];
 
