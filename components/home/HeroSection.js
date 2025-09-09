@@ -89,7 +89,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative w-full h-screen mt-[0px] mb-[20px]"
+      className="relative w-full h-screen mt-[0px]"
       style={{ backgroundColor: "#f8f9fa", backgroundImage: current.gradient }}
     >
       <div className="relative mx-auto w-[85%] overflow-hidden rounded-1xl transition-colors duration-300">
