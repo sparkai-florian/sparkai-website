@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function FinalCta() {
   return (
-    <section className="w-full bg-[#FAFAF7] text-white py-20 px-6">
+    <section className="w-full bg-black text-white py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-4">
           Ready to Stop Losing Clients?

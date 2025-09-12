@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FAFAF7] text-white py-16 px-6">
+    <footer className="bg-black text-white py-16 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Brand + Tagline */}
         <div className="md:col-span-2">

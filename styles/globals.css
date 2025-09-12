@@ -9,8 +9,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8f9fa;
-  --foreground: #f8f9fa;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -22,8 +22,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f8f9fa;
-    --foreground: #f8f9fa;
+    --background: #000000;
+    --foreground: #ffffff;
   }
 }
 

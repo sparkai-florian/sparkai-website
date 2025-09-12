@@ -20,7 +20,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full py-1">
+    <header className="w-full py-1 bg-black">
       {/* Container matches HeroSection */}
       <div className="w-[85%] mx-auto flex items-center justify-between px-6 md:px-12">
         {/* Left: Logo */}
@@ -42,8 +42,8 @@ export default function Header() {
               href={item.href}
               className={`${
                 pathname === item.href
-                  ? "font-semibold text-black border-b-2 border-[#2B00FF]"
-                  : "text-gray-700 hover:text-black"
+                  ? "font-semibold text-white border-b-2 border-[#2B00FF]"
+                  : "text-gray-300 hover:text-white"
               } transition-colors`}
             >
               {item.label}
@@ -63,7 +63,7 @@ export default function Header() {
 
         {/* Mobile menu toggle */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 text-white"
           onClick={() => setOpen(!open)}
           aria-label="Toggle Menu"
         >
@@ -73,7 +73,7 @@ export default function Header() {
 
       {/* Mobile Navigation Drawer */}
       {open && (
-        <div className="md:hidden w-full bg-white border-t">
+        <div className="md:hidden w-full bg-gray-900 border-t border-gray-800">
           <nav className="flex flex-col items-start gap-4 p-4">
             {navItems.map((item) => (
               <Link
@@ -81,8 +81,8 @@ export default function Header() {
                 href={item.href}
                 className={`${
                   pathname === item.href
-                    ? "font-semibold text-black"
-                    : "text-gray-700 hover:text-black"
+                    ? "font-semibold text-white"
+                    : "text-gray-300 hover:text-white"
                 } transition-colors`}
               >
                 {item.label}

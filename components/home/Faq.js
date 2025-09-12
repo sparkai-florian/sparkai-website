@@ -11,7 +11,7 @@ import { ChevronDown, Play, Pause, Globe2, Languages, Sparkles, Rocket, Clock, R
  */
 
 const BRAND = {
-  bg: "#f8f9fa",
+  bg: "#000000",
   text: "#FFFFFF",
   accent: "#d4ff00", // SparkAI neon
   subtle: "#9CA3AF", // gray-400
@@ -70,28 +70,26 @@ function FaqItem({ i, open, onToggle, item }) {
 
   return (
     <div
-      className={`group rounded-2xl border transition-all duration-300 ${isOpen ? "shadow-[0_0_0_2px_rgba(212,255,0,.6)]" : "shadow-[0_0_0_0_rgba(0,0,0,0)]"}`}
-      style={{ backgroundColor: BRAND.card, borderColor: BRAND.border }}
+      className={`group rounded-3xl border transition-all duration-300 transform hover:scale-105 ${isOpen ? "shadow-[0_0_0_4px_rgba(212,255,0,0.3),0_20px_60px_rgba(0,0,0,0.5)] border-[#d4ff00]/50 bg-gradient-to-br from-gray-900 to-gray-800" : "shadow-[0_0_0_0_rgba(0,0,0,0)] border-gray-700/50 bg-gradient-to-br from-gray-900/50 to-gray-800/30 hover:border-[#d4ff00]/30"}`}
     >
       <button
-        className="w-full flex items-start gap-4 p-5 md:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-0"
+        className="w-full flex items-start gap-6 p-6 md:p-8 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-0"
         onClick={() => onToggle(isOpen ? -1 : i)}
         aria-expanded={isOpen}
       >
-        <div className="mt-1 shrink-0 h-10 w-10 grid place-items-center rounded-full border" style={{ borderColor: BRAND.accent }}>
-          <MonitorPlay className="h-5 w-5" style={{ color: BRAND.accent }} />
+        <div className="mt-1 shrink-0 h-12 w-12 grid place-items-center rounded-full bg-gradient-to-r from-[#d4ff00] to-[#b8e600] text-black font-bold text-lg group-hover:scale-110 transition-transform duration-300">
+          ?
         </div>
         <div className="flex-1">
-          <h3 className="text-base md:text-lg font-semibold leading-snug" style={{ color: BRAND.text }}>
+          <h3 className="text-lg md:text-xl font-bold leading-tight text-white group-hover:text-[#d4ff00] transition-colors duration-300">
             {item.title}
           </h3>
           {item.subtitle && (
-            <p className="mt-1 text-sm" style={{ color: BRAND.subtle }}>{item.subtitle}</p>
+            <p className="mt-2 text-sm md:text-base text-gray-300 group-hover:text-gray-200 transition-colors duration-300">{item.subtitle}</p>
           )}
         </div>
         <ChevronDown
-          className={`mt-1 h-5 w-5 transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`}
-          style={{ color: BRAND.accent }}
+          className={`mt-1 h-6 w-6 transition-transform ${isOpen ? "rotate-180" : "rotate-0"} text-[#d4ff00] group-hover:text-white`}
           aria-hidden
         />
       </button>
@@ -100,20 +98,21 @@ function FaqItem({ i, open, onToggle, item }) {
         className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
       >
         <div className="overflow-hidden">
-          <div className="px-5 pb-6 md:px-6 md:pb-8 flex flex-col gap-4">
-            {/* Video first */}
-            <VideoPlayer url={item.videoUrl} isActive={isOpen} />
+          <div className="px-6 pb-8 md:px-8 md:pb-10">
             {/* Text answer */}
-            <div className="prose prose-invert max-w-none">
+            <div className="space-y-4">
               {item.answer.map((para, idx) => (
-                <p key={idx} className="leading-relaxed text-sm md:text-[15px]" style={{ color: BRAND.text }}>
+                <p key={idx} className="leading-relaxed text-base md:text-lg text-gray-300">
                   {para}
                 </p>
               ))}
               {item.points?.length ? (
-                <ul className="mt-3 list-disc pl-5 text-sm md:text-[15px]" style={{ color: BRAND.text }}>
+                <ul className="mt-6 space-y-3">
                   {item.points.map((p, idx) => (
-                    <li key={idx} className="mb-1">{p}</li>
+                    <li key={idx} className="flex items-start gap-3 text-gray-300">
+                      <div className="w-2 h-2 rounded-full bg-[#d4ff00] mt-2 flex-shrink-0"></div>
+                      <span className="text-sm md:text-base leading-relaxed">{p}</span>
+                    </li>
                   ))}
                 </ul>
               ) : null}
@@ -129,34 +128,6 @@ export default function SparkAIFAQ() {
   const [open, setOpen] = useState(-1);
 
   const faqs = [
-    {
-      title: "What platforms does SparkAI work on?",
-      subtitle: "Instagram, WhatsApp, Facebook, Viber, Telegram, Website, and more.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0", // replace with real demo URL or mp4
-      answer: [
-        "SparkAI integrates natively with the channels your customers already use — no behavior change required.",
-        "Deploy once and manage conversations across social, messaging apps, and your website from a unified workflow.",
-      ],
-      points: [
-        "Instagram & Facebook: Inbox replies, story/campaign surge handling, automated follow-ups.",
-        "WhatsApp & Viber & Telegram: Verified business flows, quick replies, order updates.",
-        "Website: Embedded widget, lead capture, appointment booking, and self‑service FAQs.",
-      ],
-    },
-    {
-      title: "Can chatbots speak multiple languages?",
-      subtitle: "Yes — SparkAI delivers multilingual experiences out of the box.",
-      videoUrl: "", // optional
-      answer: [
-        "SparkAI detects and responds in the customer’s language, enabling global reach without extra staffing.",
-        "Language packs are configurable per business; add or refine phrasing any time as your audience evolves.",
-      ],
-      points: [
-        "Auto‑detect input language; reply consistently in that language.",
-        "Support for dialects and formal/informal tone presets.",
-        "Escalation to a human agent with translated context when needed.",
-      ],
-    },
     {
       title: "What kind of businesses can benefit from SparkAI?",
       subtitle: "From clinics and salons to hotels, banks, retail, and e‑commerce.",
@@ -275,20 +246,26 @@ export default function SparkAIFAQ() {
   return (
     <section
       id="faq"
-      className="relative py-14 md:py-20"
-      style={{ backgroundColor: BRAND.bg }}
+      className="relative py-20 md:py-28 bg-black overflow-hidden"
     >
-      <div className="mx-auto w-[92%] max-w-6xl">
-        {/* Heading */}
-        <div className="mb-8 md:mb-12 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs border" style={{ borderColor: BRAND.accent, color: BRAND.accent }}>
-            <Sparkles className="h-3.5 w-3.5" /> Fire FAQ
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 opacity-50"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
+      
+      <div className="mx-auto w-[92%] max-w-6xl relative z-10">
+        {/* Enhanced Heading */}
+        <div className="mb-16 text-center">
+          <div className="flex justify-center mb-4">
+            <span className="bg-gradient-to-r from-yellow-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              FAQ
+            </span>
           </div>
-          <h2 className="mt-4 text-2xl md:text-4xl font-semibold tracking-tight" style={{ color: BRAND.text }}>
-            Answers in <span style={{ color: BRAND.accent }}>seconds</span>, demos in <span style={{ color: BRAND.accent }}>motion</span>
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-4">
+            Frequently Asked Questions
           </h2>
-          <p className="mt-3 text-sm md:text-base" style={{ color: BRAND.subtle }}>
-            Click a question to watch a short explainer — the video comes first, then a detailed, programmable answer.
+          <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            Get instant answers to the most common questions about SparkAI and how it can transform your business.
           </p>
         </div>
 
@@ -298,23 +275,21 @@ export default function SparkAIFAQ() {
           ))}
         </div>
 
-        {/* Helper footer */}
-        <div className="mt-10 flex flex-col md:flex-row items-center justify-between gap-4 rounded-2xl border p-4 md:p-6"
-             style={{ borderColor: BRAND.border, background: "linear-gradient(135deg, rgba(212,255,0,0.08), rgba(32,32,32,0.6))" }}>
+        {/* Enhanced Helper footer */}
+        <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-6 rounded-3xl border border-gray-700/50 p-6 md:p-8 bg-gradient-to-br from-gray-900/50 to-gray-800/30 hover:border-[#d4ff00]/30 transition-all duration-300">
           <div>
-            <p className="text-sm md:text-base font-medium" style={{ color: BRAND.text }}>
-              Want these answers tailored to your industry?
+            <p className="text-lg md:text-xl font-bold text-white mb-2">
+              Still have questions?
             </p>
-            <p className="text-xs md:text-sm" style={{ color: BRAND.subtle }}>
-              We can swap videos and copy per niche (healthcare, travel, finance, retail) with one config.
+            <p className="text-sm md:text-base text-gray-300">
+              Get personalized answers tailored to your specific business needs and industry.
             </p>
           </div>
           <a
             href="#book-a-demo"
-            className="inline-flex items-center gap-2 rounded-xl px-4 py-2 border text-sm font-semibold transition-colors hover:opacity-90"
-            style={{ borderColor: BRAND.accent, color: "#000", backgroundColor: BRAND.accent }}
+            className="inline-flex items-center gap-3 rounded-xl px-6 py-3 bg-gradient-to-r from-[#d4ff00] to-[#b8e600] text-black font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
-            <Play className="h-4 w-4" /> Book a Live Demo
+            <Play className="h-5 w-5" /> Book a Live Demo
           </a>
         </div>
       </div>

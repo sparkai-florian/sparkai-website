@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 px-6 py-14 sm:px-10 sm:py-16 shadow-2xl">
+    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-black px-6 py-14 sm:px-10 sm:py-16 shadow-2xl">
       <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-[#d4ff00]/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#2B00FF]/10 blur-3xl" />
       <div className="relative">

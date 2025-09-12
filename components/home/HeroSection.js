@@ -7,6 +7,7 @@ import { Circle } from "lucide-react";
 
 export default function HeroSection() {
   const [active, setActive] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
   const hasSwitchedRef = useRef(false);
   const heroRef = useRef(null);
 
@@ -28,9 +29,9 @@ export default function HeroSection() {
   const slides = [
     {
       key: "sales",
-      // Smooth header blend (top) → soft bluish bridge → brand purples → pink
+      // Dark theme gradient
       gradient:
-        "linear-gradient(180deg, #f8f9fa 0%, #f8f9fa 10px, #b27cdb 40%, #a83279 100%)",
+        "linear-gradient(180deg, #000000 0%, #1a1a1a 10px, #2d1b69 40%, #4a1a4a 100%)",
       image: "/banner-image1.png",
       imageAlt: "Sales-focused SparkAI banner",
       headline: "Your AI assistant that captures every client and boosts sales.",
@@ -56,9 +57,9 @@ export default function HeroSection() {
     },
     {
       key: "effectiveness",
-      // Clean whiteish start → subtle aqua bridge → rich purple → neon SparkAI pop
+      // Dark theme gradient
       gradient:
-        "linear-gradient(180deg, #f8f9fa 0%, #f8f9fa 16%, #e0f7fa 30%, #ac52a3 62%, #d4ff00 100%)",
+        "linear-gradient(180deg, #000000 0%, #1a1a1a 16%, #1a2a2a 30%, #4a1a4a 62%, #d4ff00 100%)",
       image: "/banner-image2.png",
       imageAlt: "speed-focused SparkAI banner.",
       headline: "Get Your Round-the-Clock Assistant Your Clients Trust.",
@@ -90,20 +91,56 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       className="relative w-full h-screen mt-[0px]"
-      style={{ backgroundColor: "#f8f9fa", backgroundImage: current.gradient }}
+      style={{ backgroundColor: "#000000", backgroundImage: current.gradient }}
     >
       <div className="relative mx-auto w-[85%] overflow-hidden rounded-1xl transition-colors duration-300">
         <div className="relative min-h-[80vh]">
-          {/* Background image */}
-          <div className="absolute inset-3 md:inset-6 rounded-xl overflow-hidden flex items-center justify-center">
-            <Image
-              src={current.image}
-              alt={current.imageAlt}
-              width={1200}
-              height={800}
-              className="object-contain max-w-[100%] max-h-[100%] translate-x-[12%]"
-              priority
-            />
+          {/* Background image or video */}
+          <div className="absolute inset-0 flex items-center justify-end z-0 pr-0">
+            {!showVideo ? (
+              <div className="relative">
+                <Image
+                  src={current.image}
+                  alt={current.imageAlt}
+                  width={1200}
+                  height={800}
+                  className="object-contain max-w-[60%] max-h-[90%] translate-x-8 cursor-pointer"
+                  priority
+                  onClick={() => setShowVideo(true)}
+                />
+                {/* Coin click overlay image */}
+                <Image
+                  src="/coin-click.png"
+                  alt="Click to play video"
+                  width={0}
+                  height={0}
+                  className="absolute top-2 right-2 cursor-pointer hover:scale-110 transition-transform duration-300 z-10 w-auto h-auto max-w-[50px] max-h-[50px]"
+                  onClick={() => setShowVideo(true)}
+                  title="Click to play video"
+                />
+              </div>
+            ) : (
+              <div className="relative max-w-[60%] max-h-[90%] translate-x-8">
+                <video
+                  className="w-full h-full object-contain rounded-lg"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                >
+                  <source src="/videos/aidemo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                {/* Close button */}
+                <button
+                  onClick={() => setShowVideo(false)}
+                  className="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/70 transition-colors"
+                  title="Close video"
+                >
+                  ×
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Foreground content */}
