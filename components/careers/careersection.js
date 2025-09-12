@@ -1,4 +1,4 @@
-import CareerCard from "./CareerCard";
+import CareerCard from "./careercard";
 
 const JOBS = [
   {
