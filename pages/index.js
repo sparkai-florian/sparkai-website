@@ -13,8 +13,12 @@ export default function Home({ location, isBalkans }) {
 
 export async function getServerSideProps({ req, query }) {
   try {
-    // Check for manual override via query parameter (for testing)
-    if (query.region === 'balkans') {
+    // Check domain-based routing
+    const host = req.headers.host || '';
+    const isRksDomain = host.includes('sparkai-rks.com') || host.includes('rks');
+    
+    // Check for manual override via query parameter
+    if (query.region === 'balkans' || isRksDomain) {
       return {
         props: {
           location: { country: 'XK', countryName: 'Kosovo', region: 'Prishtina', city: 'Prishtina', isBalkans: true },
@@ -23,9 +27,20 @@ export async function getServerSideProps({ req, query }) {
       };
     }
     
-    // Get client IP
+    // Check for global override
+    if (query.region === 'global') {
+      return {
+        props: {
+          location: { country: 'US', countryName: 'United States', region: 'Global', city: 'Global', isBalkans: false },
+          isBalkans: false
+        }
+      };
+    }
+    
+    // Get client IP for geolocation
     const clientIP = getClientIP(req);
     console.log('Client IP detected:', clientIP);
+    console.log('Host detected:', host);
     
     // Get location data
     const location = await getLocationFromIP(clientIP);
