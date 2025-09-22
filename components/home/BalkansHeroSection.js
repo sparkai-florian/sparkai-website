@@ -1,28 +1,28 @@
-// components/home/HeroSection.js
+// components/home/BalkansHeroSection.js
 "use client";
 
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { Circle } from "lucide-react";
 
-export default function HeroSection() {
+export default function BalkansHeroSection() {
   const [showVideo, setShowVideo] = useState(false);
   const heroRef = useRef(null);
 
   const heroData = {
-    key: "global",
+    key: "balkans",
     // Dark theme gradient
     gradient:
       "linear-gradient(180deg, #000000 0%, #1a1a1a 10px, #2d1b69 40%, #4a1a4a 100%)",
     image: "/banner-image1.png",
-    imageAlt: "Global-focused SparkAI banner",
-    headline: "Finally... AI That Optimizes Your Business Instead of Frustrating Your Customers",
+    imageAlt: "Balkans-focused SparkAI banner",
+    headline: "Cut Support Costs by 70% While Actually Improving Customer Service",
     subheadline:
-      "Modern businesses are scaling smarter with AI that actually understands context, handles complex processes, and delivers messages that you trust across every interaction.",
+      "Smart businesses are discovering how AI delivers better customer relationships at a fraction of the cost. Stop paying for expensive staff to answer the same questions over and over.",
     bullets: [
-      "Intelligent process automation that scales with your growth",
-      "Multi-language support that maintains your brand voice",
-      "Messages that you trust - sophisticated, contextual, never generic",
+      "24/7 instant replies that cost less than minimum wage",
+      "Real-time responses that turn more visitors into customers",
+      "Messages that you trust - professional, accurate, every time",
     ],
     buttonStyle: `
       inline-block

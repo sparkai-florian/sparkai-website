@@ -1,28 +1,40 @@
 import Layout from '../components/layout/Layout';
-import HeroSection from '../components/home/HeroSection';
-import Problem from '../components/home/Problem';
-import Solution from '../components/home/Solution';
-import Benefits from '../components/home/Benefits';
-import Testimonials from '../components/home/Testimonials';
-import Features from '../components/home/Features';
-import Faq from '../components/home/Faq';
-import FinalCta from '../components/home/FinalCta';
-import HowItWorks from '../components/home/HowItWorks';
+import GlobalHomePage from '../components/home/GlobalHomePage';
+import BalkansHomePage from '../components/home/BalkansHomePage';
+import { getLocationFromIP, getClientIP } from '../lib/geolocation';
 
-export default function Home() {
+export default function Home({ location, isBalkans }) {
   return (
     <Layout>
-      <HeroSection />
-      <Problem />
-      <Solution />
-      <HowItWorks/>
-      <Benefits />
-      <Testimonials />
-      <Features />
-      <Faq />
-      <FinalCta />
+      {isBalkans ? <BalkansHomePage /> : <GlobalHomePage />}
     </Layout>
   );
+}
+
+export async function getServerSideProps({ req }) {
+  try {
+    // Get client IP
+    const clientIP = getClientIP(req);
+    
+    // Get location data
+    const location = await getLocationFromIP(clientIP);
+    
+    return {
+      props: {
+        location,
+        isBalkans: location.isBalkans
+      }
+    };
+  } catch (error) {
+    console.error('Error in getServerSideProps:', error);
+    // Fallback to global version if there's an error
+    return {
+      props: {
+        location: { country: 'US', countryName: 'United States', isBalkans: false },
+        isBalkans: false
+      }
+    };
+  }
 }
 
 

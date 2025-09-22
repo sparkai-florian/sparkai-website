@@ -2,41 +2,44 @@
 "use client";
 
 import {
-  Zap,
-  PiggyBank,
-  Languages,
+  Cpu,
+  Globe,
+  Target,
   CheckCircle2,
 } from "lucide-react";
 
 const benefits = [
   {
-    icon: Zap,
-    title: "Never Miss a Client, Grow Without Stress",
-    tagline: "You'll feel the relief of knowing every client is answered instantly, even while you sleep, and watch sales grow without stress.",
+    icon: Cpu,
+    title: "Intelligent Process Optimization",
+    tagline: "Transform complex customer journeys into seamless experiences with AI that understands context and integrates with your existing systems.",
     points: [
-      "Replies sent in under 2 seconds",
-      "Clients covered nights, weekends, holidays",
-      "Answers personalized to your business",
+      "Handles complex, multi-step customer journeys",
+      "Integrates seamlessly with existing business systems",
+      "Maintains context across all customer touchpoints",
+      "Messages that you trust - sophisticated and contextually aware",
     ],
   },
   {
-    icon: PiggyBank,
-    title: "Win Back Your Time & Cut Costs",
-    tagline: "By automating the busywork, you gain back precious hours to enjoy with family and friends—while also freeing up focus for the areas of business that drive growth.",
+    icon: Globe,
+    title: "Scale Without Complexity",
+    tagline: "Expand globally with confidence knowing your brand voice and communication quality remain consistent across all markets and languages.",
     points: [
-      "Auto-FAQs resolve 80% of questions",
-      "Smart follow-ups recover lost sales",
-      "Team focuses only on high-value work",
+      "Native-level communication in 50+ languages",
+      "Consistent brand voice across all interactions",
+      "24/7 coverage without staffing challenges",
+      "Cultural nuance and professional communication",
     ],
   },
   {
-    icon: Languages,
-    title: "Speak Every Client's Language Effortlessly",
-    tagline: "Clients feel valued and understood in their own language, while you enjoy the confidence of truly global, professional communication.",
+    icon: Target,
+    title: "Strategic Resource Allocation",
+    tagline: "Optimize your team's focus by automating routine processes while empowering strategic initiatives and complex problem-solving.",
     points: [
-      "Automatic detection of client language",
-      "French, Italian, English and 50+ more…",
-      "Consistent, on-brand tone",
+      "Automates routine processes, not just responses",
+      "Teams focus on strategic initiatives and complex problem-solving",
+      "Scales operations without proportional resource increases",
+      "Data-driven insights for continuous optimization",
     ],
   },
 ];
@@ -58,10 +61,10 @@ export default function BenefitsSection() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-4">
-            What You Gain with SparkAI
+            Strategic Advantages for Your Operations
           </h2>
           <p className="text-lg text-gray-300 leading-relaxed">
-            Three benefits that drive revenue, efficiency, and reach—powered by AI that works while you sleep.
+            Three strategic pillars that elevate your business operations and enable intelligent scaling.
           </p>
         </div>
 
