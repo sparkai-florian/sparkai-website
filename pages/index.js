@@ -11,10 +11,21 @@ export default function Home({ location, isBalkans }) {
   );
 }
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req, query }) {
   try {
+    // Check for manual override via query parameter (for testing)
+    if (query.region === 'balkans') {
+      return {
+        props: {
+          location: { country: 'XK', countryName: 'Kosovo', region: 'Prishtina', city: 'Prishtina', isBalkans: true },
+          isBalkans: true
+        }
+      };
+    }
+    
     // Get client IP
     const clientIP = getClientIP(req);
+    console.log('Client IP detected:', clientIP);
     
     // Get location data
     const location = await getLocationFromIP(clientIP);
