@@ -44,9 +44,9 @@ export default function FinalCta() {
               Book Your Strategic Optimization Session
             </h3>
             
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+            <div className="flex justify-center">
               <Link href="/book">
-                <button className="bg-[#f6db4b] hover:bg-[#f6db4b]/90 hover:scale-105 transition-all duration-300 px-12 py-5 text-xl font-bold text-black rounded-2xl shadow-2xl hover:shadow-3xl hover:shadow-[#f6db4b]/30 w-full lg:w-auto group">
+                <button className="bg-[#f6db4b] hover:bg-[#f6db4b]/90 hover:scale-105 transition-all duration-300 px-12 py-5 text-xl font-bold text-black rounded-2xl shadow-2xl hover:shadow-3xl hover:shadow-[#f6db4b]/30 group">
                   <span className="flex items-center gap-3">
                     YES, OPTIMIZE MY OPERATIONS
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,24 +55,6 @@ export default function FinalCta() {
                   </span>
                 </button>
               </Link>
-              
-              {/* Enhanced trust indicators */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-300">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="font-medium">Strategic consultation</span>
-                </div>
-                <div className="hidden sm:block w-1 h-1 bg-gray-500 rounded-full"></div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="font-medium">Custom integration plan</span>
-                </div>
-                <div className="hidden sm:block w-1 h-1 bg-gray-500 rounded-full"></div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="font-medium">ROI analysis included</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
