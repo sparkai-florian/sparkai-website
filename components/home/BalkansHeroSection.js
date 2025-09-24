@@ -110,13 +110,22 @@ export default function BalkansHeroSection() {
                 {heroData.subheadline}
               </p>
 
-              <a
-                href="#book"
-                className={`relative z-10 ${heroData.buttonStyle}`}
-                aria-label="Book Your Free Consultation Today"
-              >
-                Book Your Free Consultation Today
-              </a>
+              <div className="flex gap-4 flex-wrap">
+                <a
+                  href="#book"
+                  className="relative z-10 inline-block text-white bg-[#f6db4b] px-6 py-3 rounded-full font-semibold shadow transition duration-300 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/70"
+                  aria-label="Book Your Free Consultation Today"
+                >
+                  Book Your Free Consultation Today
+                </a>
+                <a
+                  href="#chat"
+                  className="relative z-10 inline-block text-gray-700 bg-gray-300 px-6 py-3 rounded-full font-semibold shadow transition duration-300 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-500/70"
+                  aria-label="Chat with AI"
+                >
+                  Chat with AI
+                </a>
+              </div>
 
               {/* Bullets + Platforms wrapped in a glass card */}
               <div className="mt-8 mb-10 p-6 rounded-xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-sm">

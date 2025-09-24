@@ -6,27 +6,27 @@ import { useState } from "react";
 const steps = [
   {
     number: "01",
-    title: "Book a quick call",
+    title: "Discovery & Strategy",
+    subtitle: "We Learn Your Business Inside Out",
     blurb:
-      "Choose a slot. We get insight, gather information, and discuss goals, needs, and potential solutions for your company.",
+      "Book a quick call where we dive deep into your goals, challenges, and customer needs. Then we gather all your business knowledge - FAQs, pricing, brand voice, processes - so your AI sounds exactly like you (but never takes a day off).",
+    outcome: "Strategic consultation + complete business knowledge collection",
   },
   {
     number: "02",
-    title: "Discovery & content intake",
+    title: "Build & Integrate",
+    subtitle: "We Craft Your Intelligent System",
     blurb:
-      "Collect information, gather insights, and compile FAQs, pricing, and brand tone so replies sound like you.",
+      "Our team builds custom conversation flows, sets up multi-language support, and creates smart automations for bookings, lead qualification, follow-ups, and more. Then we seamlessly connect everything to your existing tools - Email, CRM, scheduling systems.",
+    outcome: "Custom AI development + full system integration",
   },
   {
     number: "03",
-    title: "Build & integrate",
+    title: "Launch & Thrive",
+    subtitle: "You Get Your Life Back While Revenue Grows",
     blurb:
-      "We craft flows, languages, and automations—bookings, orders, follow-ups, lead qualification—and connect Email/Sheets/CRM.",
-  },
-  {
-    number: "04",
-    title: "Go live & optimize",
-    blurb:
-      "Launch in days. Your AI replies 24/7, captures every lead, books appointments, nudges follow-ups; we monitor and keep improving conversions.",
+      "Go live in days and watch the magic happen. Your AI handles every message professionally, captures leads you used to miss, books appointments automatically, and follows up consistently. Meanwhile, you're sleeping better, working smarter, and watching your business grow on autopilot.",
+    outcome: "24/7 automated success + peace of mind + growing revenue",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function HowItWorksWave() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-4">
-            How It Works
+            3 Steps to Automated Success
           </h2>
           <p className="text-lg text-gray-300 leading-relaxed">
             From first call to first sale—fast. Our streamlined process gets you up and running in days, not months.
@@ -120,15 +120,14 @@ export default function HowItWorksWave() {
 
           {/* Interactive nodes over the wave */}
           <div className="pointer-events-none absolute inset-0">
-            <Node x="10%" y="50%" label="01" active={active === 0} onHover={() => setActive(0)} onLeave={() => setActive(null)} />
-            <Node x="40%" y="50%" label="02" active={active === 1} onHover={() => setActive(1)} onLeave={() => setActive(null)} />
-            <Node x="70%" y="50%" label="03" active={active === 2} onHover={() => setActive(2)} onLeave={() => setActive(null)} />
-            <Node x="90%" y="50%" label="04" active={active === 3} onHover={() => setActive(3)} onLeave={() => setActive(null)} />
+            <Node x="15%" y="50%" label="01" active={active === 0} onHover={() => setActive(0)} onLeave={() => setActive(null)} />
+            <Node x="50%" y="50%" label="02" active={active === 1} onHover={() => setActive(1)} onLeave={() => setActive(null)} />
+            <Node x="85%" y="50%" label="03" active={active === 2} onHover={() => setActive(2)} onLeave={() => setActive(null)} />
           </div>
         </div>
 
         {/* Enhanced step cards */}
-        <div className="mt-16 grid md:grid-cols-4 gap-6 md:gap-8">
+        <div className="mt-16 grid md:grid-cols-3 gap-6 md:gap-8">
           {steps.map((s, idx) => {
             const isActive = active === idx;
             return (
@@ -168,14 +167,24 @@ export default function HowItWorksWave() {
                         <div className="absolute inset-0 rounded-full border-2 border-[#d4ff00]/30 animate-ping"></div>
                       )}
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-[#d4ff00] transition-colors duration-300">
-                      {s.title}
-                    </h3>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-[#d4ff00] transition-colors duration-300">
+                        {s.title}
+                      </h3>
+                      <p className="text-sm text-[#d4ff00] font-medium mt-1">
+                        {s.subtitle}
+                      </p>
+                    </div>
                   </div>
                   
-                  <p className="text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 mb-4">
                     {s.blurb}
                   </p>
+                  
+                  <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                    <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-1">What happens:</p>
+                    <p className="text-sm text-gray-200 font-medium">{s.outcome}</p>
+                  </div>
                   
                   {/* Progress indicator */}
                   <div className="mt-4 h-1 bg-white/5 rounded-full overflow-hidden">

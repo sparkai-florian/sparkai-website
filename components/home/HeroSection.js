@@ -11,9 +11,9 @@ export default function HeroSection() {
 
   const heroData = {
     key: "global",
-    // Dark theme gradient
+    // Bright gold and grey gradient
     gradient:
-      "linear-gradient(180deg, #000000 0%, #1a1a1a 10px, #2d1b69 40%, #4a1a4a 100%)",
+      "linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 20%, #d4af37 40%, #b8860b 60%, #8b7355 80%, #696969 100%)",
     image: "/banner-image1.png",
     imageAlt: "Global-focused SparkAI banner",
     headline: "Finally... AI That Optimizes Your Business Instead of Frustrating Your Customers",
@@ -49,13 +49,13 @@ export default function HeroSection() {
           {/* Background image or video */}
           <div className="absolute inset-0 flex items-center justify-end z-0 pr-0">
             {!showVideo ? (
-              <div className="relative">
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
                 <Image
                   src={heroData.image}
                   alt={heroData.imageAlt}
                   width={1200}
                   height={800}
-                  className="object-contain max-w-[60%] max-h-[90%] translate-x-8 cursor-pointer"
+                  className="object-contain max-w-[100%] max-h-[90vh] cursor-pointer"
                   priority
                   onClick={() => setShowVideo(true)}
                 />
@@ -71,7 +71,7 @@ export default function HeroSection() {
                 />
               </div>
             ) : (
-              <div className="relative max-w-[60%] max-h-[90%] translate-x-8">
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 max-w-[100%] max-h-[90vh]">
                 <video
                   className="w-full h-full object-contain rounded-lg"
                   controls
@@ -96,48 +96,61 @@ export default function HeroSection() {
 
           {/* Foreground content */}
           <div className="relative z-10 flex items-center min-h-[80vh]">
-            <div className="max-w-3xl w-full px-6 md:px-12 ml-[10px] py-12 text-white">
+            <div className="max-w-3xl w-full px-6 md:px-12 ml-[10px] py-12">
               <div className="flex justify-start mb-4">
-                <span className="text-white text-sm font-semibold">
+                <span className="text-gray-800 text-sm font-semibold bg-white/80 px-3 py-1 rounded-full">
                   FOR BUSINESS OWNERS...
                 </span>
               </div>
-              <h1 className="text-2xl md:text-4xl font-bold leading-tight mb-4">
+              <h1 className="text-2xl md:text-4xl font-bold leading-tight mb-4 text-gray-900 drop-shadow-lg">
                 {heroData.headline}
               </h1>
 
-              <p className="text-base md:text-lg mb-6">
+              <p className="text-base md:text-lg mb-6 text-gray-800 drop-shadow-md">
                 {heroData.subheadline}
               </p>
 
-              <a
-                href="#book"
-                className={`relative z-10 ${heroData.buttonStyle}`}
-                aria-label="Book Your Free Consultation Today"
-              >
-                Book Your Free Consultation Today
-              </a>
+              <div className="flex gap-4 flex-wrap">
+                <a
+                  href="#book"
+                  className="group relative z-10 inline-flex items-center gap-2 text-black bg-gradient-to-r from-[#d4ff00] to-[#b8e600] px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-600"
+                  aria-label="Book Your Free Consultation Today"
+                >
+                  <span className="relative z-10">Book Your Free Consultation Today</span>
+                  <div className="w-2 h-2 bg-black rounded-full group-hover:animate-pulse"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#d4ff00] to-[#b8e600] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                </a>
+                <a
+                  href="#chat"
+                  className="group relative z-10 inline-flex items-center gap-2 text-white bg-gradient-to-r from-[#2B00FF] to-[#1a00cc] px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-600"
+                  aria-label="Chat with AI"
+                >
+                  <span className="relative z-10">Chat with AI</span>
+                  <div className="w-2 h-2 bg-white rounded-full group-hover:animate-pulse"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#2B00FF] to-[#1a00cc] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                </a>
+              </div>
 
               {/* Bullets + Platforms wrapped in a glass card */}
-              <div className="mt-8 mb-10 p-6 rounded-xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-sm">
+              <div className="mt-8 mb-10 p-6 rounded-xl bg-white/90 border border-gray-300/50 shadow-lg backdrop-blur-sm">
                 <ul className="space-y-3">
                   {heroData.bullets.map((b, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-2 text-gray-200 hover:!text-white transition-colors"
+                      className="flex items-center gap-2 text-gray-800 hover:!text-gray-900 transition-colors"
                     >
-                      <Circle className="w-3 h-3 shrink-0 text-[#d4ff00]" />
+                      <Circle className="w-3 h-3 shrink-0 text-[#d4af37]" />
                       <span>{b}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Separator line */}
-                <div className="my-6 h-[1px] w-full bg-gradient-to-r from-transparent via-[#d4ff00]/60 to-transparent"></div>
+                <div className="my-6 h-[1px] w-full bg-gradient-to-r from-transparent via-[#d4af37]/60 to-transparent"></div>
 
                 {/* Platforms row */}
                 <div>
-                  <p className="text-gray-200 font-medium mb-3">
+                  <p className="text-gray-700 font-medium mb-3">
                     Works seamlessly across your favorite platforms:
                   </p>
                   <div className="flex items-center gap-4 flex-wrap">

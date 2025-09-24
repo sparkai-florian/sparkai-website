@@ -3,109 +3,179 @@
 
 const ACCENT = "#d4ff00";
 
-const features = [
-  { title: "24/7 Instant Replies", description: "Never miss a client again — your assistant replies instantly at any hour, keeping conversations alive even when your team is offline." },
-  { title: "Omnichannel Integration", description: "Seamlessly connect with clients across WhatsApp, Facebook, Instagram, Telegram, Viber, and your Website — meeting them exactly where they are." },
-  { title: "Multi-Language Support", description: "Break down barriers by speaking your client's language — from Albanian and English to French, Italian, and 50+ more." },
-  { title: "Smart Appointment Booking", description: "Turn conversations into confirmed bookings with an automated scheduling flow that eliminates waiting for manual replies." },
-  { title: "Order Management", description: "Manage inquiries, confirm orders, and update customers — all within the same chat, from first message to final delivery." },
-  { title: "Real-Time Notifications", description: "Stay in control with instant alerts on Telegram, Email, or Slack, so you can act the moment an opportunity arrives." },
-  { title: "Custom FAQ Training", description: "Give precise, on-brand answers to every client question by training the assistant with your business knowledge." },
-  { title: "Photo Sharing & Uploads", description: "Handle requests faster with image sending and receiving — from product photos to customer uploads." },
-  { title: "Lead Capture Automation", description: "Automatically collect names, emails, and key client details — feeding directly into your CRM for follow-ups and sales." },
-  { title: "Voice Note Replies", description: "Your assistant can understand and reply to client voice messages, making interactions more natural and human-like." },
-  { title: "3rd-Party API Connections", description: "Connect SparkAI to any external platform or tool with an API — enabling custom automations tailored to your workflows." },
-  { title: "Custom Personalized Images", description: "Deliver a unique experience with AI-generated visuals — from product previews to personalized content that makes every client interaction feel special." },
+const revenueGenerators = [
+  { 
+    title: "24/7 Sales Machine", 
+    description: "Your AI never sleeps, never takes breaks, and never lets a hot lead go cold. While competitors lose customers to slow responses, you're closing deals at midnight." 
+  },
+  { 
+    title: "Smart Appointment Booking", 
+    description: "Stop playing phone tag. Your AI books appointments instantly, confirms details, and sends reminders—turning \"maybe later\" into \"see you Tuesday at 3 PM.\"" 
+  },
+  { 
+    title: "Order Management That Sells", 
+    description: "From first inquiry to final delivery, your AI manages the entire sales process. Upsells, cross-sells, order confirmations—all handled automatically while you focus on bigger deals." 
+  },
+  { 
+    title: "Lead Capture That Actually Works", 
+    description: "Every conversation becomes a sales opportunity. Names, emails, phone numbers, buying intent—all captured automatically and fed straight into your CRM for follow-up." 
+  },
 ];
 
-const left = features.slice(0, 6);
-const right = features.slice(6);
+const customerExperienceBoosters = [
+  { 
+    title: "Meet Customers Where They Live", 
+    description: "WhatsApp, Facebook, Instagram, Telegram, Viber, your website—your AI is everywhere your customers are. No more \"sorry, we only respond on email.\"" 
+  },
+  { 
+    title: "Speak Every Customer's Language", 
+    description: "Break language barriers instantly. Albanian, English, French, Italian, and 50+ more languages—your AI speaks them all fluently, expanding your market overnight." 
+  },
+  { 
+    title: "Voice Note Magic", 
+    description: "Your customers love voice messages? Your AI gets it. Understands them, responds naturally, and keeps conversations flowing like you're texting with a friend." 
+  },
+  { 
+    title: "Visual Selling Power", 
+    description: "Send product photos, receive customer uploads, even generate custom personalized images. Show, don't just tell—and watch conversion rates soar." 
+  },
+];
+
+const businessEfficiencyMultipliers = [
+  { 
+    title: "Never Miss Another Opportunity", 
+    description: "Real-time notifications on Telegram, Email, or Slack mean you know the moment a big opportunity walks through your digital door." 
+  },
+  { 
+    title: "Custom FAQ Training", 
+    description: "Give precise, on-brand answers to every client question by training the assistant with your complete business knowledge." 
+  },
+  { 
+    title: "Connect Everything", 
+    description: "Your CRM, scheduling tools, payment systems—SparkAI connects to any platform with an API. One conversation, infinite possibilities." 
+  },
+  { 
+    title: "Messages That You Trust", 
+    description: "Every response reflects your brand voice, your expertise, your professionalism. Customers can't tell the difference—except you're suddenly available 24/7." 
+  },
+];
 
 export default function Features() {
   return (
     <section
-      className="w-full bg-black text-white py-20 md:py-28 px-6 relative overflow-hidden"
+      className="w-full bg-[#f8f9fa] text-white py-16 md:py-20 px-6"
       style={{ ["--accent"]: ACCENT }}
     >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 opacity-50"></div>
-      <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-4">
-            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-              Feature Set
-            </span>
+      <div className="max-w-7xl mx-auto text-center mb-16 md:mb-20">
+        <h2 className="text-3xl md:text-4xl font-bold">Everything You Need To Turn Every Message Into Money</h2>
+        <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
+          SparkAI doesn't just chat—it sells, books, and grows your business 24/7
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto space-y-16">
+        {/* Revenue Generators */}
+        <div>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#d4ff00] mb-2">💰 REVENUE GENERATORS</h3>
+            <p className="text-white/70">Turn every conversation into a sales opportunity</p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-4">
-            All the Features You Need — Built In
-          </h2>
-          <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            SparkAI packs the essentials to communicate faster, sell more, and support better.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {revenueGenerators.map((feature, i) => (
+              <div key={i} className="group flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#d4ff00]/30 transition-all duration-300">
+                <span className="relative mt-1 inline-block h-5 w-5 shrink-0">
+                  <span className="bullet-ring absolute inset-0 rounded-full" />
+                  <span className="bullet-dot absolute left-1/2 top-1/2 h-[6px] w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+                </span>
+                <div className="min-w-0">
+                  <h4 className="font-semibold text-lg leading-tight group-hover:text-[#d4ff00] transition-colors duration-300">
+                    {feature.title}
+                  </h4>
+                  <p className="mt-2 text-white/70 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Enhanced Feature Cards */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-          {[left, right].map((side, colIdx) => (
-            <div key={colIdx} className="space-y-6">
-              {side.map(({ title, description }, i) => (
-                <div
-                  key={i}
-                  className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/30 p-6 rounded-2xl border border-gray-700/50 hover:border-[#d4ff00]/30 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_0_4px_rgba(212,255,0,0.1),0_15px_40px_rgba(0,0,0,0.4)]"
-                >
-                  {/* Decorative gradient overlay */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                       style={{
-                         background: "radial-gradient(1200px 300px at 50% -10%, rgba(212,255,0,0.05), rgba(0,0,0,0))",
-                       }}
-                  />
-
-                  <div className="relative flex items-start gap-4">
-                    {/* Enhanced bullet point */}
-                    <div className="relative mt-1 flex-shrink-0">
-                      <span className="relative inline-block h-6 w-6">
-                        {/* outer ring */}
-                        <span className="absolute inset-0 rounded-full border-2 border-[#d4ff00] group-hover:border-[#d4ff00] transition-colors duration-300" />
-                        {/* inner dot */}
-                        <span className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d4ff00] group-hover:scale-125 transition-transform duration-300" />
-                        {/* pulse ring on hover */}
-                        <span className="absolute inset-0 rounded-full border-2 border-[#d4ff00]/30 group-hover:animate-ping" />
-                      </span>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-bold text-lg md:text-xl leading-tight text-white group-hover:text-[#d4ff00] transition-colors duration-300 mb-2">
-                        {title}
-                      </h3>
-                      <p className="text-gray-300 text-sm md:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                        {description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Accent line */}
-                  <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-[#d4ff00] to-[#2B00FF] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* Customer Experience Boosters */}
+        <div>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#d4ff00] mb-2">🚀 CUSTOMER EXPERIENCE BOOSTERS</h3>
+            <p className="text-white/70">Meet customers where they are, how they want</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {customerExperienceBoosters.map((feature, i) => (
+              <div key={i} className="group flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#d4ff00]/30 transition-all duration-300">
+                <span className="relative mt-1 inline-block h-5 w-5 shrink-0">
+                  <span className="bullet-ring absolute inset-0 rounded-full" />
+                  <span className="bullet-dot absolute left-1/2 top-1/2 h-[6px] w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+                </span>
+                <div className="min-w-0">
+                  <h4 className="font-semibold text-lg leading-tight group-hover:text-[#d4ff00] transition-colors duration-300">
+                    {feature.title}
+                  </h4>
+                  <p className="mt-2 text-white/70 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-              ))}
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Business Efficiency Multipliers */}
+        <div>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#d4ff00] mb-2">⚡ BUSINESS EFFICIENCY MULTIPLIERS</h3>
+            <p className="text-white/70">Work smarter, not harder—while your AI works 24/7</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {businessEfficiencyMultipliers.map((feature, i) => (
+              <div key={i} className="group flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#d4ff00]/30 transition-all duration-300">
+                <span className="relative mt-1 inline-block h-5 w-5 shrink-0">
+                  <span className="bullet-ring absolute inset-0 rounded-full" />
+                  <span className="bullet-dot absolute left-1/2 top-1/2 h-[6px] w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+                </span>
+                <div className="min-w-0">
+                  <h4 className="font-semibold text-lg leading-tight group-hover:text-[#d4ff00] transition-colors duration-300">
+                    {feature.title}
+                  </h4>
+                  <p className="mt-2 text-white/70 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Line */}
+        <div className="text-center mt-16 p-8 rounded-2xl bg-gradient-to-r from-[#d4ff00]/10 to-[#2B00FF]/10 border border-[#d4ff00]/20">
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto">
+            <strong className="text-[#d4ff00]">The Bottom Line:</strong> While your competitors are still manually typing responses and losing customers to slow service, you'll have an AI-powered sales and support machine that works around the clock, speaks every language, and turns every conversation into revenue.
+          </p>
         </div>
       </div>
 
-      {/* Enhanced animations */}
+      {/* minimal hover effects for ring & dot */}
       <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-5px); }
+        .bullet-ring {
+          box-shadow: inset 0 0 0 2px var(--accent);
+          transition: box-shadow 180ms ease;
         }
-        
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
+        .group:hover .bullet-ring {
+          box-shadow: inset 0 0 0 3px var(--accent);
+        }
+        .bullet-dot {
+          background: var(--accent);
+          transform: scale(1);
+          transition: transform 180ms ease;
+        }
+        .group:hover .bullet-dot {
+          transform: scale(1.2);
         }
       `}</style>
     </section>

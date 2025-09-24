@@ -1,125 +1,46 @@
-import { useState, useRef, useEffect } from "react";
-import { ChevronDown, Play, Pause, Globe2, Languages, Sparkles, Rocket, Clock, RefreshCw, ShieldCheck, HelpCircle, Tag, MonitorPlay } from "lucide-react";
-
-/**
- * SparkAI – Fire FAQ Section
- * - Video-first accordion: when an item opens, the video appears first, then the rich text answer.
- * - Supports YouTube/Vimeo (iframe) or direct .mp4/.webm via <video>.
- * - Tailwind design tuned to SparkAI palette (neon green #d4ff00 on a dark #1C1C1C surface).
- * - Accessible keyboard navigation (Enter/Space toggle), ARIA attributes, and focus rings.
- * - Drop-in component: <SparkAIFAQ />
- */
-
-const BRAND = {
-  bg: "#000000",
-  text: "#FFFFFF",
-  accent: "#d4ff00", // SparkAI neon
-  subtle: "#9CA3AF", // gray-400
-  card: "#111111",
-  border: "#2A2A2A",
-};
-
-function isYouTubeOrVimeo(url) {
-  if (!url) return false;
-  const u = url.toLowerCase();
-  return u.includes("youtube.com") || u.includes("youtu.be") || u.includes("vimeo.com");
-}
-
-function VideoPlayer({ url, isActive }) {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    // Auto-pause inactive HTML5 videos when the panel closes
-    const v = videoRef.current;
-    if (!v) return;
-    if (!isActive && !isYouTubeOrVimeo(url)) {
-      try { v.pause(); } catch {}
-    }
-  }, [isActive, url]);
-
-  if (!url) return null;
-
-  if (isYouTubeOrVimeo(url)) {
-    // Responsive iframe wrapper
-    return (
-      <div className="w-full aspect-video rounded-2xl overflow-hidden border" style={{ borderColor: BRAND.accent }}>
-        <iframe
-          className="w-full h-full"
-          src={url}
-          title="FAQ Video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          loading="lazy"
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative w-full rounded-2xl overflow-hidden border aspect-video" style={{ borderColor: BRAND.accent }}>
-      <video ref={videoRef} className="w-full h-full" controls preload="metadata">
-        <source src={url} />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  );
-}
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 function FaqItem({ i, open, onToggle, item }) {
   const isOpen = open === i;
 
   return (
-    <div
-      className={`group rounded-3xl border transition-all duration-300 transform hover:scale-105 ${isOpen ? "shadow-[0_0_0_4px_rgba(212,255,0,0.3),0_20px_60px_rgba(0,0,0,0.5)] border-[#d4ff00]/50 bg-gradient-to-br from-gray-900 to-gray-800" : "shadow-[0_0_0_0_rgba(0,0,0,0)] border-gray-700/50 bg-gradient-to-br from-gray-900/50 to-gray-800/30 hover:border-[#d4ff00]/30"}`}
-    >
+    <div className="border-b border-gray-700/50">
       <button
-        className="w-full flex items-start gap-6 p-6 md:p-8 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-0"
+        className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
         onClick={() => onToggle(isOpen ? -1 : i)}
         aria-expanded={isOpen}
       >
-        <div className="mt-1 shrink-0 h-12 w-12 grid place-items-center rounded-full bg-gradient-to-r from-[#d4ff00] to-[#b8e600] text-black font-bold text-lg group-hover:scale-110 transition-transform duration-300">
-          ?
-        </div>
-        <div className="flex-1">
-          <h3 className="text-lg md:text-xl font-bold leading-tight text-white group-hover:text-[#d4ff00] transition-colors duration-300">
-            {item.title}
-          </h3>
-          {item.subtitle && (
-            <p className="mt-2 text-sm md:text-base text-gray-300 group-hover:text-gray-200 transition-colors duration-300">{item.subtitle}</p>
-          )}
-        </div>
+        <h3 className="text-lg font-semibold text-white pr-4">
+          {item.title}
+        </h3>
         <ChevronDown
-          className={`mt-1 h-6 w-6 transition-transform ${isOpen ? "rotate-180" : "rotate-0"} text-[#d4ff00] group-hover:text-white`}
+          className={`h-5 w-5 text-gray-400 transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`}
           aria-hidden
         />
       </button>
 
-      <div
-        className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-      >
-        <div className="overflow-hidden">
-          <div className="px-6 pb-8 md:px-8 md:pb-10">
-            {/* Text answer */}
-            <div className="space-y-4">
-              {item.answer.map((para, idx) => (
-                <p key={idx} className="leading-relaxed text-base md:text-lg text-gray-300">
-                  {para}
-                </p>
-              ))}
-              {item.points?.length ? (
-                <ul className="mt-6 space-y-3">
-                  {item.points.map((p, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-gray-300">
-                      <div className="w-2 h-2 rounded-full bg-[#d4ff00] mt-2 flex-shrink-0"></div>
-                      <span className="text-sm md:text-base leading-relaxed">{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
+      {isOpen && (
+        <div className="px-6 pb-6">
+          <div className="space-y-4">
+            {item.answer.map((para, idx) => (
+              <p key={idx} className="text-gray-300 leading-relaxed">
+                {para}
+              </p>
+            ))}
+            {item.points?.length && (
+              <ul className="mt-4 space-y-2">
+                {item.points.map((p, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-gray-300">
+                    <span className="text-[#d4ff00] mt-1">•</span>
+                    <span className="text-sm leading-relaxed">{p}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -130,174 +51,112 @@ export default function SparkAIFAQ() {
   const faqs = [
     {
       title: "What kind of businesses can benefit from SparkAI?",
-      subtitle: "From clinics and salons to hotels, banks, retail, and e‑commerce.",
-      videoUrl: "", // optional
       answer: [
-        "Any organization that communicates with customers benefits from faster replies and consistent service.",
-        "SparkAI is configurable by industry and use‑case so you start with relevant skills from day one.",
-      ],
-      points: [
-        "Healthcare & Med‑Spa: Bookings, pre‑visit triage, reminders, pricing FAQs.",
-        "Hospitality & Travel: Reservations, availability, itinerary changes, upsells.",
-        "Finance & Banking: Product discovery, branch/ATM info, lead pre‑qualification.",
-        "Retail & E‑Com: Product Q&A, stock/size checks, order status, returns.",
-      ],
+        "Short answer: Pretty much any business that gets customer messages.",
+        "Real answer: We've transformed operations for clinics handling appointment bookings, salons managing client inquiries, hotels processing reservations, banks answering account questions, retail stores managing product inquiries, and e-commerce businesses converting browsers into buyers.",
+        "But here's the thing - if customers message you with questions, complaints, or interest in your services, SparkAI can handle it. We've worked with restaurants taking orders, real estate agents qualifying leads, fitness centers booking classes, legal firms screening clients, and even local service businesses managing emergency calls.",
+        "The magic isn't in the industry - it's in having customers who expect fast, professional responses."
+      ]
     },
     {
       title: "How will SparkAI help me increase sales?",
-      subtitle: "Instant replies, captured leads, and automation that moves customers to checkout.",
-      videoUrl: "", // optional
       answer: [
-        "Speed wins. SparkAI replies in real time, even during peak campaigns, so no lead goes cold.",
-        "Guided flows and smart suggestions reduce friction, improving conversion at every step.",
+        "The brutal truth: Most businesses lose 60% of potential sales because they respond too slowly or not at all.",
+        "Here's how SparkAI fixes that:"
       ],
       points: [
-        "Lead capture with validated contact info and consent.",
-        "Follow‑ups on abandoned chats and promotional campaigns.",
-        "Cross‑sell/upsell recommendations based on intent signals.",
-      ],
+        "Instant replies keep hot leads from going cold (studies show you have 5 minutes max before they move on)",
+        "Smart lead qualification identifies your best prospects automatically",
+        "Follow-up sequences that actually follow up (most humans forget after the first attempt)",
+        "24/7 availability captures sales while competitors sleep",
+        "Objection handling that addresses concerns before they become deal-breakers",
+        "Upsell automation that suggests additional services naturally",
+        "Appointment booking that eliminates phone tag and \"I'll call you back\""
+      ]
     },
     {
       title: "How long does it take to set up SparkAI?",
-      subtitle: "Usually a few days depending on complexity — no tech skills required.",
-      videoUrl: "", // optional
       answer: [
-        "We use an implementation checklist to configure channels, knowledge, and workflows fast.",
-        "Simple projects launch within days; complex integrations follow a clear milestone plan.",
-      ],
-      points: [
-        "Kickoff → content intake → approval → go‑live.",
-        "Training on your real FAQs and offers.",
-        "Optional integrations (CRM, payments, sheets) when needed.",
-      ],
+        "Typically 3-14 days, depending on complexity.",
+        "Here's the reality: A basic setup with your core FAQs and services? We can have you live in 3-5 days.",
+        "Want it to handle complex product catalogs, integrate with your CRM, manage appointment booking, and know every detail of your business? That might take up to 14 days.",
+        "But here's what's different about us: We don't disappear after setup. We monitor, optimize, and keep improving your system based on real conversations.",
+        "Most businesses see results within 24 hours of going live."
+      ]
     },
     {
       title: "Can I change information later (hours, prices, promotions)?",
-      subtitle: "Yes — updates are simple and included in your maintenance plan.",
-      videoUrl: "", // optional
       answer: [
-        "All key business data (hours, pricing, promos, availability) lives in a structured knowledge base.",
-        "Update once, and changes take effect across channels with version history for accountability.",
-      ],
-      points: [
-        "Self‑serve dashboard or send updates to our team.",
-        "Rollback support for time‑boxed promotions.",
-        "Multi‑location overrides and holiday hours.",
-      ],
+        "Yes, absolutely. After you notify us of changes, it takes 24-48 hours to update the system with the right information.",
+        "But here's where it gets interesting: If you want certain areas of your chatbot to have more frequent updates or faster changes, we can give you direct access where changes are instant.",
+        "Think of it like this: Basic updates (hours, prices, policies) go through us for quality control. But if you're running frequent promotions or need real-time inventory updates, we can set up instant access for those specific areas.",
+        "Your business changes, your AI adapts - at whatever speed you need."
+      ]
     },
     {
       title: "What makes SparkAI different from other chatbots (like Facebook templates)?",
-      subtitle: "Personalization, advanced automation, local support, and a real ROI focus.",
-      videoUrl: "", // optional
       answer: [
-        "Templates reply — SparkAI consults. It understands intent, asks clarifying questions, and executes actions.",
-        "We optimize for outcomes: bookings, orders, qualified leads — not just message counts.",
+        "Facebook templates: \"I don't understand. Please try again.\"",
+        "SparkAI: Actually understands what your customer meant and responds intelligently.",
+        "Here's the difference: Our AI doesn't just match keywords - it understands context, intent, and nuance. Your customer could write \"hey can u tel me wat time u close on saturdya?\" (grammar errors and all) and SparkAI will understand they're asking about Saturday hours.",
+        "But here's the real magic:",
+        "Every response is personalized based on:"
       ],
       points: [
-        "Industry kits to start fast, then deep customization.",
-        "Automation: payments, bookings, lookups, order status, reminders.",
-        "Human‑in‑the‑loop and analytics you can act on.",
-      ],
+        "The specific words your customer chose",
+        "The context of the conversation",
+        "Your unique brand voice",
+        "The customer's apparent intent",
+        "Previous conversation history"
+      ]
     },
     {
-      title: "What happens if SparkAI doesn’t understand a question?",
-      subtitle: "It gracefully recovers, suggests alternatives, or routes to your team.",
-      videoUrl: "", // optional
+      title: "What happens if SparkAI doesn't understand a question?",
       answer: [
-        "When confidence is low, SparkAI asks a clarifying question or offers the nearest helpful options.",
-        "If human help is better, it escalates with full context so your team continues seamlessly.",
-      ],
-      points: [
-        "Fallback FAQs and quick actions to keep momentum.",
-        "Smart routing by business hours, team, or priority.",
-        "Conversation transcript attached to escalation.",
-      ],
+        "First: It doesn't panic or give up. SparkAI makes intelligent guesses based on context and provides the most helpful response possible.",
+        "Second: If it's genuinely stumped, it gracefully suggests alternatives: \"I'm not sure about that specific question, but I can help you with [related topic] or connect you with our team.\"",
+        "Third: We have safeguards. Every \"I don't know\" gets flagged, and we work with you to add that knowledge to the system.",
+        "The goal: Your AI gets smarter every day, and customers never feel abandoned."
+      ]
     },
     {
       title: "What are the pricing options?",
-      subtitle: "Flexible packages by features and industry — see the pricing page.",
-      videoUrl: "", // optional
       answer: [
-        "Pricing aligns with the value you need: from essential automation to advanced, integrated workflows.",
-        "Transparent setup and a predictable monthly plan — no surprises.",
-      ],
-      points: [
-        "Starter, Growth, and Enterprise tiers.",
-        "Add‑ons for multi‑language, media handling, and integrations.",
-        "Optional SLA and priority support.",
-      ],
+        "Flexible packages designed around what you actually need.",
+        "We don't believe in one-size-fits-all pricing because every business is different. A small salon needs different features than a multi-location retail chain.",
+        "Check out all our packages at: sparkai-rks.com/pricing",
+        "Want the honest truth? Most businesses save more in reduced support costs than they spend on SparkAI. It's not an expense - it's an investment that pays for itself."
+      ]
     },
     {
       title: "Can I see a demo before deciding?",
-      subtitle: "Yes — book a live demo to experience SparkAI with your use‑case.",
-      videoUrl: "", // optional
       answer: [
-        "We’ll walk through a tailored scenario for your industry and show the admin view behind the scenes.",
-        "You’ll leave with a clear plan, timeline, and expected outcomes.",
-      ],
-      points: [
-        "Hands‑on trial flows.",
-        "Q&A with implementation best practices.",
-        "Post‑demo summary and next steps.",
-      ],
-    },
+        "Absolutely. We've got you covered two ways:",
+        "Industry-Specific Demos: Visit sparkai-rks.com/services and select your industry to see exactly how SparkAI works for businesses like yours. See real conversations, real scenarios, real results.",
+        "Personalized Demo: Want to see SparkAI with YOUR actual business information? Upload your details at sparkai-rks.com/demo for just $11 and we'll create a custom demo using your services, pricing, and brand voice.",
+        "Why the small fee for personalized demos? Because creating a custom demo takes real work, and we want to work with serious business owners who are ready to see exactly how SparkAI would transform their specific business.",
+        "The industry demos give you a great overview, but the personalized demo shows you exactly how it works for your business."
+      ]
+    }
   ];
 
   return (
-    <section
-      id="faq"
-      className="relative py-20 md:py-28 bg-black overflow-hidden"
-    >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 opacity-50"></div>
-      <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
-      
-      <div className="mx-auto w-[92%] max-w-6xl relative z-10">
-        {/* Enhanced Heading */}
-        <div className="mb-16 text-center">
-          <div className="flex justify-center mb-4">
-            <span className="bg-gradient-to-r from-yellow-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-              FAQ
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-4">
+    <section id="faq" className="py-20 bg-black">
+      <div className="mx-auto max-w-4xl px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300">
             Get instant answers to the most common questions about SparkAI and how it can transform your business.
           </p>
         </div>
 
-        <div className="grid gap-4 md:gap-5">
+        <div className="bg-gray-900/50 rounded-lg border border-gray-700/50">
           {faqs.map((item, i) => (
             <FaqItem key={i} i={i} open={open} onToggle={setOpen} item={item} />
           ))}
         </div>
-
-        {/* Enhanced Helper footer */}
-        <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-6 rounded-3xl border border-gray-700/50 p-6 md:p-8 bg-gradient-to-br from-gray-900/50 to-gray-800/30 hover:border-[#d4ff00]/30 transition-all duration-300">
-          <div>
-            <p className="text-lg md:text-xl font-bold text-white mb-2">
-              Still have questions?
-            </p>
-            <p className="text-sm md:text-base text-gray-300">
-              Get personalized answers tailored to your specific business needs and industry.
-            </p>
-          </div>
-          <a
-            href="#book-a-demo"
-            className="inline-flex items-center gap-3 rounded-xl px-6 py-3 bg-gradient-to-r from-[#d4ff00] to-[#b8e600] text-black font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg"
-          >
-            <Play className="h-5 w-5" /> Book a Live Demo
-          </a>
-        </div>
-      </div>
-
-      {/* Subtle glow */}
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-30" aria-hidden>
-        <div className="absolute left-1/2 top-0 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full blur-3xl"
-             style={{ background: "radial-gradient(closest-side, rgba(212,255,0,0.18), transparent 70%)" }} />
       </div>
     </section>
   );
