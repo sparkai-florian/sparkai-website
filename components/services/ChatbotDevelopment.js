@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import {
   UserIcon,
@@ -7,7 +7,9 @@ import {
   GlobeAltIcon,
   PaperAirplaneIcon,
   BanknotesIcon,
-  SparklesIcon
+  SparklesIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
 } from '@heroicons/react/24/outline';
 
 const features = [
@@ -53,45 +55,49 @@ const features = [
   }
 ];
 
-const industries = [
+const services = [
   {
-    name: 'Healthcare',
-    color: '#008080',
-    icon: UserIcon
+    name: 'Aesthetic Clinics',
+    image: '/aesthetic_clinics.png',
+    link: '/solutions/healthcare'
   },
   {
-    name: 'Restaurant',
-    color: '#D62828',
-    icon: ClipboardDocumentIcon
+    name: 'E Commerce',
+    image: '/e_commerce.png',
+    link: '/solutions/e_commerce'
   },
   {
-    name: 'Retail Store',
-    color: '#F77F00',
-    icon: BuildingStorefrontIcon
+    name: 'Fashion Stores',
+    image: '/fashion_stores.png',
+    link: '/solutions/fashtion_store'
   },
   {
-    name: 'E-Commerce',
-    color: '#7209B7',
-    icon: GlobeAltIcon
+    name: 'Law',
+    image: '/law_firms.png',
+    link: '/solutions/finance'
   },
   {
-    name: 'Travel Agency',
-    color: '#00B4D8',
-    icon: PaperAirplaneIcon
-  },
-  {
-    name: 'Finance',
-    color: '#023E8A',
-    icon: BanknotesIcon
-  },
-  {
-    name: 'Fashion Store',
-    color: '#D00070',
-    icon: SparklesIcon
+    name: 'Travel Agencies',
+    image: '/travel_agency.png',
+    link: '/solutions/travel_agency'
   }
 ];
 
 const ChatbotDevelopment = () => {
+  const carouselRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="bg-black text-white py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -121,23 +127,53 @@ const ChatbotDevelopment = () => {
           ))}
         </div>
 
-        {/* Industry-Specific Chatbots */}
+        {/* Industry-Specific Solutions Carousel */}
         <div>
           <h3 className="text-2xl font-bold mb-8 text-center">Industry-Specific Solutions</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry, index) => {
-              const Icon = industry.icon;
-              return (
-                <Link
-                  key={index}
-                  href={`/solutions/${industry.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="flex items-center gap-4 bg-gray-900 hover:bg-gray-800 transition p-4 rounded-lg border border-gray-700"
-                >
-                  <Icon className="h-6 w-6" style={{ color: industry.color }} />
-                  <span className="font-medium">{industry.name}</span>
-                </Link>
-              );
-            })}
+          <div className="flex items-center gap-4">
+            {/* Left Navigation Arrow */}
+            <button
+              onClick={scrollLeft}
+              className="flex-shrink-0 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-3 transition-all duration-200"
+            >
+              <ChevronLeftIcon className="h-8 w-8 text-white" />
+            </button>
+
+            {/* Carousel Container */}
+            <div className="flex-1 overflow-hidden">
+              <div ref={carouselRef} className="flex animate-scroll gap-8 py-4">
+                {/* Duplicate the services array to create seamless infinite scroll */}
+                {[...services, ...services, ...services].map((service, index) => (
+                  <div key={`${service.name}-${index}`} className="flex-shrink-0 group cursor-pointer">
+                    {/* Service name above image */}
+                    <div className="mb-4">
+                      <h4 className="text-white text-xl font-bold text-left">
+                        {service.name}
+                      </h4>
+                    </div>
+                    
+                    {/* Service image with thin gradient border */}
+                    <Link href={service.link}>
+                      <div className="relative w-80 h-80 rounded-2xl overflow-hidden shadow-2xl p-0.5 bg-gradient-to-br from-[#d4ff00] to-[#213efa]">
+                        <img
+                          src={service.image}
+                          alt={service.name}
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Navigation Arrow */}
+            <button
+              onClick={scrollRight}
+              className="flex-shrink-0 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-3 transition-all duration-200"
+            >
+              <ChevronRightIcon className="h-8 w-8 text-white" />
+            </button>
           </div>
         </div>
       </div>

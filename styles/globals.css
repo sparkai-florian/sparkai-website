@@ -61,3 +61,17 @@ body {
   min-height: 100vh;
 }
 
+/* Infinite scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 12s linear infinite;
+}
+
