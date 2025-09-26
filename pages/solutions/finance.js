@@ -1,18 +1,18 @@
-// pages/solutions/healthcare.js
+// pages/solutions/finance.js
 import React from 'react';
 import Head from 'next/head';
-import HeroSection from '@/components/solutions/healthcare/HeroSection';
-import StorySection from '@/components/solutions/healthcare/StorySection';
-import DemoVideoSection from '@/components/solutions/healthcare/DemoVideoSection';
-import BenefitsSection from '@/components/solutions/healthcare/BenefitsSection';
-import FreeGuide from '@/components/solutions/healthcare/FreeGuide';
-import ChatbotDemoSection from '@/components/solutions/healthcare/ChatbotDemoSection';
-import UseCases from '@/components/solutions/healthcare/UseCases';
-import TestimonialSection from '@/components/solutions/healthcare/TestimonialSection';
-import CTASection from '@/components/solutions/healthcare/CTASection';
+import HeroSection from '@/components/solutions/finance/HeroSection';
+import StorySection from '@/components/solutions/finance/StorySection';
+import DemoVideoSection from '@/components/solutions/finance/DemoVideoSection';
+import BenefitsSection from '@/components/solutions/finance/BenefitsSection';
+import FreeGuide from '@/components/solutions/finance/FreeGuide';
+import ChatbotDemoSection from '@/components/solutions/finance/ChatbotDemoSection';
+import UseCases from '@/components/solutions/finance/UseCases';
+import TestimonialSection from '@/components/solutions/finance/TestimonialSection';
+import CTASection from '@/components/solutions/finance/CTASection';
 import Layout from '@/components/layout/Layout';
 
-const HealthcareSolutionPage = () => {
+const FinanceSolutionPage = () => {
   return (
     <>
       <Head>
@@ -39,4 +39,4 @@ const HealthcareSolutionPage = () => {
   );
 };
 
-export default HealthcareSolutionPage;
+export default FinanceSolutionPage;

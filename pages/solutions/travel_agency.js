@@ -1,18 +1,18 @@
-// pages/solutions/healthcare.js
+// pages/solutions/travel_agency.js
 import React from 'react';
 import Head from 'next/head';
-import HeroSection from '@/components/solutions/healthcare/HeroSection';
-import StorySection from '@/components/solutions/healthcare/StorySection';
-import DemoVideoSection from '@/components/solutions/healthcare/DemoVideoSection';
-import BenefitsSection from '@/components/solutions/healthcare/BenefitsSection';
-import FreeGuide from '@/components/solutions/healthcare/FreeGuide';
-import ChatbotDemoSection from '@/components/solutions/healthcare/ChatbotDemoSection';
-import UseCases from '@/components/solutions/healthcare/UseCases';
-import TestimonialSection from '@/components/solutions/healthcare/TestimonialSection';
-import CTASection from '@/components/solutions/healthcare/CTASection';
+import HeroSection from '@/components/solutions/travel_agency/HeroSection';
+import StorySection from '@/components/solutions/travel_agency/StorySection';
+import DemoVideoSection from '@/components/solutions/travel_agency/DemoVideoSection';
+import BenefitsSection from '@/components/solutions/travel_agency/BenefitsSection';
+import FreeGuide from '@/components/solutions/travel_agency/FreeGuide';
+import ChatbotDemoSection from '@/components/solutions/travel_agency/ChatbotDemoSection';
+import UseCases from '@/components/solutions/travel_agency/UseCases';
+import TestimonialSection from '@/components/solutions/travel_agency/TestimonialSection';
+import CTASection from '@/components/solutions/travel_agency/CTASection';
 import Layout from '@/components/layout/Layout';
 
-const HealthcareSolutionPage = () => {
+const TravelAgencySolutionPage = () => {
   return (
     <>
       <Head>
@@ -39,4 +39,4 @@ const HealthcareSolutionPage = () => {
   );
 };
 
-export default HealthcareSolutionPage;
+export default TravelAgencySolutionPage;

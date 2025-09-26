@@ -1,18 +1,18 @@
-// pages/solutions/healthcare.js
+// pages/solutions/retail_store.js
 import React from 'react';
 import Head from 'next/head';
-import HeroSection from '@/components/solutions/healthcare/HeroSection';
-import StorySection from '@/components/solutions/healthcare/StorySection';
-import DemoVideoSection from '@/components/solutions/healthcare/DemoVideoSection';
-import BenefitsSection from '@/components/solutions/healthcare/BenefitsSection';
-import FreeGuide from '@/components/solutions/healthcare/FreeGuide';
-import ChatbotDemoSection from '@/components/solutions/healthcare/ChatbotDemoSection';
-import UseCases from '@/components/solutions/healthcare/UseCases';
-import TestimonialSection from '@/components/solutions/healthcare/TestimonialSection';
-import CTASection from '@/components/solutions/healthcare/CTASection';
+import HeroSection from '@/components/solutions/retail_store/HeroSection';
+import StorySection from '@/components/solutions/retail_store/StorySection';
+import DemoVideoSection from '@/components/solutions/retail_store/DemoVideoSection';
+import BenefitsSection from '@/components/solutions/retail_store/BenefitsSection';
+import FreeGuide from '@/components/solutions/retail_store/FreeGuide';
+import ChatbotDemoSection from '@/components/solutions/retail_store/ChatbotDemoSection';
+import UseCases from '@/components/solutions/retail_store/UseCases';
+import TestimonialSection from '@/components/solutions/retail_store/TestimonialSection';
+import CTASection from '@/components/solutions/retail_store/CTASection';
 import Layout from '@/components/layout/Layout';
 
-const HealthcareSolutionPage = () => {
+const RetailStoreSolutionPage = () => {
   return (
     <>
       <Head>
@@ -39,4 +39,4 @@ const HealthcareSolutionPage = () => {
   );
 };
 
-export default HealthcareSolutionPage;
+export default RetailStoreSolutionPage;

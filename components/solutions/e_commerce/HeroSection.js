@@ -1,4 +1,4 @@
-// components/solutions/healthcare/HeroSection.js
+// components/solutions/e_commerce/HeroSection.js
 import React from 'react';
 import Link from 'next/link';
 
@@ -7,10 +7,10 @@ const HeroSection = () => {
     <section className="bg-black text-white py-20">
       <div className="max-w-6xl mx-auto px-4 text-left">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          AI Chatbots Built for Clinics That Care
+          AI Chatbots Built for E-Commerce Success
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl">
-          Respond instantly to patient inquiries, book appointments, and follow up automatically — all without lifting a finger.
+          Convert more visitors into customers with instant product support, cart recovery, and personalized shopping assistance — all automated.
         </p>
         <Link
           href="/book"

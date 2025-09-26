@@ -1,29 +1,29 @@
-// components/solutions/healthcare/BenefitsSection.js
+// components/solutions/e_commerce/BenefitsSection.js
 import React from 'react';
 
 const benefits = [
   {
-    title: 'Faster Patient Response',
+    title: 'Higher Conversion Rates',
     features: [
-      'Automated instant replies for appointment requests',
-      '24/7 availability, even outside clinic hours',
-      'No more missed DMs or long waits',
+      'Instant product recommendations and sizing help',
+      '24/7 customer support, even outside business hours',
+      'No more abandoned carts due to unanswered questions',
     ],
   },
   {
-    title: 'Fewer Repetitive Tasks',
+    title: 'Reduced Support Load',
     features: [
-      'Automatic follow-ups for unanswered messages',
-      'Appointment confirmations and reminders',
-      'Answers to frequently asked questions',
+      'Automatic responses to common product questions',
+      'Order tracking and status updates',
+      'Returns and exchange assistance',
     ],
   },
   {
-    title: 'More Bookings, Less Stress',
+    title: 'More Sales, Less Work',
     features: [
-      'Integrated booking system via chatbot',
-      'Data sync with your calendar or CRM',
-      'Multilingual conversations with international clients',
+      'Integrated cart recovery and checkout assistance',
+      'Data sync with your e-commerce platform',
+      'Multilingual support for global customers',
     ],
   },
 ];

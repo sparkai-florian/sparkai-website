@@ -1,4 +1,4 @@
-// components/solutions/healthcare/DemoVideoSection.js
+// components/solutions/e_commerce/DemoVideoSection.js
 import React from 'react';
 
 const DemoVideoSection = () => {
@@ -11,7 +11,7 @@ const DemoVideoSection = () => {
             src="/aidemo.mp4"
             controls
             className="w-full rounded-xl shadow-lg"
-            style={{ aspectRatio: '9 / 16', objectFit: 'cover' }}
+            style={{ aspectRatio: '16 / 9', objectFit: 'cover' }}
           />
         </div>
 
@@ -21,10 +21,10 @@ const DemoVideoSection = () => {
             See SparkAI in Action
           </h3>
           <p className="text-lg mb-3">
-            This demo shows exactly how patients can interact with your clinic’s chatbot — from booking appointments to asking for prices, hours, and services.
+            This demo shows exactly how customers can interact with your e-commerce chatbot — from product questions to order tracking, sizing help, and checkout assistance.
           </p>
           <p className="text-lg">
-            Available 24/7, always polite, and never tired. It's like having a digital assistant that never sleeps.
+            Available 24/7, always helpful, and never tired. It's like having a digital sales assistant that never sleeps.
           </p>
         </div>
       </div>

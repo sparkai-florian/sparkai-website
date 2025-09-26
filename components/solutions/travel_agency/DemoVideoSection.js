@@ -11,7 +11,7 @@ const DemoVideoSection = () => {
             src="/aidemo.mp4"
             controls
             className="w-full rounded-xl shadow-lg"
-            style={{ aspectRatio: '9 / 16', objectFit: 'cover' }}
+            style={{ aspectRatio: '16 / 9', objectFit: 'cover' }}
           />
         </div>
 
