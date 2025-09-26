@@ -30,11 +30,13 @@ export default function ProblemSection() {
           
           {/* Left side - Video */}
           <div className="flex justify-center">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-3xl">
               <video 
-                className="w-full h-auto"
+                className="w-full h-auto min-h-[300px] object-cover"
                 controls
-                poster="/images/video-poster.jpg"
+                poster="/the_support_dilemma.png"
+                preload="metadata"
+                style={{ aspectRatio: '16/9' }}
               >
                 <source src="/videos/problem-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
