@@ -17,7 +17,7 @@ const ChatbotDemoSection = () => {
             height="100%"
             allow="camera; microphone; clipboard-read; clipboard-write"
             title="SparkAI Chatbot"
-            style="border:none;"
+            style={{ border: 'none' }}
           ></iframe>
         </div>
       </div>
