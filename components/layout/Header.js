@@ -20,7 +20,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full py-1 bg-black">
+    <header className="w-full py-4 bg-black sticky top-0 z-50">
       {/* Container matches HeroSection */}
       <div className="w-[85%] mx-auto flex items-center justify-between px-6 md:px-12">
         {/* Left: Logo */}
@@ -55,7 +55,7 @@ export default function Header() {
         <div className="hidden md:flex">
           <Link
             href="#book"
-            className="border-2 border-[#f6db4b] text-[#f6db4b] px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#f6db4b] hover:text-black"
+            className="border-2 border-[#d4ff00] text-[#d4ff00] px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#d4ff00] hover:text-black"
           >
             Book a Call
           </Link>
@@ -92,7 +92,7 @@ export default function Header() {
             {/* CTA also in mobile menu */}
             <Link
               href="#book"
-              className="mt-4 border-2 border-[#f6db4b] text-[#f6db4b] px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#f6db4b] hover:text-black"
+              className="mt-4 border-2 border-[#d4ff00] text-[#d4ff00] px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#d4ff00] hover:text-black"
             >
               Book a Call
             </Link>

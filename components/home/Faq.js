@@ -141,8 +141,18 @@ export default function SparkAIFAQ() {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-black">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="faq" className="py-20 bg-black relative overflow-hidden">
+      {/* Radiant gradient in the middle */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div 
+          className="w-[800px] h-[800px] rounded-full blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, rgba(212,255,0,0.2) 0%, rgba(212,255,0,0.05) 50%, transparent 100%)'
+          }}
+        ></div>
+      </div>
+      
+      <div className="mx-auto max-w-4xl px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
             Frequently Asked Questions

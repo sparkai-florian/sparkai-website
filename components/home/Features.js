@@ -61,123 +61,55 @@ const businessEfficiencyMultipliers = [
 ];
 
 export default function Features() {
+  // Combine all features into one array for three-column layout
+  const allFeatures = [
+    ...revenueGenerators.map(f => ({ ...f, category: 'Revenue' })),
+    ...customerExperienceBoosters.map(f => ({ ...f, category: 'Experience' })),
+    ...businessEfficiencyMultipliers.map(f => ({ ...f, category: 'Efficiency' }))
+  ];
+
   return (
-    <section
-      className="w-full bg-[#f8f9fa] text-white py-16 md:py-20 px-6"
-      style={{ ["--accent"]: ACCENT }}
-    >
-      <div className="max-w-7xl mx-auto text-center mb-16 md:mb-20">
-        <h2 className="text-3xl md:text-4xl font-bold">Everything You Need To Turn Every Message Into Money</h2>
-        <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
-          SparkAI doesn't just chat—it sells, books, and grows your business 24/7
-        </p>
-      </div>
-
-      <div className="max-w-7xl mx-auto space-y-16">
-        {/* Revenue Generators */}
-        <div>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#d4ff00] mb-2">💰 REVENUE GENERATORS</h3>
-            <p className="text-white/70">Turn every conversation into a sales opportunity</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {revenueGenerators.map((feature, i) => (
-              <div key={i} className="group flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#d4ff00]/30 transition-all duration-300">
-                <span className="relative mt-1 inline-block h-5 w-5 shrink-0">
-                  <span className="bullet-ring absolute inset-0 rounded-full" />
-                  <span className="bullet-dot absolute left-1/2 top-1/2 h-[6px] w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
-                </span>
-                <div className="min-w-0">
-                  <h4 className="font-semibold text-lg leading-tight group-hover:text-[#d4ff00] transition-colors duration-300">
-                    {feature.title}
-                  </h4>
-                  <p className="mt-2 text-white/70 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+    <section className="w-full bg-[#2EBE8B] text-black py-20">
+      <div className="mx-auto w-[85%] max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+            Everything You Need To Turn Every Message Into Money
+          </h2>
+          <p className="text-lg text-black/80 max-w-3xl mx-auto">
+            SparkAI doesn't just chat—it sells, books, and grows your business 24/7
+          </p>
         </div>
 
-        {/* Customer Experience Boosters */}
-        <div>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#d4ff00] mb-2">🚀 CUSTOMER EXPERIENCE BOOSTERS</h3>
-            <p className="text-white/70">Meet customers where they are, how they want</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {customerExperienceBoosters.map((feature, i) => (
-              <div key={i} className="group flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#d4ff00]/30 transition-all duration-300">
-                <span className="relative mt-1 inline-block h-5 w-5 shrink-0">
-                  <span className="bullet-ring absolute inset-0 rounded-full" />
-                  <span className="bullet-dot absolute left-1/2 top-1/2 h-[6px] w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
-                </span>
-                <div className="min-w-0">
-                  <h4 className="font-semibold text-lg leading-tight group-hover:text-[#d4ff00] transition-colors duration-300">
-                    {feature.title}
-                  </h4>
-                  <p className="mt-2 text-white/70 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+        {/* Three-column layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {allFeatures.map((feature, i) => (
+            <div key={i} className="text-center p-6">
+              {/* Icon placeholder - you can replace with actual icons */}
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-8 h-8 bg-black rounded-full"></div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Business Efficiency Multipliers */}
-        <div>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#d4ff00] mb-2">⚡ BUSINESS EFFICIENCY MULTIPLIERS</h3>
-            <p className="text-white/70">Work smarter, not harder—while your AI works 24/7</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {businessEfficiencyMultipliers.map((feature, i) => (
-              <div key={i} className="group flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#d4ff00]/30 transition-all duration-300">
-                <span className="relative mt-1 inline-block h-5 w-5 shrink-0">
-                  <span className="bullet-ring absolute inset-0 rounded-full" />
-                  <span className="bullet-dot absolute left-1/2 top-1/2 h-[6px] w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
-                </span>
-                <div className="min-w-0">
-                  <h4 className="font-semibold text-lg leading-tight group-hover:text-[#d4ff00] transition-colors duration-300">
-                    {feature.title}
-                  </h4>
-                  <p className="mt-2 text-white/70 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+              
+              {/* Feature heading */}
+              <h3 className="text-lg font-bold text-[#D4FF00] mb-3">
+                {feature.title}
+              </h3>
+              
+              {/* Short description */}
+              <p className="text-sm text-black leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Bottom Line */}
-        <div className="text-center mt-16 p-8 rounded-2xl bg-gradient-to-r from-[#d4ff00]/10 to-[#2B00FF]/10 border border-[#d4ff00]/20">
-          <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto">
-            <strong className="text-[#d4ff00]">The Bottom Line:</strong> While your competitors are still manually typing responses and losing customers to slow service, you'll have an AI-powered sales and support machine that works around the clock, speaks every language, and turns every conversation into revenue.
+        <div className="text-center mt-16 p-8 rounded-2xl bg-white/20 border border-white/30">
+          <p className="text-lg md:text-xl text-black leading-relaxed max-w-4xl mx-auto">
+            <strong className="text-[#D4FF00]">The Bottom Line:</strong> While your competitors are still manually typing responses and losing customers to slow service, you'll have an AI-powered sales and support machine that works around the clock, speaks every language, and turns every conversation into revenue.
           </p>
         </div>
       </div>
-
-      {/* minimal hover effects for ring & dot */}
-      <style jsx>{`
-        .bullet-ring {
-          box-shadow: inset 0 0 0 2px var(--accent);
-          transition: box-shadow 180ms ease;
-        }
-        .group:hover .bullet-ring {
-          box-shadow: inset 0 0 0 3px var(--accent);
-        }
-        .bullet-dot {
-          background: var(--accent);
-          transform: scale(1);
-          transition: transform 180ms ease;
-        }
-        .group:hover .bullet-dot {
-          transform: scale(1.2);
-        }
-      `}</style>
     </section>
   );
 }
