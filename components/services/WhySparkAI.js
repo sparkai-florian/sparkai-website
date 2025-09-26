@@ -1,47 +1,56 @@
 // components/services/WhySparkAI.js
 
-import { CheckCircle } from 'lucide-react';
+import { Zap, Clock, Target, DollarSign } from 'lucide-react';
 
 export default function WhySparkAI() {
   const benefits = [
     {
+      icon: Zap,
       title: 'Instant Replies 24/7',
-      description:
-        'Never lose a customer again — your chatbot responds immediately, day or night.',
+      description: 'Never lose another customer to slow responses. Your AI works while you sleep, vacation, or focus on big-picture strategy.',
     },
     {
+      icon: Clock,
       title: 'Save 10+ Hours Weekly',
-      description:
-        'Automate repetitive tasks like answering FAQs, booking, and sending updates.',
+      description: 'Stop answering the same questions over and over. Your AI handles FAQs, bookings, and updates automatically.',
     },
     {
+      icon: Target,
       title: 'Industry-Tailored Solutions',
-      description:
-        'Chatbots and automations built specifically for your niche and customer flow.',
+      description: 'Forget generic templates. Get AI built specifically for how your industry actually operates.',
+    },
+    {
+      icon: DollarSign,
+      title: 'ROI That Makes Sense',
+      description: 'Most businesses save more in reduced support costs than they spend on SparkAI. It\'s not an expense - it\'s an investment that pays for itself.',
     },
   ];
 
   return (
-    <section className="bg-zinc-900 py-20 px-6 text-white">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Why Choose SparkAI?
-        </h2>
-        <p className="text-gray-300 text-lg max-w-3xl mx-auto mb-10">
-          We don’t just build chatbots. We build high-performing AI systems
-          that are custom-tailored to your business goals.
-        </p>
+    <section className="bg-black py-20 px-6 text-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">
+            Why Choose SparkAI?
+          </h2>
+          <p className="text-xl text-gray-300">
+            We Don't Build Chatbots - We Build Revenue Machines
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-10">
-          {benefits.map((item, idx) => (
-            <div key={idx} className="text-left bg-zinc-800 p-6 rounded-xl shadow-md">
-              <div className="flex items-center gap-2 text-[#d4ff00] mb-2">
-                <CheckCircle size={20} />
-                <h3 className="font-semibold text-lg">{item.title}</h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {benefits.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-[#d4ff00] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
               </div>
-              <p className="text-gray-300">{item.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

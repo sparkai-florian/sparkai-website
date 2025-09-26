@@ -1,18 +1,49 @@
 export default function SparkAIStory() {
   return (
-    <section className="px-6 sm:px-10 py-12">
-      <p className="text-xs tracking-widest uppercase text-white/60 mb-2">Our Story</p>
-      <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4">Why Spark AI exists</h2>
+    <section className="w-full py-20 bg-gray-900">
+      <div className="w-[85%] mx-auto px-6 md:px-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm tracking-widest uppercase text-[#2B00FF] mb-4 font-semibold">Our Story</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">Our Story: From Prishtina to the World</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              SparkAI was born out of a simple observation in early 2024 in Prishtina, Kosovo. At the time, the AI industry was in its infancy, and businesses were struggling to keep up with the demands of modern communication.
+            </p>
+          </div>
 
-      <div className="grid gap-6 text-white/80 sm:grid-cols-2">
-        <p className="leading-relaxed">
-          Spark AI began with a simple observation: businesses lose time and revenue when responses are slow or inconsistent.
-          We build approachable AI that answers instantly, books appointments, and guides customers to the right action.
-        </p>
-        <p className="leading-relaxed">
-          Our mission is to simplify processes, cut costs, and raise confidence in AI technology. We design clear conversation
-          flows, integrate with your tools, and measure impact so teams can focus on the work that matters.
-        </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-6">
+              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-semibold text-white mb-4">The Problem We Saw</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  At the time, the AI industry was in its infancy, and businesses were struggling to keep up with the demands of modern communication.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Our founder, Florian, noticed how businesses were overwhelmed with messages, often responding too late—or not at all. Appointments were still being booked in notebooks, and customer inquiries were met with generic, unhelpful responses like, "The price is 50 euros."
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="bg-gradient-to-br from-[#2B00FF]/10 to-[#00D4FF]/10 rounded-2xl p-8 border border-[#2B00FF]/20">
+                <div className="text-center">
+                  <div className="text-6xl mb-4">🏙️</div>
+                  <h4 className="text-xl font-semibold text-white mb-3">Prishtina, Kosovo</h4>
+                  <p className="text-gray-300">Where our journey began</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-[#2B00FF]/20 to-[#00D4FF]/20 rounded-2xl p-8 border border-white/10">
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold text-white mb-4">The Solution</h3>
+              <p className="text-lg text-white/90 leading-relaxed max-w-4xl mx-auto">
+                Florian saw an opportunity to change this. Through trial and error, countless conversations, and a relentless drive to solve these problems, SparkAI was created. Today, we're proud to help businesses around the world optimize their communication and automate repetitive tasks, so they can focus on what truly matters.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

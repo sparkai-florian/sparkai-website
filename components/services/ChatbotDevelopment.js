@@ -7,42 +7,49 @@ import {
   GlobeAltIcon,
   PaperAirplaneIcon,
   BanknotesIcon,
-  SparklesIcon,
-  CheckCircleIcon
+  SparklesIcon
 } from '@heroicons/react/24/outline';
 
 const features = [
   {
+    emoji: '💰',
     title: 'Instant Replies',
-    description: 'Clients receive immediate answers without waiting, improving satisfaction and increasing conversion rates.'
+    description: 'While your competitors leave customers hanging, you\'re closing deals at midnight. Every second counts - studies show you have 5 minutes max before hot leads go cold.'
   },
   {
+    emoji: '🎯',
     title: 'Audience Growth',
-    description: 'Every interaction becomes a lead opportunity, helping businesses grow their client base effortlessly.'
+    description: 'Turn every conversation into a sales opportunity. Your AI doesn\'t just answer questions - it qualifies leads, captures contact info, and feeds your sales pipeline automatically.'
   },
   {
+    emoji: '🔗',
     title: 'Custom Integrations',
-    description: 'Connect chat seamlessly with CRMs, databases, or accounting tools to keep everything organized and automatic.'
+    description: 'Your CRM, scheduling tools, payment systems - everything talks to each other seamlessly. One conversation, infinite possibilities.'
   },
   {
-    title: 'Multi-Platform Support',
-    description: 'Engage users on Instagram, WhatsApp, Telegram, and more — all from one chatbot.'
+    emoji: '🌐',
+    title: 'Multi-Platform Domination',
+    description: 'Instagram, WhatsApp, Telegram, your website - your AI is everywhere your customers are. No more "sorry, we only respond on email."'
   },
   {
-    title: 'Multilingual Communication',
-    description: 'Serve clients in their preferred language and remove barriers to trust and clarity.'
+    emoji: '🗣️',
+    title: 'Multilingual Money-Making',
+    description: 'Break language barriers instantly. Serve customers in Albanian, English, French, Italian, and 50+ more languages. Expand your market overnight.'
   },
   {
-    title: 'Smart Conversations',
-    description: 'Respond with context-aware messages that feel natural and tailored to each client.'
+    emoji: '🧠',
+    title: 'Smart Conversations That Sell',
+    description: 'Context-aware responses that understand intent, handle objections, and guide customers toward purchase. It\'s like having your best salesperson available 24/7.'
   },
   {
-    title: 'Automated Follow-Ups',
-    description: 'Never forget a message. The chatbot reminds and re-engages users automatically.'
+    emoji: '🔄',
+    title: 'Automated Follow-Ups That Actually Follow Up',
+    description: 'Most businesses lose 80% of sales because they forget to follow up. Your AI never forgets, never gets busy, never takes a day off.'
   },
   {
-    title: 'Social Media Optimization',
-    description: 'Boost algorithm visibility with fast, frequent, and quality interactions — driven by automation.'
+    emoji: '📈',
+    title: 'Social Media Algorithm Boost',
+    description: 'Fast, frequent, quality interactions make algorithms love you. More visibility = more customers = more money.'
   }
 ];
 
@@ -87,20 +94,28 @@ const industries = [
 const ChatbotDevelopment = () => {
   return (
     <section className="bg-black text-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center text-primaryCTA">Chatbot Development</h2>
-        <p className="text-lg text-center max-w-3xl mx-auto mb-12">
-          Chatbot development is about creating smart virtual assistants that speak with your clients — automatically, intelligently, and in real-time.
-          SparkAI chatbots help you generate leads, take bookings, answer FAQs, and provide excellent service across multiple platforms.
-        </p>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Chatbot Development</h2>
+          <p className="text-xl text-gray-300 mb-6">
+            Finally... Customer Service That Never Sleeps (And Never Screws Up)
+          </p>
+          <p className="text-lg text-gray-400 max-w-4xl mx-auto">
+            Forget those frustrating "I don't understand" chatbots that make customers want to throw their phones. SparkAI chatbots actually get it - they understand context, handle complex requests, and sound like your best employee (who happens to work 24/7 for pennies).
+          </p>
+          <p className="text-lg text-gray-400 max-w-4xl mx-auto mt-4">
+            Here's what this means for your bank account:
+          </p>
+        </div>
+
         {/* Features */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {features.map((feature, idx) => (
-            <div key={idx} className="flex items-start gap-3">
-              <CheckCircleIcon className="h-6 w-6 text-primaryCTA mt-1" />
+            <div key={idx} className="flex items-start gap-4">
+              <span className="text-3xl">{feature.emoji}</span>
               <div>
-                <h4 className="font-semibold text-lg">{feature.title}</h4>
-                <p className="text-sm text-zinc-400">{feature.description}</p>
+                <h4 className="font-semibold text-lg mb-2">{feature.title}</h4>
+                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
               </div>
             </div>
           ))}
@@ -108,18 +123,18 @@ const ChatbotDevelopment = () => {
 
         {/* Industry-Specific Chatbots */}
         <div>
-          <h3 className="text-2xl font-bold mb-6 text-center">Industry-Specific Solutions</h3>
-          <div className="space-y-4">
+          <h3 className="text-2xl font-bold mb-8 text-center">Industry-Specific Solutions</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
                 <Link
                   key={index}
                   href={`/solutions/${industry.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="flex items-center gap-4 bg-zinc-900 hover:bg-zinc-800 transition p-4 rounded-lg"
+                  className="flex items-center gap-4 bg-gray-900 hover:bg-gray-800 transition p-4 rounded-lg border border-gray-700"
                 >
                   <Icon className="h-6 w-6" style={{ color: industry.color }} />
-                  <span className="font-medium text-lg">{industry.name}</span>
+                  <span className="font-medium">{industry.name}</span>
                 </Link>
               );
             })}

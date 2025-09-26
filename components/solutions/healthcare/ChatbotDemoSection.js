@@ -12,12 +12,12 @@ const ChatbotDemoSection = () => {
 
         <div className="w-full h-[700px] border border-gray-300 rounded-xl shadow-md overflow-hidden">
           <iframe
-            src="https://app.chatgptbuilder.io/webchat/index.html?id=GijNfqtMNdXT4x&accountId=1683092&color=%232B00FF"
+            src="https://app.chatgptbuilder.io/webchat/index.html?id=vCRnjUV0vz9&accountId=1234372&color=%23474A38"
             width="100%"
             height="100%"
-            frameBorder="0"
             allow="camera; microphone; clipboard-read; clipboard-write"
-            title="SparkAI Healthcare Chatbot"
+            title="SparkAI Chatbot"
+            style="border:none;"
           ></iframe>
         </div>
       </div>
@@ -26,3 +26,5 @@ const ChatbotDemoSection = () => {
 };
 
 export default ChatbotDemoSection;
+
+
