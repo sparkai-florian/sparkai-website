@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
   UserIcon,
@@ -85,17 +85,55 @@ const services = [
 
 const ChatbotDevelopment = () => {
   const carouselRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!isAutoScrolling) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = prevIndex + 1;
+        // Reset to 0 after showing all 5 services (0-4)
+        return nextIndex >= 5 ? 0 : nextIndex;
+      });
+    }, 2500); // Change every 2.5 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoScrolling]);
+
+  // Update carousel position when currentIndex changes
+  useEffect(() => {
+    if (carouselRef.current) {
+      const scrollPosition = currentIndex * 312; // 288px width + 24px gap
+      carouselRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    }
+  }, [currentIndex]);
+
+  // Debug: Log current index changes
+  useEffect(() => {
+    console.log('Current index:', currentIndex, 'Service:', services[currentIndex]?.name);
+  }, [currentIndex]);
 
   const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -320, behavior: 'smooth' });
-    }
+    setIsAutoScrolling(false);
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex - 1;
+      return nextIndex < 0 ? 4 : nextIndex; // Loop to last item if going below 0
+    });
+    // Restart auto-scroll after 3 seconds
+    setTimeout(() => setIsAutoScrolling(true), 3000);
   };
 
   const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 320, behavior: 'smooth' });
-    }
+    setIsAutoScrolling(false);
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1;
+      return nextIndex >= 5 ? 0 : nextIndex; // Loop to first item if going above 4
+    });
+    // Restart auto-scroll after 3 seconds
+    setTimeout(() => setIsAutoScrolling(true), 3000);
   };
 
   return (
@@ -141,8 +179,8 @@ const ChatbotDevelopment = () => {
 
             {/* Carousel Container */}
             <div className="flex-1 overflow-hidden">
-              <div ref={carouselRef} className="flex animate-scroll gap-8 py-4">
-                {/* Duplicate the services array to create seamless infinite scroll */}
+              <div ref={carouselRef} className="flex gap-6 py-4 animate-scroll" style={{ width: 'max-content' }}>
+                {/* Duplicate services for infinite loop */}
                 {[...services, ...services, ...services].map((service, index) => (
                   <div key={`${service.name}-${index}`} className="flex-shrink-0 group cursor-pointer">
                     {/* Service name above image */}
@@ -154,7 +192,7 @@ const ChatbotDevelopment = () => {
                     
                     {/* Service image with thin gradient border */}
                     <Link href={service.link}>
-                      <div className="relative w-80 h-80 rounded-2xl overflow-hidden shadow-2xl p-0.5 bg-gradient-to-br from-[#d4ff00] to-[#213efa]">
+                      <div className="relative w-72 h-72 rounded-2xl overflow-hidden shadow-2xl p-0.5 bg-gradient-to-br from-[#d4ff00] to-[#213efa]">
                         <img
                           src={service.image}
                           alt={service.name}
