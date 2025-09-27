@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SparkAIStory() {
   return (
     <section className="w-full py-20 bg-gray-900">
@@ -11,9 +13,9 @@ export default function SparkAIStory() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch mb-16">
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-white/10">
+              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-white/10 h-full">
                 <h3 className="text-2xl font-semibold text-white mb-4">The Problem We Saw</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   At the time, the AI industry was in its infancy, and businesses were struggling to keep up with the demands of modern communication.
@@ -25,12 +27,14 @@ export default function SparkAIStory() {
             </div>
             
             <div className="relative">
-              <div className="bg-gradient-to-br from-[#2B00FF]/10 to-[#00D4FF]/10 rounded-2xl p-8 border border-[#2B00FF]/20">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🏙️</div>
-                  <h4 className="text-xl font-semibold text-white mb-3">Prishtina, Kosovo</h4>
-                  <p className="text-gray-300">Where our journey began</p>
-                </div>
+              <div className="bg-white rounded-2xl border border-[#2B00FF]/20 h-full flex items-center justify-center">
+                <Image
+                  src="/prishtina.png"
+                  alt="Prishtina"
+                  fill
+                  className="object-cover rounded-2xl"
+                  style={{margin: '4px'}}
+                />
               </div>
             </div>
           </div>

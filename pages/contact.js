@@ -14,10 +14,9 @@ export default function ContactPage() {
       <ContactHero />
       <ContactForm />
       <DirectInfo />
-      <BookingCTA />
       <SocialLinks />
-      <SupportHours />
       <MapSection />
+      <BookingCTA />
     </Layout>
   );
 }

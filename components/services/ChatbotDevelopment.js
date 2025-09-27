@@ -98,7 +98,7 @@ const ChatbotDevelopment = () => {
         // Reset to 0 after showing all 5 services (0-4)
         return nextIndex >= 5 ? 0 : nextIndex;
       });
-    }, 2500); // Change every 2.5 seconds
+    }, 4500); // Change every 4.5 seconds
 
     return () => clearInterval(interval);
   }, [isAutoScrolling]);

@@ -5,12 +5,18 @@ import {
   FaLinkedin,
   FaYoutube,
 } from 'react-icons/fa';
+import {
+  PhoneIcon,
+  EnvelopeIcon,
+  ClockIcon
+} from '@heroicons/react/24/outline';
 import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-16 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
+    <footer className="bg-black text-white py-16">
+      <div className="w-[85%] mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
         {/* Brand + Tagline */}
         <div className="md:col-span-2">
           <Link href="/" className="flex items-center">
@@ -22,9 +28,14 @@ export default function Footer() {
             priority
           />
         </Link>
-          <p className="text-gray-400 mt-4 text-sm max-w-md">
-            SparkAI delivers professional, personalized customer service automation that helps businesses grow while reducing costs.
-          </p>
+          <div className="text-gray-300 mt-4 text-sm max-w-md leading-relaxed">
+            <p className="font-semibold text-white mb-1">
+              SparkAI delivers <span className="text-[#d4ff00] font-bold">professional, personalized</span>
+            </p>
+            <p className="text-gray-400">
+              customer service automation that helps businesses grow while reducing costs.
+            </p>
+          </div>
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-4 text-lg text-white">
@@ -75,21 +86,23 @@ export default function Footer() {
         {/* Contact Information */}
         <div>
           <h4 className="text-sm font-bold uppercase mb-4 text-gray-300">Get in Touch</h4>
-          <ul className="space-y-2 text-sm text-gray-400">
-            <li className="flex items-start gap-2">
-              <span className="text-white">📍</span>
-              <span>Prishtina, Republic of Kosova</span>
+          <ul className="space-y-3 text-sm text-gray-400">
+            <li className="flex items-start gap-3">
+              <svg className="w-4 h-4 text-white mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              <span>Republic of Kosova</span>
             </li>
-            <li className="flex items-start gap-2">
-              <span className="text-white">📞</span>
-              <span>+383 44 123 456</span>
+            <li className="flex items-start gap-3">
+              <PhoneIcon className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
+              <span>+383 49 453 595</span>
             </li>
-            <li className="flex items-start gap-2">
-              <span className="text-white">✉️</span>
-              <span>support@sparkai.com</span>
+            <li className="flex items-start gap-3">
+              <EnvelopeIcon className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
+              <span>hi@sparkai-rks.com</span>
             </li>
-            <li className="flex items-start gap-2">
-              <span className="text-white">🕒</span>
+            <li className="flex items-start gap-3">
+              <ClockIcon className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
               <span>24/7 Support Available</span>
             </li>
           </ul>
@@ -97,8 +110,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom Line */}
-      <div className="mt-12 border-t border-gray-800 pt-6 text-left text-xs text-gray-500 max-w-7xl mx-auto">
+      <div className="mt-12 border-t border-gray-800 pt-6 text-left text-xs text-gray-500">
         <p>© {new Date().getFullYear()} Spark Martech L.L.C. All rights reserved.</p>
+      </div>
       </div>
     </footer>
   );

@@ -8,7 +8,7 @@ const steps = [
     title: "Discovery & Strategy",
     subtitle: "We Learn Your Business Inside Out",
     blurb:
-      "Book a quick call where we dive deep into your goals, challenges, and customer needs. Then we gather all your business knowledge - FAQs, pricing, brand voice, processes - so your AI sounds exactly like you (but never takes a day off).",
+      "Go live in days and watch the magic happen. Your AI handles every message professionally, captures leads you used to miss, books appointments automatically, and follows up consistently. Meanwhile, you're sleeping better, working smarter, and watching your business grow automatically while maintaining perfect relationships.",
     outcome: "Strategic consultation + complete business knowledge collection",
   },
   {
@@ -24,15 +24,21 @@ const steps = [
     title: "Launch & Thrive",
     subtitle: "You Get Your Life Back While Revenue Grows",
     blurb:
-      "Go live in days and watch the magic happen. Your AI handles every message professionally, captures leads you used to miss, books appointments automatically, and follows up consistently. Meanwhile, you're sleeping better, working smarter, and watching your business grow on autopilot.",
+      "Go live in days and watch the magic happen. Your AI handles every message professionally, captures leads you used to miss, books appointments automatically, and follows up consistently. Meanwhile, you're sleeping better, working smarter, and watching your business grow automatically.",
     outcome: "24/7 automated success + peace of mind + growing revenue",
   },
 ];
 
 export default function HowItWorksWave() {
   return (
-    <section className="bg-black py-20">
-      <div className="mx-auto w-[85%] max-w-7xl">
+    <section className="bg-black py-20 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#d4ff00] rounded-full blur-3xl opacity-10"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 bg-[#2139ff] rounded-full blur-3xl opacity-15"></div>
+      </div>
+
+      <div className="mx-auto w-[80%] relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -41,41 +47,61 @@ export default function HowItWorksWave() {
           <p className="text-lg text-gray-300">From first call to first sale—fast. Our streamlined process gets you up and running in days, not months.</p>
         </div>
 
-        {/* Simple step cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((s, idx) => (
-            <div key={s.number} className="bg-gray-900 p-6 rounded-lg border border-transparent bg-clip-padding relative" style={{
-              backgroundImage: 'linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(135deg, #d4ff00, #2139ff)',
-              backgroundOrigin: 'border-box',
-              backgroundClip: 'padding-box, border-box'
-            }}>
-              {/* Step number in top right */}
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-sm">
-                {s.number}
-              </div>
+        {/* Roadmap Design */}
+        <div className="relative">
+          {/* Connection lines for desktop */}
+          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#d4ff00] via-[#2139ff] to-[#d4ff00] opacity-30"></div>
+          
+          {/* Steps in roadmap layout */}
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {steps.map((s, idx) => (
+              <div key={s.number} className="relative">
+                {/* Step circle */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-lg shadow-2xl">
+                    {s.number}
+                  </div>
+                </div>
 
-              {/* Title */}
-              <div className="mb-4">
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-[#d4ff00] font-medium">
-                  {s.subtitle}
-                </p>
-              </div>
+                {/* Step card */}
+                <div className="bg-gray-900 p-6 rounded-lg border border-transparent bg-clip-padding relative hover:scale-105 transition-transform duration-300" style={{
+                  backgroundImage: 'linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(135deg, #d4ff00, #2139ff)',
+                  backgroundOrigin: 'border-box',
+                  backgroundClip: 'padding-box, border-box'
+                }}>
+                  {/* Title */}
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {s.title}
+                    </h3>
+                    <p className="text-sm text-[#d4ff00] font-medium">
+                      {s.subtitle}
+                    </p>
+                  </div>
 
-              {/* Description */}
-              <p className="text-gray-300 text-sm mb-4">
-                {s.blurb}
-              </p>
+                  {/* Description */}
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    {s.blurb}
+                  </p>
 
-              {/* Outcome */}
-              <div className="bg-gray-800 rounded-lg p-3">
-                <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-1">What happens:</p>
-                <p className="text-sm text-gray-200 font-medium">{s.outcome}</p>
+                  {/* Outcome */}
+                  <div className="bg-gray-800 rounded-lg p-3">
+                    <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-1">What happens:</p>
+                    <p className="text-sm text-gray-200 font-medium">{s.outcome}</p>
+                  </div>
+
+                  {/* Arrow indicator for mobile */}
+                  {idx < steps.length - 1 && (
+                    <div className="md:hidden flex justify-center mt-4">
+                      <div className="w-8 h-8 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-sm">
+                        ↓
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

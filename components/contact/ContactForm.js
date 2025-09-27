@@ -41,8 +41,9 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact-form" className="px-6 sm:px-10 py-12">
-      <div className="rounded-2xl border border-white/10 bg-neutral-900 p-6 sm:p-8 shadow-xl">
+    <section id="contact-form" className="py-12">
+      <div className="w-[85%] mx-auto px-6 md:px-12">
+        <div className="rounded-2xl border border-white/10 bg-neutral-900 p-6 sm:p-8 shadow-xl">
         <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">Contact Form</h2>
         <p className="text-white/70 mb-6">{"Tell us a bit about your needs and we'll be in touch."}</p>
 
@@ -107,12 +108,6 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="sm:col-span-2 flex items-start gap-3">
-            <input id="consent" name="consent" type="checkbox" className="mt-1 h-4 w-4" />
-            <label htmlFor="consent" className="text-sm text-white/70">
-              {"I agree to the privacy policy and allow SparkAI to contact me about this inquiry."}
-            </label>
-          </div>
 
           <div className="sm:col-span-2">
             <button
@@ -124,6 +119,7 @@ export default function ContactForm() {
             </button>
           </div>
         </form>
+        </div>
       </div>
     </section>
   );
