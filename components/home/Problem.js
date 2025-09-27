@@ -4,7 +4,7 @@ export default function ProblemSection() {
 
   return (
     <section id="problems" className="w-full bg-black">
-      <div className="mx-auto w-[85%] max-w-7xl py-20">
+      <div className="mx-auto w-[80%] py-20">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -45,11 +45,11 @@ export default function ProblemSection() {
           </div>
 
           {/* Right side - Pain Points */}
-          <div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
+          <div className="flex flex-col items-end">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6 text-right">
               The Business Reality:
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-4 w-3/4">
               {[
                 "Staff Costs Keep Rising — Every new hire for customer support eats into your profit margins",
                 "Peak Time Chaos — Busy periods overwhelm your team while quiet times waste payroll",
@@ -63,7 +63,7 @@ export default function ProblemSection() {
                     {index + 1}
                   </div>
                   <div className="flex-1">
-                    <p className="text-gray-200 text-sm md:text-base leading-relaxed">
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-left">
                       <span className="font-semibold text-white">{point.split(' — ')[0]}</span>
                       <span className="text-gray-200"> — {point.split(' — ')[1]}</span>
                     </p>
