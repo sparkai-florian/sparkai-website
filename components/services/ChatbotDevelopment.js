@@ -110,7 +110,7 @@ const ChatbotDevelopment = () => {
         // Reset to 0 after showing all 5 services (0-4)
         return nextIndex >= 5 ? 0 : nextIndex;
       });
-    }, 4500); // Change every 4.5 seconds
+    }, 3000); // Change every 3 seconds for faster movement
 
     return () => clearInterval(interval);
   }, [isAutoScrolling]);
@@ -134,8 +134,8 @@ const ChatbotDevelopment = () => {
       const nextIndex = prevIndex - 1;
       return nextIndex < 0 ? 4 : nextIndex; // Loop to last item if going below 0
     });
-    // Restart auto-scroll after 3 seconds
-    setTimeout(() => setIsAutoScrolling(true), 3000);
+    // Restart auto-scroll after 2 seconds
+    setTimeout(() => setIsAutoScrolling(true), 2000);
   };
 
   const scrollRight = () => {
@@ -144,8 +144,8 @@ const ChatbotDevelopment = () => {
       const nextIndex = prevIndex + 1;
       return nextIndex >= 5 ? 0 : nextIndex; // Loop to first item if going above 4
     });
-    // Restart auto-scroll after 3 seconds
-    setTimeout(() => setIsAutoScrolling(true), 3000);
+    // Restart auto-scroll after 2 seconds
+    setTimeout(() => setIsAutoScrolling(true), 2000);
   };
 
   return (
