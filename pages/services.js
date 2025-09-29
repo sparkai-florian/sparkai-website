@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import ServicesHero from '@/components/services/ServicesHero';
 import AutomationDevelopment from '@/components/services/AutomationDevelopment';
 import WhySparkAI from '@/components/services/WhySparkAI';
 import ServicesCTA from '@/components/services/ServicesCTA';
@@ -23,13 +24,7 @@ export default function ServicesPage() {
       </Head>
 
       <main className="bg-black text-white">
-        <section className="pt-24 pb-8 text-center">
-          <h1 className="text-4xl font-bold">Our Services</h1>
-          <p className="text-zinc-400 mt-2 max-w-2xl mx-auto">
-            Powerful automation and communication tools designed to grow your business and save time.
-          </p>
-        </section>
-
+        <ServicesHero />
         <ChatbotDevelopment />
         <AutomationDevelopment />
         <WhySparkAI />

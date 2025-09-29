@@ -3,22 +3,21 @@ import Link from 'next/link';
 
 export default function PricingHero() {
   return (
-    <section className="py-16">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Flexible Plans. Clear Pricing. Real Results.</h1>
-        <p className="text-zinc-400 max-w-2xl mx-auto">
-          Choose an industry package or customize your chatbot with powerful features and integrations.
-        </p>
-        <div className="mt-8 flex items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="bg-[#2B00FF] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            Book a Free Demo
-          </Link>
-          <a href="#all-features" className="text-white/80 hover:text-white underline">
-            Compare All Features
-          </a>
+    <section className="w-full min-h-screen flex items-center justify-center bg-black">
+      <div className="w-[85%] mx-auto px-6 md:px-12">
+        <div className="text-center max-w-6xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+            Flexible{" "}
+            <span className="bg-gradient-to-r from-[#2B00FF] to-[#00D4FF] bg-clip-text text-transparent">
+              Pricing
+            </span>
+          </h1>
+          <p className="text-xl sm:text-2xl text-gray-300 max-w-5xl mx-auto leading-relaxed mb-12">
+            Choose an industry package or customize your chatbot with powerful features and integrations. Clear pricing with no hidden fees.
+          </p>
+          <p className="text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            We believe in transparent pricing that scales with your business. From startups to enterprise, we have a plan that fits your needs and budget. Get started today and see real results from day one.
+          </p>
         </div>
       </div>
     </section>
