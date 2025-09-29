@@ -2,11 +2,10 @@ import Image from "next/image";
 
 export default function SparkAIStory() {
   return (
-    <section className="w-full py-20 bg-gray-900">
+    <section className="w-full py-20 bg-black">
       <div className="w-[85%] mx-auto px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm tracking-widest uppercase text-[#2B00FF] mb-4 font-semibold">Our Story</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">Our Story: From Prishtina to the World</h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               SparkAI was born out of a simple observation in early 2024 in Prishtina, Kosovo. At the time, the AI industry was in its infancy, and businesses were struggling to keep up with the demands of modern communication.

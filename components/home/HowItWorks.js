@@ -49,26 +49,55 @@ export default function HowItWorksWave() {
 
         {/* Roadmap Design */}
         <div className="relative">
-          {/* Connection lines for desktop */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#d4ff00] via-[#2139ff] to-[#d4ff00] opacity-30"></div>
+          {/* Moving wave dashes with start and end reference points */}
+          <div className="hidden md:block absolute top-2 left-0 right-0 h-16 overflow-hidden">
+            {/* Start reference circle */}
+            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full border-2 border-white shadow-lg z-10"></div>
+            
+            {/* Wave path */}
+            <div className="absolute left-4 right-4 top-0 h-full">
+              <svg className="w-full h-full" viewBox="0 0 800 64" preserveAspectRatio="none">
+                <path
+                  d="M0,32 Q200,8 400,32 T800,32"
+                  stroke="url(#waveGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="12,8"
+                  className="animate-dash-flow"
+                />
+                <defs>
+                  <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#d4ff00" />
+                    <stop offset="50%" stopColor="#2139ff" />
+                    <stop offset="100%" stopColor="#d4ff00" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            
+            {/* End reference circle */}
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-[#2139ff] to-[#d4ff00] rounded-full border-2 border-white shadow-lg z-10"></div>
+          </div>
           
-          {/* Steps in roadmap layout */}
+          {/* Steps in equal height cards with numbers on top */}
           <div className="grid md:grid-cols-3 gap-8 relative">
             {steps.map((s, idx) => (
-              <div key={s.number} className="relative">
-                {/* Step circle */}
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-lg shadow-2xl">
-                    {s.number}
+              <div key={s.number} className="relative flex flex-col">
+                {/* Step circle on top of card */}
+                <div className="flex justify-center mb-6 relative z-10">
+                  <div className="relative group">
+                    <div className="w-16 h-16 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-lg shadow-2xl transition-all duration-300 group-hover:scale-125 group-hover:shadow-3xl cursor-pointer">
+                      {s.number}
+                    </div>
+                    {/* Hover tooltip */}
+                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                      {s.title}
+                    </div>
                   </div>
                 </div>
 
-                {/* Step card */}
-                <div className="bg-gray-900 p-6 rounded-lg border border-transparent bg-clip-padding relative hover:scale-105 transition-transform duration-300" style={{
-                  backgroundImage: 'linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(135deg, #d4ff00, #2139ff)',
-                  backgroundOrigin: 'border-box',
-                  backgroundClip: 'padding-box, border-box'
-                }}>
+                {/* Glossy step card */}
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-sm relative hover:scale-105 transition-all duration-300 flex-1 flex flex-col">
                   {/* Title */}
                   <div className="mb-4">
                     <h3 className="text-xl font-bold text-white mb-2">
@@ -80,24 +109,15 @@ export default function HowItWorksWave() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed flex-grow">
                     {s.blurb}
                   </p>
 
                   {/* Outcome */}
-                  <div className="bg-gray-800 rounded-lg p-3">
+                  <div className="bg-white/10 rounded-lg p-3 mt-auto border border-white/20">
                     <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-1">What happens:</p>
                     <p className="text-sm text-gray-200 font-medium">{s.outcome}</p>
                   </div>
-
-                  {/* Arrow indicator for mobile */}
-                  {idx < steps.length - 1 && (
-                    <div className="md:hidden flex justify-center mt-4">
-                      <div className="w-8 h-8 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-sm">
-                        ↓
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             ))}

@@ -47,7 +47,7 @@ export default function ProblemSection() {
           {/* Right side - Pain Points */}
           <div className="flex flex-col items-end">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-6 text-right">
-              The Business Reality:
+              The Reality for Many Businesses
             </h3>
             <div className="space-y-4 w-3/4">
               {[
@@ -58,7 +58,7 @@ export default function ProblemSection() {
                 "Inconsistent Service — Different staff members give different answers, confusing customers",
                 "Revenue Leaks — Every missed message is potential revenue walking to your competitors"
               ].map((point, index) => (
-                <div key={index} className="flex gap-4 p-4 bg-[#23241F] rounded-lg">
+                <div key={index} className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-sm">
                   <div className="w-8 h-8 bg-[#d4ff00] text-black rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                     {index + 1}
                   </div>

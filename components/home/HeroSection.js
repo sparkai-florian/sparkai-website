@@ -136,7 +136,7 @@ export default function HeroSection() {
               <div className="flex gap-4 flex-wrap">
                 <a
                   href="#book"
-                  className="relative z-10 inline-block text-black bg-[#d4ff00] px-6 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-600"
+                  className="relative z-10 inline-block text-white bg-[#ec3481] px-6 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-600"
                   aria-label="Book My Free Consultation Today"
                 >
                   Book My Free Consultation Today

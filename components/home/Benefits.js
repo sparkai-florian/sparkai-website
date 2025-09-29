@@ -2,44 +2,44 @@
 "use client";
 
 import {
-  Cpu,
-  Globe,
-  Target,
+  Clock,
+  Heart,
+  Shield,
   CheckCircle2,
 } from "lucide-react";
 
 const benefits = [
   {
-    icon: Cpu,
-    title: "Deep Discovery & Custom Setup",
-    tagline: "We dive deep into your goals, challenges, and customer needs, then gather all your business knowledge to make your AI sound exactly like you.",
+    icon: Clock,
+    title: "More Time to Do What You Love",
+    tagline: "Imagine having the freedom to focus on the parts of your business that truly matter—upgrading your services, innovating, and connecting with your customers on a deeper level.",
     points: [
-      "Comprehensive discovery of your goals and challenges",
-      "Analysis of customer needs and pain points",
-      "Gathering FAQs, pricing, and brand voice guidelines",
-      "AI that sounds exactly like you but never takes a day off",
+      "Focus on parts of your business that truly matter",
+      "Upgrade your services and innovate more",
+      "Connect with customers on a deeper level",
+      "Feel more in control and energized to grow your business",
     ],
   },
   {
-    icon: Globe,
-    title: "Smart Automation & Integration",
-    tagline: "We build custom conversation flows, set up multi-language support, and create smart automations that seamlessly connect to your existing tools.",
+    icon: Heart,
+    title: "Happier, More Loyal Customers",
+    tagline: "Your customers will feel valued and understood, thanks to timely and thoughtful responses. This creates stronger relationships, builds trust, and leaves them with a positive impression of your brand.",
     points: [
-      "Custom conversation flows tailored to your business",
-      "Multi-language support for global reach",
-      "Smart automations for bookings and lead qualification",
-      "Seamless integration with Email, CRM, and scheduling systems",
+      "Customers feel valued and understood",
+      "Timely and thoughtful responses every time",
+      "Stronger relationships and increased trust",
+      "Positive brand impression and customer loyalty",
     ],
   },
   {
-    icon: Target,
-    title: "Go Live & Watch Results",
-    tagline: "Deploy in days and watch your AI handle every message professionally, capture leads, book appointments, and follow up consistently while you work smarter.",
+    icon: Shield,
+    title: "A Business That Runs Smoothly, Day and Night",
+    tagline: "You'll feel the peace of mind that comes with knowing every inquiry is handled, every opportunity is captured, and everything is running seamlessly—even when you're not there.",
     points: [
-      "Go live in days with immediate impact",
-      "Professional handling of every customer message",
-      "Automatic lead capture and appointment booking",
-      "Consistent follow-ups while you sleep better and work smarter",
+      "Every inquiry is handled professionally",
+      "Every opportunity is captured automatically",
+      "Seamless operations day and night",
+      "Peace of mind and confidence to focus on bigger picture",
     ],
   },
 ];
@@ -51,13 +51,13 @@ export default function BenefitsSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Strategic Advantages for Your Operations
+            Why Work With Us?
           </h2>
           <p className="text-lg text-gray-300">Three strategic pillars that elevate your business operations and enable intelligent scaling.</p>
         </div>
 
         {/* Simple Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {benefits.map(({ icon: Icon, title, tagline, points }, index) => (
             <div key={title} className="bg-gray-900 p-6 rounded-lg border border-transparent bg-clip-padding relative" style={{
               backgroundImage: 'linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(135deg, #d4ff00, #2139ff)',
@@ -80,19 +80,9 @@ export default function BenefitsSection() {
               </div>
 
               {/* Tagline */}
-              <p className="text-gray-300 text-sm mb-4">
+              <p className="text-gray-300 text-sm">
                 {tagline}
               </p>
-
-              {/* Bullets */}
-              <ul className="space-y-2">
-                {points.map((p) => (
-                  <li key={p} className="flex items-start gap-2 text-gray-300">
-                    <CheckCircle2 className="mt-1 h-4 w-4 text-[#d4ff00] flex-shrink-0" />
-                    <span className="text-sm">{p}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>

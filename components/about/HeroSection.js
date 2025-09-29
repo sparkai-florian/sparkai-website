@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section className="w-full min-h-screen flex items-center justify-center bg-black">
       <div className="w-[85%] mx-auto px-6 md:px-12">
         <div className="text-center max-w-6xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-16 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             The Messages You{" "}
             <span className="bg-gradient-to-r from-[#2B00FF] to-[#00D4FF] bg-clip-text text-transparent">
               Trust

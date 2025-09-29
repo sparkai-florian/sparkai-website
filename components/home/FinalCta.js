@@ -70,7 +70,7 @@ export default function FinalCta() {
               </div>
               
               <Link href="/book">
-                <button className="w-full bg-[#d4ff00] hover:bg-[#d4ff00]/90 hover:scale-105 transition-all duration-300 px-6 py-4 text-base font-bold text-black rounded-xl shadow-2xl hover:shadow-3xl group">
+                <button className="w-full bg-[#ec3481] hover:bg-[#ec3481]/90 hover:scale-105 transition-all duration-300 px-6 py-4 text-base font-bold text-white rounded-xl shadow-2xl hover:shadow-3xl group">
                   <span className="flex items-center justify-center gap-3">
                     YES, OPTIMIZE MY OPERATIONS
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

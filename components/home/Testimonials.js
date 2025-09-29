@@ -38,14 +38,10 @@ export default function Testimonials() {
                   <p className="text-lg text-gray-300">Trusted by businesses across Republic of Kosova</p>
         </div>
 
-        {/* Simple Testimonial Cards */}
+        {/* Glossy Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-900 p-6 rounded-lg border border-transparent bg-clip-padding relative" style={{
-              backgroundImage: 'linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(135deg, #d4ff00, #2139ff)',
-              backgroundOrigin: 'border-box',
-              backgroundClip: 'padding-box, border-box'
-            }}>
+            <div key={index} className="p-6 rounded-xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-sm relative">
               {/* Quote mark in top right */}
               <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-lg">
                 "

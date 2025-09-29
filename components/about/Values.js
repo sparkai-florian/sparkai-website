@@ -25,7 +25,6 @@ export default function Values() {
       <div className="w-[85%] mx-auto px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm tracking-widest uppercase text-[#2B00FF] mb-4 font-semibold">Why Choose Us</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">Why SparkAI?</h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
               Because we believe that every message matters. We're here to help businesses:

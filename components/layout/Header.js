@@ -42,9 +42,13 @@ export default function Header() {
               href={item.href}
               className={`${
                 pathname === item.href
-                  ? "font-semibold text-white border-b-2 border-[#2B00FF]"
+                  ? "font-semibold text-white relative"
                   : "text-gray-300 hover:text-white"
               } transition-colors`}
+              style={pathname === item.href ? {
+                borderBottom: '2px solid',
+                borderImage: 'linear-gradient(to right, #2B00FF, #00D4FF) 1'
+              } : {}}
             >
               {item.label}
             </Link>
@@ -55,7 +59,7 @@ export default function Header() {
         <div className="hidden md:flex">
           <Link
             href="#book"
-            className="border-2 border-[#d4ff00] text-[#d4ff00] px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#d4ff00] hover:text-black"
+            className="bg-[#ec3481] text-white px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#ec3481]/90"
           >
             Book a Call
           </Link>
@@ -92,7 +96,7 @@ export default function Header() {
             {/* CTA also in mobile menu */}
             <Link
               href="#book"
-              className="mt-4 border-2 border-[#d4ff00] text-[#d4ff00] px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#d4ff00] hover:text-black"
+              className="mt-4 bg-[#ec3481] text-white px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#ec3481]/90"
             >
               Book a Call
             </Link>

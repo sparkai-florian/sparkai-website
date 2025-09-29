@@ -106,6 +106,22 @@ export default function Footer() {
               <span>24/7 Support Available</span>
             </li>
           </ul>
+
+          {/* Newsletter Section */}
+          <div className="mt-8">
+            <h4 className="text-sm font-bold uppercase mb-4 text-gray-300">Join Our Newsletter</h4>
+            <p className="text-xs text-gray-400 mb-3">Stay updated with the latest AI insights and business tips.</p>
+            <div className="flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-xs placeholder-gray-500 focus:outline-none focus:border-[#2139ff] focus:ring-1 focus:ring-[#2139ff]"
+              />
+              <button className="bg-[#2139ff] hover:bg-[#2139ff]/90 text-white px-4 py-2 rounded-lg text-xs font-semibold transition-colors duration-200">
+                Subscribe
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 

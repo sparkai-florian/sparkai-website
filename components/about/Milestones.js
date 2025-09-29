@@ -21,7 +21,7 @@ const IMPACT_METRICS = [
   },
   {
     icon: ClockIcon,
-    value: "5.79 seconds",
+    value: "5.79s",
     label: "Average Response Time",
     color: "from-[#f6db4b]/20 to-[#f6db4b]/5"
   },
@@ -41,11 +41,10 @@ const IMPACT_METRICS = [
 
 export default function Milestones() {
   return (
-    <section className="w-full py-20 bg-gray-900">
-      <div className="w-[85%] mx-auto px-6 md:px-12">
+    <section className="w-full py-20 bg-black">
+      <div className="w-[80%] mx-auto px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm tracking-widest uppercase text-[#2B00FF] mb-4 font-semibold">Our Impact</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">Our Impact in Numbers</h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
               Here's how SparkAI is transforming communication for businesses:
@@ -60,8 +59,8 @@ export default function Milestones() {
                 return (
                   <div key={index} className="text-center">
                     <div className="flex justify-center mb-4">
-                      <div className={`p-4 rounded-2xl bg-gradient-to-br ${metric.color}`}>
-                        <IconComponent className="w-8 h-8 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#D4FF00] to-[#213efa] rounded-xl flex items-center justify-center">
+                        <IconComponent className="w-6 h-6 text-black" />
                       </div>
                     </div>
                     <div className="text-2xl sm:text-3xl font-bold text-white mb-2">{metric.value}</div>

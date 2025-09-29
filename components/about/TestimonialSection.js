@@ -1,13 +1,14 @@
 // components/about/TestimonialSection.js
 "use client";
 
+import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+
 export default function TestimonialSection() {
   return (
     <section className="w-full py-20 bg-black">
       <div className="w-[85%] mx-auto px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm tracking-widest uppercase text-[#2B00FF] mb-4 font-semibold">Customer Success</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">A Word from Our Customers</h2>
           </div>
 
@@ -17,7 +18,11 @@ export default function TestimonialSection() {
             
             <div className="relative z-10">
               <div className="text-center mb-8">
-                <div className="text-6xl mb-4">💬</div>
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#D4FF00] to-[#213efa] rounded-xl flex items-center justify-center">
+                    <ChatBubbleLeftRightIcon className="w-8 h-8 text-black" />
+                  </div>
+                </div>
                 <h3 className="text-2xl font-semibold text-white mb-2">Client Testimonial</h3>
                 <p className="text-gray-400">Satisfied Customer</p>
               </div>
