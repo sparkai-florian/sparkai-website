@@ -4,20 +4,28 @@ import Link from 'next/link';
 
 export default function ServicesCTA() {
   return (
-    <section className="bg-[#2B00FF] text-white py-20 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Ready to Supercharge Your Business?
-        </h2>
-        <p className="text-lg md:text-xl text-white mb-8">
-          Book your personalized demo today and see SparkAI in action.
-        </p>
-        <Link
-          href="/contact"
-          className="bg-white text-[#2B00FF] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-        >
-          Book Your Demo
-        </Link>
+    <section className="w-full py-20 bg-black">
+      <div className="w-full px-0">
+        <div className="w-full">
+          <div className="bg-gradient-to-r from-[#2B00FF] to-[#00D4FF] p-12 text-center shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+            
+            <div className="relative z-10">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+                Ready to Supercharge Your Business?
+              </h2>
+              <p className="text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Book your personalized demo today and see SparkAI in action. Transform your customer service and automate your business processes with our AI solutions.
+              </p>
+              <div className="flex justify-center">
+                <Link href="/contact" className="bg-[#ec3481] text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:bg-[#ec3481]/90 transition-all duration-300 hover:shadow-xl">
+                  Book Your Demo
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

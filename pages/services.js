@@ -4,7 +4,6 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import ServicesHero from '@/components/services/ServicesHero';
 import AutomationDevelopment from '@/components/services/AutomationDevelopment';
-import WhySparkAI from '@/components/services/WhySparkAI';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Layout from '@/components/layout/Layout';
 
@@ -27,7 +26,6 @@ export default function ServicesPage() {
         <ServicesHero />
         <ChatbotDevelopment />
         <AutomationDevelopment />
-        <WhySparkAI />
         <ServicesCTA />
       </main>
       </Layout>
