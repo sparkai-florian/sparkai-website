@@ -6,7 +6,6 @@ import IndustryPackages from '@/components/pricing/IndustryPackages';
 import AddOns from '@/components/pricing/AddOns';
 import FeatureList from '@/components/pricing/FeatureList';
 import FinalCTA from '@/components/pricing/FinalCTA';
-import HowItWorksDownload from '@/components/pricing/HowItWorksDownload';
 
 export default function PricingPage() {
   return (
@@ -21,13 +20,9 @@ export default function PricingPage() {
       <Layout>
         <main className="bg-black text-white">
             <PricingHero />
-            <HowItWorksDownload />
             <IndustryPackages />
             <AddOns />
             <FeatureList />
-            <p className="text-white/90 mb-4">
-                Prefer reading first? <a href="/guides/how-it-works.pdf" target="_blank" className="underline">Download the How‑it‑Works PDF</a>.
-            </p>
             <FinalCTA />
         </main>
       </Layout>

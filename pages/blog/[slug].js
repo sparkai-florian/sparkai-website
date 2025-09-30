@@ -27,7 +27,7 @@ export default function BlogPost({ post }) {
       <Layout>
         <main className="container mx-auto px-4 py-12">
         <article className="max-w-3xl">
-          <h1 className="text-3xl font-semibold tracking-tight">{post.title}</h1>
+          <h1 className="text-3xl font-semibold tracking-tight font-headline">{post.title}</h1>
           {post.cover_url && (
             <img
               src={post.cover_url}
@@ -35,7 +35,7 @@ export default function BlogPost({ post }) {
               className="mb-4 mt-4 w-full rounded-xl object-cover"
             />
           )}
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-zinc-500 font-paragraph">
             {post.published_at ? new Date(post.published_at).toLocaleDateString() : ""}
           </p>
 

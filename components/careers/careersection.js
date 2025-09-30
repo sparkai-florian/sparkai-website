@@ -18,16 +18,16 @@ export default function CareersSection() {
     <section className="container mx-auto px-4 py-12 sm:py-16 md:py-20">
       {/* Top copy */}
       <div className="mx-auto max-w-3xl text-center">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-paragraph">
           Careers
         </p>
-        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl font-headline">
           Join SparkAI
         </h1>
-        <p className="mt-3 text-zinc-600 dark:text-zinc-400">
-          We’re building practical AI that helps real businesses. If you’re passionate and hands-on, we’d love to hear from you.
+        <p className="mt-3 text-zinc-600 dark:text-zinc-400 font-paragraph">
+          We're building practical AI that helps real businesses. If you're passionate and hands-on, we'd love to hear from you.
         </p>
-        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 font-paragraph">
           Send your <span className="font-medium">resume, CV, and motivational letter</span> to{" "}
           <a className="font-medium underline underline-offset-4" href="mailto:hi@sparkai-rks.com">
             hi@sparkai-rks.com
@@ -43,7 +43,7 @@ export default function CareersSection() {
       </div>
 
       {/* Simple note */}
-      <div className="mx-auto mt-10 max-w-2xl text-center text-sm text-zinc-500 dark:text-zinc-400">
+      <div className="mx-auto mt-10 max-w-2xl text-center text-sm text-zinc-500 dark:text-zinc-400 font-paragraph">
         Tip: Include links to examples of your work (GitHub, portfolio, or a short Loom video) if you have them.
       </div>
     </section>

@@ -50,10 +50,10 @@ export default function BenefitsSection() {
       <div className="mx-auto w-[85%] max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-headline">
             Why Work With Us?
           </h2>
-          <p className="text-lg text-gray-300">Three strategic pillars that elevate your business operations and enable intelligent scaling.</p>
+          <p className="text-lg text-gray-300 font-subheadline">Three strategic pillars that elevate your business operations and enable intelligent scaling.</p>
         </div>
 
         {/* Simple Cards */}
@@ -74,13 +74,13 @@ export default function BenefitsSection() {
                 <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4">
                   <Icon className="h-6 w-6 text-[#d4ff00]" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold text-white mb-3 font-headline">
                   {title}
                 </h3>
               </div>
 
               {/* Tagline */}
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-300 text-sm font-paragraph">
                 {tagline}
               </p>
             </div>

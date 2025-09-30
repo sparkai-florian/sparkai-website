@@ -32,10 +32,10 @@ export default function Testimonials() {
       <div className="mx-auto w-[80%]">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-headline">
             What Our Clients Say
           </h2>
-                  <p className="text-lg text-gray-300">Trusted by businesses across Republic of Kosova</p>
+                  <p className="text-lg text-gray-300 font-subheadline">Trusted by businesses across Republic of Kosova</p>
         </div>
 
         {/* Glossy Testimonial Cards */}
@@ -48,7 +48,7 @@ export default function Testimonials() {
               </div>
               
               {/* Quote */}
-              <p className="text-gray-300 text-base leading-relaxed mb-6">
+              <p className="text-gray-300 text-base leading-relaxed mb-6 font-paragraph">
                 {testimonial.quote}
               </p>
 
@@ -73,10 +73,10 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <span className="font-semibold text-white text-sm">
+                  <span className="font-semibold text-white text-sm font-headline">
                     {testimonial.name}
                   </span>
-                  <div className="text-gray-400 text-xs">
+                  <div className="text-gray-400 text-xs font-paragraph">
                     {testimonial.company}
                   </div>
                 </div>

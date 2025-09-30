@@ -41,10 +41,10 @@ export default function HowItWorksWave() {
       <div className="mx-auto w-[80%] relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-headline">
             3 Steps to Automated Success
           </h2>
-          <p className="text-lg text-gray-300">From first call to first sale—fast. Our streamlined process gets you up and running in days, not months.</p>
+          <p className="text-lg text-gray-300 font-subheadline">From first call to first sale—fast. Our streamlined process gets you up and running in days, not months.</p>
         </div>
 
         {/* Roadmap Design */}
@@ -100,23 +100,23 @@ export default function HowItWorksWave() {
                 <div className="p-6 rounded-xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-sm relative hover:scale-105 transition-all duration-300 flex-1 flex flex-col">
                   {/* Title */}
                   <div className="mb-4">
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-xl font-bold text-white mb-2 font-headline">
                       {s.title}
                     </h3>
-                    <p className="text-sm text-[#d4ff00] font-medium">
+                    <p className="text-sm text-[#d4ff00] font-medium font-subheadline">
                       {s.subtitle}
                     </p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed flex-grow font-paragraph">
                     {s.blurb}
                   </p>
 
                   {/* Outcome */}
                   <div className="bg-white/10 rounded-lg p-3 mt-auto border border-white/20">
-                    <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-1">What happens:</p>
-                    <p className="text-sm text-gray-200 font-medium">{s.outcome}</p>
+                    <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-1 font-paragraph">What happens:</p>
+                    <p className="text-sm text-gray-200 font-medium font-paragraph">{s.outcome}</p>
                   </div>
                 </div>
               </div>

@@ -74,15 +74,15 @@ function SectionHeader({ kicker, title, subtitle }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
       {kicker && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-paragraph">
           {kicker}
         </p>
       )}
-      <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+      <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl font-headline">
         {title}
       </h1>
       {subtitle && (
-        <p className="mt-3 text-zinc-600 dark:text-zinc-400">{subtitle}</p>
+        <p className="mt-3 text-zinc-600 dark:text-zinc-400 font-paragraph">{subtitle}</p>
       )}
     </div>
   );

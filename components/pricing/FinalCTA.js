@@ -3,24 +3,27 @@ import Link from 'next/link';
 
 export default function FinalCTA() {
   return (
-    <section className="py-20 bg-[#2B00FF]">
-      <div className="max-w-5xl mx-auto px-4 text-center text-white">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3">
-          Ready to automate your customer communication?
-        </h2>
-        <p className="text-white/90 mb-8">
-          Book a free demo and we’ll show you the exact flow for your industry.
-        </p>
-        <div className="flex items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="bg-white text-[#2B00FF] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            Book a Free Demo
-          </Link>
-          <a href="#all-features" className="underline text-white/90 hover:text-white">
-            Compare Features
-          </a>
+    <section className="w-full py-20 bg-black">
+      <div className="w-full px-0">
+        <div className="w-full">
+          <div className="bg-gradient-to-r from-[#2B00FF] to-[#00D4FF] p-12 text-center shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+            
+            <div className="relative z-10">
+                      <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-headline">
+                        Ready to Automate Your Customer Communication?
+                      </h2>
+                      <p className="text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-subheadline">
+                        Book a free demo and we'll show you the exact flow for your industry. Transform your customer service with our AI-powered solutions.
+                      </p>
+              <div className="flex justify-center">
+                <Link href="/contact" className="bg-[#ec3481] text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:bg-[#ec3481]/90 transition-all duration-300 hover:shadow-xl font-subheadline">
+                  Book My Free Consultation Today
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -56,24 +56,24 @@ export default function HeroSection() {
           {/* Left: Text */}
           <div className="lg:basis-1/2 w-full px-2 sm:px-4 md:px-6 text-white z-10 relative top-[25px]">
             <div className="flex justify-start mb-3">
-              <span className="text-white/90 text-xs sm:text-sm font-semibold tracking-wide">
+              <span className="text-white/90 text-xs sm:text-sm font-semibold tracking-wide font-paragraph">
                 FOR BUSINESS OWNERS...
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 font-headline">
               {heroData.headline}
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 max-w-2xl">
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 max-w-2xl font-subheadline">
               {heroData.subheadline}
             </p>
 
             {/* Buttons */}
             <div className="flex gap-3 sm:gap-4 flex-wrap">
-              <a
+                <a
                 href="#book"
-                className="relative z-10 inline-block text-white bg-[#ec3481] px-5 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 hover:opacity-90"
+                className="relative z-10 inline-block text-white bg-[#ec3481] px-5 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 hover:opacity-90 font-subheadline"
               >
                 Book My Free Consultation Today
               </a>
@@ -81,7 +81,7 @@ export default function HeroSection() {
               <div className="relative dropdown-container">
                 <button
                   onClick={() => setShowChatDropdown(!showChatDropdown)}
-                  className="relative z-10 inline-flex items-center gap-2 text-white bg-[#2139ff] px-5 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 hover:opacity-90"
+                  className="relative z-10 inline-flex items-center gap-2 text-white bg-[#2139ff] px-5 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 hover:opacity-90 font-subheadline"
                 >
                   <span>Chat with AI</span>
                   <ChevronDown
@@ -103,7 +103,7 @@ export default function HeroSection() {
                           className="w-3 h-3 rounded-full flex-shrink-0"
                           style={{ backgroundColor: option.color }}
                         />
-                        <span className="text-gray-800 font-medium">{option.name}</span>
+                        <span className="text-gray-800 font-medium font-paragraph">{option.name}</span>
                       </button>
                     ))}
                   </div>
@@ -120,7 +120,7 @@ export default function HeroSection() {
                     className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
                   >
                     <Circle className="w-3 h-3 shrink-0 text-[#d4ff00]" />
-                    <span className="text-sm sm:text-base">{b}</span>
+                    <span className="text-sm sm:text-base font-paragraph">{b}</span>
                   </li>
                 ))}
               </ul>
@@ -128,7 +128,7 @@ export default function HeroSection() {
               <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-[#d4ff00]/70 to-transparent" />
 
               <div>
-                <p className="text-white/90 font-medium mb-3">
+                <p className="text-white/90 font-medium mb-3 font-subheadline">
                   Works seamlessly across your favorite platforms:
                 </p>
                 <div className="flex items-center gap-4 flex-wrap">

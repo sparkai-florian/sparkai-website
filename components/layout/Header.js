@@ -42,8 +42,8 @@ export default function Header() {
               href={item.href}
               className={`${
                 pathname === item.href
-                  ? "font-semibold text-white relative"
-                  : "text-gray-300 hover:text-white"
+                  ? "font-semibold text-white relative font-headline"
+                  : "text-gray-300 hover:text-white font-paragraph"
               } transition-colors`}
               style={pathname === item.href ? {
                 borderBottom: '2px solid',
@@ -59,7 +59,7 @@ export default function Header() {
         <div className="hidden md:flex">
           <Link
             href="#book"
-            className="bg-[#ec3481] text-white px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#ec3481]/90"
+            className="bg-[#ec3481] text-white px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#ec3481]/90 font-subheadline"
           >
             Book a Call
           </Link>
@@ -85,8 +85,8 @@ export default function Header() {
                 href={item.href}
                 className={`${
                   pathname === item.href
-                    ? "font-semibold text-white"
-                    : "text-gray-300 hover:text-white"
+                    ? "font-semibold text-white font-headline"
+                    : "text-gray-300 hover:text-white font-paragraph"
                 } transition-colors`}
               >
                 {item.label}
@@ -96,7 +96,7 @@ export default function Header() {
             {/* CTA also in mobile menu */}
             <Link
               href="#book"
-              className="mt-4 bg-[#ec3481] text-white px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#ec3481]/90"
+              className="mt-4 bg-[#ec3481] text-white px-5 py-2 rounded-lg font-semibold shadow transition duration-200 hover:bg-[#ec3481]/90 font-subheadline"
             >
               Book a Call
             </Link>

@@ -105,10 +105,10 @@ export default function Features() {
       <div className="mx-auto w-[80%]">
         {/* Header */}
         <div className="text-center mb-16 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-headline">
             Everything You Need To Turn Every Message Into Money
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+          <p className="text-lg text-white/80 max-w-3xl mx-auto font-subheadline">
             SparkAI doesn't just chat—it sells, books, and grows your business 24/7
           </p>
         </div>
@@ -127,12 +127,12 @@ export default function Features() {
                 </div>
                 
                 {/* Feature heading */}
-                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#D4FF00] transition-colors duration-300 text-left">
+                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#D4FF00] transition-colors duration-300 text-left font-headline">
                   {feature.title}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-white/90 leading-relaxed text-sm text-left flex-1">
+                <p className="text-white/90 leading-relaxed text-sm text-left flex-1 font-paragraph">
                   {feature.description}
                 </p>
                 

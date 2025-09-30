@@ -45,8 +45,8 @@ export default function Milestones() {
       <div className="w-[80%] mx-auto px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">Our Impact in Numbers</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-headline">Our Impact in Numbers</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12 font-subheadline">
               Here's how SparkAI is transforming communication for businesses:
             </p>
           </div>
@@ -63,8 +63,8 @@ export default function Milestones() {
                         <IconComponent className="w-6 h-6 text-black" />
                       </div>
                     </div>
-                    <div className="text-2xl sm:text-3xl font-bold text-white mb-2">{metric.value}</div>
-                    <div className="text-sm text-gray-300 leading-tight">{metric.label}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white mb-2 font-headline">{metric.value}</div>
+                    <div className="text-sm text-gray-300 leading-tight font-paragraph">{metric.label}</div>
                   </div>
                 );
               })}

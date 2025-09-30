@@ -157,10 +157,10 @@ export default function BookDemoSection() {
 
       {/* Hero copy (kept minimal; you can customize) */}
       <div className="container mx-auto px-4 pt-12 sm:pt-16 md:pt-20 text-center">
-        <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
+        <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl font-headline">
           Book a live demo of SparkAI
         </h1>
-        <p className="mx-auto mt-3 max-w-2xl text-white/90">
+        <p className="mx-auto mt-3 max-w-2xl text-white/90 font-paragraph">
           See DM‑to‑Order funnels, chat automations, and real integrations tailored to your industry.
         </p>
       </div>

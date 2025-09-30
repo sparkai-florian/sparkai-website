@@ -100,10 +100,10 @@ function SectionHeader({ kicker, title, subtitle }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
       {kicker && (
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">{kicker}</p>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-paragraph">{kicker}</p>
       )}
-      <h2 className="text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">{title}</h2>
-      {subtitle && <p className="mt-3 text-zinc-600 dark:text-zinc-400">{subtitle}</p>}
+      <h2 className="text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl font-headline">{title}</h2>
+      {subtitle && <p className="mt-3 text-zinc-600 dark:text-zinc-400 font-paragraph">{subtitle}</p>}
     </div>
   );
 }
@@ -113,9 +113,9 @@ export default function DocsSection() {
     <section className="container mx-auto px-4 py-14 sm:py-18 md:py-24">
       {/* Hero */}
       <div className="mx-auto max-w-3xl text-center">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Docs & Playbooks</p>
-        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">Practical guides for better communication & automations</h1>
-        <p className="mt-3 text-zinc-600 dark:text-zinc-400">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-paragraph">Docs & Playbooks</p>
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl font-headline">Practical guides for better communication & automations</h1>
+        <p className="mt-3 text-zinc-600 dark:text-zinc-400 font-paragraph">
           Download concise guides in English and Albanian. Start with industry‑specific communication playbooks,
           then explore funnels and (soon) automation recipes.
         </p>

@@ -25,21 +25,21 @@ export default function FinalCta() {
           
           {/* Left side - Content */}
           <div className="space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-lg">
+            <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-lg font-headline">
               Ready To Scale Your Operations Intelligently?
             </h2>
             
             <div className="space-y-4 text-base text-gray-100">
-              <p className="leading-relaxed drop-shadow-md">
+              <p className="leading-relaxed drop-shadow-md font-paragraph">
                 Your business has outgrown simple solutions. 
                 <span className="text-white font-medium"> You need intelligent automation that understands your processes, speaks your customers' languages, and integrates with your existing systems.</span>
               </p>
               
-              <p className="text-lg font-semibold text-[#d4ff00] drop-shadow-md">
+              <p className="text-lg font-semibold text-[#d4ff00] drop-shadow-md font-subheadline">
                 This isn't about replacing your team - it's about empowering them.
               </p>
               
-              <p className="leading-relaxed drop-shadow-md">
+              <p className="leading-relaxed drop-shadow-md font-paragraph">
                 I'll show you how businesses are using 
                 <span className="text-white font-medium"> sophisticated AI to optimize operations while delivering superior customer experiences.</span> 
                 We'll design a system specifically for your business complexity and growth trajectory.
@@ -50,27 +50,27 @@ export default function FinalCta() {
           {/* Right side - CTA */}
           <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 relative shadow-2xl">
             <div className="text-center">
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-white drop-shadow-lg">
+              <h3 className="text-xl md:text-2xl font-bold mb-6 text-white drop-shadow-lg font-headline">
                 Book Your Strategic Optimization Session
               </h3>
               
               <div className="space-y-4 mb-6">
                 <div className="flex items-center gap-3 text-sm text-gray-100">
                   <div className="w-2 h-2 bg-[#d4ff00] rounded-full shadow-lg"></div>
-                  <span>30-minute strategy call</span>
+                  <span className="font-paragraph">30-minute strategy call</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-100">
                   <div className="w-2 h-2 bg-[#d4ff00] rounded-full shadow-lg"></div>
-                  <span>Custom automation roadmap</span>
+                  <span className="font-paragraph">Custom automation roadmap</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-100">
                   <div className="w-2 h-2 bg-[#d4ff00] rounded-full shadow-lg"></div>
-                  <span>ROI projections for your business</span>
+                  <span className="font-paragraph">ROI projections for your business</span>
                 </div>
               </div>
               
               <Link href="/book">
-                <button className="w-full bg-[#ec3481] hover:bg-[#ec3481]/90 hover:scale-105 transition-all duration-300 px-6 py-4 text-base font-bold text-white rounded-xl shadow-2xl hover:shadow-3xl group">
+                <button className="w-full bg-[#ec3481] hover:bg-[#ec3481]/90 hover:scale-105 transition-all duration-300 px-6 py-4 text-base font-bold text-white rounded-xl shadow-2xl hover:shadow-3xl group font-subheadline">
                   <span className="flex items-center justify-center gap-3">
                     YES, OPTIMIZE MY OPERATIONS
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

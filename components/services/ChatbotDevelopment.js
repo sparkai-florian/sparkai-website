@@ -159,13 +159,13 @@ const ChatbotDevelopment = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white font-headline">
             Customer Service That Never Sleeps
           </h2>
-          <p className="text-xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed font-subheadline">
             Forget those frustrating "I don't understand" chatbots that make customers want to throw their phones. SparkAI chatbots actually get it - they understand context, handle complex requests, and sound like your best employee.
           </p>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto font-paragraph">
             Here's what this means for your bank account:
           </p>
         </div>
@@ -180,10 +180,10 @@ const ChatbotDevelopment = () => {
                   <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {IconComponent && <IconComponent className="w-8 h-8 text-white" />}
                   </div>
-                  <h4 className="font-bold text-xl mb-4 text-white group-hover:text-[#d4ff00] transition-colors">
+                  <h4 className="font-bold text-xl mb-4 text-white group-hover:text-[#d4ff00] transition-colors font-headline">
                     {feature.title}
                   </h4>
-                  <p className="text-gray-300 leading-relaxed text-sm">
+                  <p className="text-gray-300 leading-relaxed text-sm font-paragraph">
                     {feature.description}
                   </p>
                 </div>
@@ -194,7 +194,7 @@ const ChatbotDevelopment = () => {
 
         {/* Industry-Specific Solutions Carousel */}
         <div>
-          <h3 className="text-2xl font-bold mb-8 text-center">Industry-Specific Solutions</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center font-headline">Industry-Specific Solutions</h3>
           <div className="flex items-center gap-4">
             {/* Left Navigation Arrow */}
             <button

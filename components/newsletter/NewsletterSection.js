@@ -30,14 +30,14 @@ export default function NewsletterSection({
     <section className="container mx-auto px-4 py-14 sm:py-18 md:py-24">
       {/* Header */}
       <div className="mx-auto max-w-3xl text-center">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-paragraph">
           Newsletter
         </p>
-        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl font-headline">
           Stay ahead with AI communication & automation
         </h1>
-        <p className="mt-3 text-zinc-600 dark:text-zinc-400">
-          Join SparkAI’s newsletter for concise insights on{" "}
+        <p className="mt-3 text-zinc-600 dark:text-zinc-400 font-paragraph">
+          Join SparkAI's newsletter for concise insights on{" "}
           <span className="font-medium">communication tips</span>,{" "}
           <span className="font-medium">automation builds inside messaging systems & chatbots</span>,{" "}
           <span className="font-medium">marketing tips</span>, and{" "}

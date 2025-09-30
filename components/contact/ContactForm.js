@@ -44,8 +44,8 @@ export default function ContactForm() {
     <section id="contact-form" className="py-12">
       <div className="w-[85%] mx-auto px-6 md:px-12">
         <div className="rounded-2xl border border-white/10 bg-neutral-900 p-6 sm:p-8 shadow-xl">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">Contact Form</h2>
-        <p className="text-white/70 mb-6">{"Tell us a bit about your needs and we'll be in touch."}</p>
+        <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2 font-headline">Contact Form</h2>
+        <p className="text-white/70 mb-6 font-paragraph">{"Tell us a bit about your needs and we'll be in touch."}</p>
 
         {status.error && (
           <div className="mb-4 rounded-lg border border-red-400/30 bg-red-500/10 px-4 py-3 text-red-200">
