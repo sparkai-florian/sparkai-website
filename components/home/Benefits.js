@@ -65,14 +65,17 @@ export default function BenefitsSection() {
               backgroundClip: 'padding-box, border-box'
             }}>
               {/* Step number in top right */}
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-sm">
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#2139ff] rounded-full flex items-center justify-center text-white font-bold text-sm">
                 {index + 1}
               </div>
 
               {/* Icon */}
               <div className="mb-4">
-                <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="h-6 w-6 text-[#d4ff00]" />
+                <div 
+                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                  style={{ backgroundColor: '#d4ff0020' }}
+                >
+                  <Icon className="h-6 w-6" style={{ color: '#d4ff00' }} />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 font-headline">
                   {title}

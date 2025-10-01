@@ -19,8 +19,11 @@ export default function TestimonialSection() {
             <div className="relative z-10">
               <div className="text-center mb-8">
                 <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#D4FF00] to-[#213efa] rounded-xl flex items-center justify-center">
-                    <ChatBubbleLeftRightIcon className="w-8 h-8 text-black" />
+                  <div 
+                    className="w-16 h-16 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: '#d4ff0020' }}
+                  >
+                    <ChatBubbleLeftRightIcon className="w-8 h-8" style={{ color: '#d4ff00' }} />
                   </div>
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-2">Client Testimonial</h3>

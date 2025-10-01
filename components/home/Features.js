@@ -119,10 +119,18 @@ export default function Features() {
             <div key={i} className="group relative h-full">
               {/* Card with gradient border */}
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 transition-all duration-300 hover:bg-white/20 hover:border-[#D4FF00]/50 hover:shadow-2xl hover:shadow-[#D4FF00]/20 h-full flex flex-col">
+                {/* Number in top right corner */}
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#2139ff] rounded-full flex items-center justify-center text-white font-bold text-sm z-10">
+                  {i + 1}
+                </div>
+                
                 {/* Icon in top left corner */}
                 <div className="mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#D4FF00] to-[#213efa] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-6 h-6 text-black" />
+                  <div 
+                    className="w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                    style={{ backgroundColor: '#d4ff0020' }}
+                  >
+                    <feature.icon className="w-6 h-6" style={{ color: '#d4ff00' }} />
                   </div>
                 </div>
                 

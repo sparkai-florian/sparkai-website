@@ -80,8 +80,11 @@ export default function AutomationDevelopment() {
             return (
               <div key={index} className="group">
                 <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105 h-full">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${useCase.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {IconComponent && <IconComponent className="w-8 h-8 text-white" />}
+                  <div 
+                    className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                    style={{ backgroundColor: '#d4ff0020' }}
+                  >
+                    {IconComponent && <IconComponent className="w-8 h-8" style={{ color: '#d4ff00' }} />}
                   </div>
                   <h3 className="font-bold text-xl mb-4 text-white group-hover:text-[#d4ff00] transition-colors">
                     {useCase.title}
@@ -108,8 +111,11 @@ export default function AutomationDevelopment() {
           <div className="grid md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <CheckCircleIcon className="h-5 w-5 text-white" />
+                <div 
+                  className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                  style={{ backgroundColor: '#d4ff0020' }}
+                >
+                  <CheckCircleIcon className="h-5 w-5" style={{ color: '#d4ff00' }} />
                 </div>
                 <span className="text-white/90 text-lg">{benefit}</span>
               </div>

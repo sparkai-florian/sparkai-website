@@ -59,8 +59,11 @@ export default function Milestones() {
                 return (
                   <div key={index} className="text-center">
                     <div className="flex justify-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#D4FF00] to-[#213efa] rounded-xl flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-black" />
+                      <div 
+                        className="w-12 h-12 rounded-xl flex items-center justify-center"
+                        style={{ backgroundColor: '#d4ff0020' }}
+                      >
+                        <IconComponent className="w-6 h-6" style={{ color: '#d4ff00' }} />
                       </div>
                     </div>
                     <div className="text-2xl sm:text-3xl font-bold text-white mb-2 font-headline">{metric.value}</div>

@@ -42,14 +42,11 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="p-6 rounded-xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-sm relative">
-              {/* Quote mark in top right */}
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-lg">
-                "
-              </div>
-              
               {/* Quote */}
               <p className="text-gray-300 text-base leading-relaxed mb-6 font-paragraph">
+                <span className="text-white text-2xl font-bold mr-1">"</span>
                 {testimonial.quote}
+                <span className="text-white text-2xl font-bold ml-1">"</span>
               </p>
 
               {/* Stars */}

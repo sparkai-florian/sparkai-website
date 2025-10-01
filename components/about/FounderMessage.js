@@ -31,14 +31,14 @@ export default function FounderMessage() {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 border-2 border-yellow-300 shadow-2xl relative overflow-hidden">
-                {/* Golden paper texture effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/20 to-yellow-300/10"></div>
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+              <div className="bg-white/20 border border-white/30 rounded-2xl p-8 shadow-xl backdrop-blur-md relative overflow-hidden">
+                {/* Transparent glass overlay effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-white/10 rounded-2xl"></div>
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                 
                 <div className="relative z-10">
-                  <div className="text-amber-800 leading-relaxed space-y-4 text-sm">
+                  <div className="text-white leading-relaxed space-y-4 text-sm">
                     <p className="font-medium">
                       Hi, I'm Florian, a young entrepreneur from the vibrant city of Prishtina, Kosovo. In early 2024, SparkAI was born from a simple yet powerful idea: to reimagine how businesses communicate and operate.
                     </p>
@@ -63,9 +63,9 @@ export default function FounderMessage() {
                       Let's write the future of communication together.
                     </p>
                     
-                    <div className="mt-6 pt-4 border-t border-amber-300">
-                      <p className="text-amber-700 font-medium">Cheers,</p>
-                      <p className="text-amber-800 font-semibold">Florian</p>
+                    <div className="mt-6 pt-4 border-t border-white/30">
+                      <p className="text-white/90 font-medium">Cheers,</p>
+                      <p className="text-white font-semibold">Florian</p>
                     </div>
                   </div>
                 </div>

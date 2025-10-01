@@ -50,7 +50,7 @@ export default function HowItWorksWave() {
         {/* Roadmap Design */}
         <div className="relative">
           {/* Moving wave dashes with start and end reference points */}
-          <div className="hidden md:block absolute top-2 left-0 right-0 h-16 overflow-hidden">
+          <div className="hidden md:block absolute -top-2 left-0 right-0 h-16 overflow-hidden">
             {/* Start reference circle */}
             <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full border-2 border-white shadow-lg z-10"></div>
             
@@ -84,9 +84,9 @@ export default function HowItWorksWave() {
             {steps.map((s, idx) => (
               <div key={s.number} className="relative flex flex-col">
                 {/* Step circle on top of card */}
-                <div className="flex justify-center mb-6 relative z-10">
+                <div className="flex justify-center mb-8 relative z-10 -mt-4">
                   <div className="relative group">
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#d4ff00] to-[#2139ff] rounded-full flex items-center justify-center text-black font-bold text-lg shadow-2xl transition-all duration-300 group-hover:scale-125 group-hover:shadow-3xl cursor-pointer">
+                    <div className="w-16 h-16 bg-[#2139ff] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-2xl transition-all duration-300 group-hover:scale-125 group-hover:shadow-3xl cursor-pointer">
                       {s.number}
                     </div>
                     {/* Hover tooltip */}

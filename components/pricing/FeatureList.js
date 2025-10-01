@@ -366,7 +366,7 @@ export default function FeatureList() {
 
   return (
     <section id="all-features" className="py-20 bg-gradient-to-b from-zinc-950 to-black">
-      <div className="w-[85%] mx-auto px-4">
+      <div className="w-[80%] mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             All{" "}

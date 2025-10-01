@@ -116,7 +116,7 @@ export default function AddOns() {
 
   return (
     <section id="add-ons" className="py-20 bg-gradient-to-b from-black to-zinc-950">
-      <div className="w-[85%] mx-auto px-4">
+      <div className="w-[80%] mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-headline">
             Popular{" "}

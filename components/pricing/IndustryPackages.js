@@ -72,7 +72,7 @@ export default function IndustryPackages() {
 
   return (
     <section className="py-16">
-      <div className="w-[85%] mx-auto px-4">
+      <div className="w-[80%] mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 font-headline">Industry Packages</h2>
         
         {selectedIndustry && (
@@ -98,7 +98,7 @@ export default function IndustryPackages() {
           {packages.map((pkg) => (
             <div 
               key={pkg.industry} 
-              className="group relative bg-gradient-to-br from-zinc-900/80 to-zinc-800/60 rounded-2xl p-6 border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm overflow-hidden"
+              className="group relative bg-gradient-to-br from-zinc-900/80 to-zinc-800/60 rounded-2xl p-6 border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm overflow-hidden flex flex-col h-full"
               style={{
                 boxShadow: `0 0 30px ${pkg.color}20`,
                 borderColor: `${pkg.color}40`
@@ -113,7 +113,7 @@ export default function IndustryPackages() {
               />
               
 
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col h-full">
                 {/* Industry header */}
                 <div className="flex items-center gap-3 mb-4">
                   <div
@@ -137,7 +137,7 @@ export default function IndustryPackages() {
                 </div>
 
                 {/* Features with royal styling */}
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   {pkg.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm">
                       <div 
@@ -157,7 +157,7 @@ export default function IndustryPackages() {
                 {/* Royal CTA button */}
                 <button
                   onClick={() => selectIndustry(pkg)}
-                  className="w-full relative overflow-hidden rounded-xl font-bold text-white py-3 px-4 text-center transition-all duration-300 hover:shadow-xl hover:scale-105 group/btn"
+                  className="w-full relative overflow-hidden rounded-xl font-bold text-white py-3 px-4 text-center transition-all duration-300 hover:shadow-xl hover:scale-105 group/btn mt-auto"
                   style={{ 
                     background: `linear-gradient(135deg, ${pkg.color}, ${pkg.color}CC)`,
                     boxShadow: `0 0 20px ${pkg.color}40`

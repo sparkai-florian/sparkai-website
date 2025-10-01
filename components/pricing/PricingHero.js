@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function PricingHero() {
   return (
     <section className="w-full min-h-screen flex items-center justify-center bg-black">
-      <div className="w-[85%] mx-auto px-4 md:px-6">
+      <div className="w-[80%] mx-auto px-4 md:px-6">
         <div className="text-center max-w-6xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight font-headline">
             Flexible{" "}
