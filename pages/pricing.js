@@ -3,8 +3,7 @@ import Layout from '../components/layout/Layout';
 import Head from 'next/head';
 import PricingHero from '@/components/pricing/PricingHero';
 import IndustryPackages from '@/components/pricing/IndustryPackages';
-import AddOns from '@/components/pricing/AddOns';
-import FeatureList from '@/components/pricing/FeatureList';
+import PricingSection from '@/components/services/PricingSection';
 import FinalCTA from '@/components/pricing/FinalCTA';
 
 export default function PricingPage() {
@@ -14,15 +13,14 @@ export default function PricingPage() {
         <title>Pricing | SparkAI</title>
         <meta
           name="description"
-          content="Flexible plans, clear pricing, and powerful add-ons for chatbot and automation development."
+          content="Simple, transparent pricing for AI chatbot and automation solutions. Industry packages and monthly subscriptions available."
         />
       </Head>
       <Layout>
         <main className="bg-black text-white">
             <PricingHero />
             <IndustryPackages />
-            <AddOns />
-            <FeatureList />
+            <PricingSection />
             <FinalCTA />
         </main>
       </Layout>

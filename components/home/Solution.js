@@ -15,9 +15,9 @@ export default function SolutionIntro() {
         </div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
           {/* Text Side */}
-          <div className="space-y-6 lg:pr-8">
+          <div className="space-y-6 lg:pr-8 flex flex-col justify-center">
             <p className="text-lg text-gray-700">
               Here's what smart business owners are discovering: 
               <span className="text-black font-medium"> you can deliver better customer service while actually reducing costs.</span>
@@ -47,7 +47,7 @@ export default function SolutionIntro() {
           </div>
 
           {/* Image Side */}
-          <div className="h-auto lg:pl-8">
+          <div className="h-auto lg:pl-8 flex items-center">
             <div className="relative">
               <Image
                 src={robotImage}

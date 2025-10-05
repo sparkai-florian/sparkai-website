@@ -175,17 +175,32 @@ const ChatbotDevelopment = () => {
           {features.map((feature, idx) => {
             const IconComponent = feature.icon;
             return (
-              <div key={idx} className="group">
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105 h-full">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {IconComponent && <IconComponent className="w-8 h-8 text-white" />}
+              <div key={idx} className="group relative h-full">
+                {/* Card with gradient border */}
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 transition-all duration-300 hover:bg-white/20 hover:border-[#D4FF00]/50 hover:shadow-2xl hover:shadow-[#D4FF00]/20 h-full flex flex-col">
+                  
+                  {/* Icon in top left corner */}
+                  <div className="mb-6">
+                    <div 
+                      className="w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{ backgroundColor: '#d4ff0020' }}
+                    >
+                      {IconComponent && <IconComponent className="w-8 h-8" style={{ color: '#d4ff00' }} />}
+                    </div>
                   </div>
-                  <h4 className="font-bold text-xl mb-4 text-white group-hover:text-[#d4ff00] transition-colors font-headline">
+                  
+                  {/* Feature heading */}
+                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#D4FF00] transition-colors duration-300 text-left font-headline">
                     {feature.title}
                   </h4>
-                  <p className="text-gray-300 leading-relaxed text-sm font-paragraph">
+                  
+                  {/* Description */}
+                  <p className="text-white/90 leading-relaxed text-sm text-left flex-1 font-paragraph">
                     {feature.description}
                   </p>
+                  
+                  {/* Hover effect line */}
+                  <div className="absolute bottom-0 left-6 right-6 h-1 bg-gradient-to-r from-[#D4FF00] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
                 </div>
               </div>
             );

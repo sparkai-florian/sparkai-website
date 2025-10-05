@@ -127,7 +127,7 @@ export default function Footer() {
 
       {/* Bottom Line */}
       <div className="mt-12 border-t border-gray-800 pt-6 text-left text-xs text-gray-500">
-        <p className="font-paragraph">© {new Date().getFullYear()} Spark Martech L.L.C. All rights reserved.</p>
+        <p className="font-paragraph">© {new Date().getFullYear()} spark martech. L.L.C. All rights reserved.</p>
       </div>
       </div>
     </footer>
