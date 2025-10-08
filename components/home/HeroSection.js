@@ -32,8 +32,8 @@ export default function HeroSection() {
     key: "main",
     gradient:
       "linear-gradient(135deg, #000000 0%, #1a1a2e 20%, #16213e 40%, #0f3460 60%, #1a1a2e 80%, #000000 100%)",
-    image: "/banner-image1.png",
-    imageAlt: "SparkAI banner",
+    image: "/hand-image.png",
+    imageAlt: "SparkAI AI Robot Hand Interface",
     headline: "Cut Support Costs by 70% While Actually Improving Customer Service",
     subheadline:
       "Smart businesses are discovering how AI delivers better customer relationships at a fraction of the cost. Stop paying for expensive staff to answer the same questions over and over.",
@@ -47,25 +47,25 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative w-full min-h-screen"
+      className="relative w-full"
       style={{ backgroundColor: "#000000", backgroundImage: heroData.gradient }}
     >
       {/* 85% wide container */}
       <div className="relative mx-auto w-[85%] max-w-[1700px] overflow-visible">
-        <div className="relative min-h-[80vh] flex flex-col lg:flex-row items-center gap-10 py-10">
+        <div className="relative flex flex-col lg:flex-row items-start gap-4 pt-4 pb-0">
           {/* Left: Text */}
-          <div className="lg:basis-1/2 w-full px-2 sm:px-4 md:px-6 text-white z-10 relative top-[25px]">
+          <div className="lg:basis-1/2 w-full px-2 sm:px-4 md:px-6 text-white z-10 pt-4">
             <div className="flex justify-start mb-3">
               <span className="text-white/90 text-xs sm:text-sm font-semibold tracking-wide font-paragraph">
                 FOR BUSINESS OWNERS...
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 font-headline">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-3 font-headline">
               {heroData.headline}
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 max-w-2xl font-subheadline">
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-4 max-w-2xl font-subheadline">
               {heroData.subheadline}
             </p>
 
@@ -112,7 +112,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bullets + Platforms card */}
-            <div className="mt-8 mb-10 p-6 rounded-xl bg-white/10 border border-white/15 shadow-lg backdrop-blur-sm">
+            <div className="mt-6 mb-0 p-5 pb-5 rounded-xl bg-white/10 border border-white/15 shadow-lg backdrop-blur-sm">
               <ul className="space-y-3">
                 {heroData.bullets.map((b, i) => (
                   <li
@@ -127,11 +127,11 @@ export default function HeroSection() {
 
               <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-[#d4ff00]/70 to-transparent" />
 
-              <div>
+              <div className="pb-0">
                 <p className="text-white/90 font-medium mb-3 font-subheadline">
                   Works seamlessly across your favorite platforms:
                 </p>
-                <div className="flex items-center gap-4 flex-wrap">
+                <div className="flex items-center gap-4 flex-wrap pb-0">
                   <Image src="/icons/facebook.png" alt="Facebook" width={40} height={40} />
                   <Image src="/icons/instagram.png" alt="Instagram" width={40} height={40} />
                   <Image src="/icons/whatsapp.png" alt="WhatsApp" width={40} height={40} />
@@ -146,19 +146,28 @@ export default function HeroSection() {
           {/* Right: Bigger image, right aligned */}
           {/* Right: Bigger image, shifted left */}
 
-<div className="lg:basis-1/2 w-full flex items-center">
-  <div className="ml-auto w-full max-w-[900px] relative -left-[30px]">
+<div className="lg:basis-1/2 w-full flex items-end">
+  <div className="ml-auto w-full max-w-[650px] relative -left-[30px]">
     {!showVideo ? (
       <div className="relative">
         <Image
           src={heroData.image}
           alt={heroData.imageAlt}
-          width={1800}   // bigger intrinsic width
-          height={1100}  // bigger intrinsic height
-          className="w-full h-auto object-contain cursor-pointer"
+          width={1300}
+          height={850}
+          className="w-full h-auto object-contain"
           priority
-          onClick={() => setShowVideo(true)}
         />
+        
+        {/* Chatbot iframe positioned to match the red screen area */}
+        <div className="absolute top-[10%] left-[32.48%] w-[36%] h-[58%] overflow-hidden rounded-2xl">
+          <iframe
+            src="https://app.chatgptbuilder.io/webchat/?p=1234372&ref=1718203509503"
+            className="w-full h-full border-none rounded-2xl"
+            allow="camera; microphone; clipboard-read; clipboard-write"
+            title="SparkAI Chatbot Demo"
+          />
+        </div>
       </div>
     ) : (
       <div className="relative">
