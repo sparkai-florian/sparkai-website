@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Circle, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
-  const [showVideo, setShowVideo] = useState(false);
   const [showChatDropdown, setShowChatDropdown] = useState(false);
   const heroRef = useRef(null);
 
@@ -32,8 +31,6 @@ export default function HeroSection() {
     key: "main",
     gradient:
       "linear-gradient(135deg, #000000 0%, #1a1a2e 20%, #16213e 40%, #0f3460 60%, #1a1a2e 80%, #000000 100%)",
-    image: "/hand-image.png",
-    imageAlt: "SparkAI AI Robot Hand Interface",
     headline: "Cut Support Costs by 70% While Actually Improving Customer Service",
     subheadline:
       "Smart businesses are discovering how AI delivers better customer relationships at a fraction of the cost. Stop paying for expensive staff to answer the same questions over and over.",
@@ -52,7 +49,7 @@ export default function HeroSection() {
     >
       {/* 85% wide container */}
       <div className="relative mx-auto w-[85%] max-w-[1700px] overflow-visible">
-        <div className="relative flex flex-col lg:flex-row items-start gap-4 pt-4 pb-0">
+        <div className="relative flex flex-col lg:flex-row items-start gap-4 pt-16 pb-[110px]">
           {/* Left: Text */}
           <div className="lg:basis-1/2 w-full px-2 sm:px-4 md:px-6 text-white z-10 pt-4">
             <div className="flex justify-start mb-3">
@@ -146,49 +143,16 @@ export default function HeroSection() {
           {/* Right: Bigger image, right aligned */}
           {/* Right: Bigger image, shifted left */}
 
-<div className="lg:basis-1/2 w-full flex items-end">
-  <div className="ml-auto w-full max-w-[650px] relative -left-[30px]">
-    {!showVideo ? (
-      <div className="relative">
-        <Image
-          src={heroData.image}
-          alt={heroData.imageAlt}
-          width={1300}
-          height={850}
-          className="w-full h-auto object-contain"
-          priority
-        />
-        
-        {/* Chatbot iframe positioned to match the red screen area */}
-        <div className="absolute top-[10%] left-[32.48%] w-[36%] h-[58%] overflow-hidden rounded-2xl">
-          <iframe
-            src="https://app.chatgptbuilder.io/webchat/?p=1234372&ref=1718203509503"
-            className="w-full h-full border-none rounded-2xl"
-            allow="camera; microphone; clipboard-read; clipboard-write"
-            title="SparkAI Chatbot Demo"
-          />
-        </div>
-      </div>
-    ) : (
-      <div className="relative">
-        <video
-          className="w-full h-auto object-contain rounded-lg"
-          controls
-          autoPlay
-          muted
-          loop
-        >
-          <source src="/videos/aidemo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <button
-          onClick={() => setShowVideo(false)}
-          className="absolute top-2 right-2 bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/80 transition-colors"
-        >
-          ×
-        </button>
-      </div>
-    )}
+<div className="lg:basis-1/2 w-full flex items-start justify-center pt-[80px]">
+  <div className="w-full max-w-[600px] aspect-square">
+    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+      <iframe
+        src="https://app.chatgptbuilder.io/webchat/?p=1234372&ref=1718203509503"
+        className="w-full h-full border-none"
+        allow="camera; microphone; clipboard-read; clipboard-write"
+        title="SparkAI Chatbot Demo"
+      />
+    </div>
   </div>
 </div>
 
