@@ -10,23 +10,23 @@ export default function FounderMessage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="relative h-80 w-80 mx-auto rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">👨‍💼</div>
-                    <p className="text-gray-600 text-sm font-medium">Professional Photo</p>
-                    <p className="text-xs text-gray-500">(Include a professional photo of Florian here)</p>
-                  </div>
-                </div>
+            <div className="flex items-center justify-end gap-4">
+              <div className="relative h-[520px] w-80 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
+                <Image
+                  src="/florian.png"
+                  alt="Florian - Founder & CEO of SparkAI"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  priority
+                />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#2B00FF] to-[#00D4FF] text-white p-5 rounded-2xl shadow-2xl border-2 border-white/20">
+              <div className="relative bg-black/80 backdrop-blur-md p-4 rounded-xl shadow-2xl border-2 border-[#d4ff00]/60 self-end mb-8">
                 <div className="text-center">
-                  <div className="text-sm font-bold mb-1">Founder & CEO</div>
-                  <div className="text-xs font-medium opacity-90">SparkAI</div>
+                  <div className="text-xs font-bold mb-0.5 text-[#d4ff00] tracking-wider uppercase">Founder & CEO</div>
+                  <div className="text-[10px] font-medium text-white/90">SparkAI</div>
                 </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full"></div>
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white/60 rounded-full"></div>
+                <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-[#d4ff00] rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-[#d4ff00]/60 rounded-full"></div>
               </div>
             </div>
 

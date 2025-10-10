@@ -7,7 +7,7 @@ const testimonials = [
     name: 'Krenar Dobroshi',
     company: 'estethica Medical Wellness Polyclinic',
     quote:
-      'As a company, we had been looking for a practical and effective solution to respond to our clients online with instant and professional answers. Luckily, Florian presented the innovative and energy-saving idea of a chatbot, which could be customized and adjusted to our needs. Surprisingly, the system not only surpassed our expectations but also led to increased traffic, more appointments, and less wasted time for our staff, allowing them to focus more on productivity. Florian has a problem-solving mindset—he is responsible, helpful, and highly innovative. He is undoubtedly a future-thinker, ensuring that the company\'s demands are met and never leaving without finding a solution. I strongly recommend him!',
+      'We went from delayed replies to instant communication — SparkAI made it effortless.',
     image: '/icons/k.d.-pic.png',
   },
   {
