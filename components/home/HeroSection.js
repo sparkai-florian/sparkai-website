@@ -13,8 +13,6 @@ export default function HeroSection() {
     { name: "Aesthetic Clinics", color: "#FF6F91", route: "/solutions/healthcare" },
     { name: "E-Commerce", color: "#FF7F11", route: "/solutions/e_commerce" },
     { name: "Fashion Retail", color: "#8E44AD", route: "/solutions/fashion_store" },
-    { name: "Law Firms", color: "#002855", route: "/solutions/finance" },
-    { name: "Travel Agencies", color: "#00B4D8", route: "/solutions/travel_agency" },
   ];
 
   useEffect(() => {

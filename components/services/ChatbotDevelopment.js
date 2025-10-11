@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import {
   ChatBubbleLeftRightIcon,
@@ -9,8 +9,6 @@ import {
   CpuChipIcon,
   ArrowPathIcon,
   ChartBarIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
   SparklesIcon,
   ClockIcon,
   BuildingStorefrontIcon
@@ -82,77 +80,10 @@ const services = [
     name: 'Fashion Stores',
     image: '/fashion_stores.png',
     link: '/solutions/fashtion_store'
-  },
-  {
-    name: 'Law',
-    image: '/law_firms.png',
-    link: '/solutions/finance'
-  },
-  {
-    name: 'Travel Agencies',
-    image: '/travel_agency.png',
-    link: '/solutions/travel_agency'
   }
 ];
 
 const ChatbotDevelopment = () => {
-  const carouselRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    if (!isAutoScrolling) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const nextIndex = prevIndex + 1;
-        // Reset to 0 after showing all 5 services (0-4)
-        return nextIndex >= 5 ? 0 : nextIndex;
-      });
-    }, 3000); // Change every 3 seconds for faster movement
-
-    return () => clearInterval(interval);
-  }, [isAutoScrolling]);
-
-  // Update carousel position when currentIndex changes
-  useEffect(() => {
-    if (carouselRef.current) {
-      const scrollPosition = currentIndex * 312; // 288px width + 24px gap
-      carouselRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-    }
-  }, [currentIndex]);
-
-  // Debug: Log current index changes
-  useEffect(() => {
-    console.log('Current index:', currentIndex, 'Service:', services[currentIndex]?.name);
-  }, [currentIndex]);
-
-  const scrollLeft = () => {
-    console.log('Left button clicked');
-    setIsAutoScrolling(false);
-    setCurrentIndex((prevIndex) => {
-      const nextIndex = prevIndex - 1;
-      const newIndex = nextIndex < 0 ? 4 : nextIndex; // Loop to last item if going below 0
-      console.log('Moving left from', prevIndex, 'to', newIndex);
-      return newIndex;
-    });
-    // Restart auto-scroll after 3 seconds
-    setTimeout(() => setIsAutoScrolling(true), 3000);
-  };
-
-  const scrollRight = () => {
-    console.log('Right button clicked');
-    setIsAutoScrolling(false);
-    setCurrentIndex((prevIndex) => {
-      const nextIndex = prevIndex + 1;
-      const newIndex = nextIndex >= 5 ? 0 : nextIndex; // Loop to first item if going above 4
-      console.log('Moving right from', prevIndex, 'to', newIndex);
-      return newIndex;
-    });
-    // Restart auto-scroll after 3 seconds
-    setTimeout(() => setIsAutoScrolling(true), 3000);
-  };
 
   return (
     <section className="bg-black text-white py-20">
@@ -207,53 +138,33 @@ const ChatbotDevelopment = () => {
           })}
         </div>
 
-        {/* Industry-Specific Solutions Carousel */}
-        <div>
+        {/* Industry-Specific Solutions */}
+        <div className="w-[80%] mx-auto">
           <h3 className="text-2xl font-bold mb-8 text-center font-headline">Industry-Specific Solutions</h3>
-          <div className="flex items-center gap-4">
-            {/* Left Navigation Arrow */}
-            <button
-              onClick={scrollLeft}
-              className="flex-shrink-0 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-3 transition-all duration-200"
-            >
-              <ChevronLeftIcon className="h-8 w-8 text-white" />
-            </button>
-
-            {/* Carousel Container */}
-            <div className="flex-1 overflow-hidden">
-              <div ref={carouselRef} className="flex gap-6 py-4 animate-scroll" style={{ width: 'max-content' }}>
-                {/* Duplicate services for infinite loop */}
-                {[...services, ...services, ...services].map((service, index) => (
-                  <div key={`${service.name}-${index}`} className="flex-shrink-0 group cursor-pointer">
-                    {/* Service name above image */}
-                    <div className="mb-4">
-                      <h4 className="text-white text-xl font-bold text-left">
-                        {service.name}
-                      </h4>
-                    </div>
-                    
-                    {/* Service image with thin gradient border */}
-                    <Link href={service.link}>
-                      <div className="relative w-72 h-72 rounded-2xl overflow-hidden shadow-2xl p-0.5 bg-gradient-to-br from-[#d4ff00] to-[#213efa]">
-                        <img
-                          src={service.image}
-                          alt={service.name}
-                          className="w-full h-full object-cover rounded-2xl"
-                        />
-                      </div>
-                    </Link>
+          
+          {/* Static Grid */}
+          <div className="flex justify-center items-start gap-12">
+            {services.map((service, index) => (
+              <div key={index} className="group cursor-pointer" style={{ width: '280px' }}>
+                {/* Service name above image */}
+                <div className="mb-4">
+                  <h4 className="text-white text-xl font-bold text-center">
+                    {service.name}
+                  </h4>
+                </div>
+                
+                {/* Service image with thin gradient border */}
+                <Link href={service.link}>
+                  <div className="relative w-[280px] h-[280px] rounded-2xl overflow-hidden shadow-2xl p-0.5 bg-gradient-to-br from-[#d4ff00] to-[#213efa] transition-transform duration-300 hover:scale-105">
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
                   </div>
-                ))}
+                </Link>
               </div>
-            </div>
-
-            {/* Right Navigation Arrow */}
-            <button
-              onClick={scrollRight}
-              className="flex-shrink-0 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-3 transition-all duration-200"
-            >
-              <ChevronRightIcon className="h-8 w-8 text-white" />
-            </button>
+            ))}
           </div>
         </div>
       </div>
