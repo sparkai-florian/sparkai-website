@@ -39,23 +39,23 @@ export default function SparkAIStory() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-stretch mb-16">
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-300 hover:border-white/30">
-                <h3 className="text-2xl font-semibold text-white mb-4 font-headline bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <div className="bg-gradient-to-br from-black/70 to-gray-900/60 backdrop-blur-md rounded-2xl p-8 border border-white/30 shadow-2xl hover:shadow-white/10 transition-all duration-300 hover:border-white/40">
+                <h3 className="text-2xl font-semibold text-white mb-4 font-headline">
                   The Problem We Saw
                 </h3>
-                <p className="text-gray-300 leading-relaxed mb-4 font-paragraph">
+                <p className="text-white leading-relaxed mb-4 font-paragraph font-medium">
                   At the time, the AI industry was in its infancy, and businesses were struggling to keep up with the demands of modern communication.
                 </p>
-                <p className="text-gray-300 leading-relaxed font-paragraph">
+                <p className="text-white leading-relaxed font-paragraph font-medium">
                   Our founder, Florian, noticed how businesses were overwhelmed with messages, often responding too late—or not at all. Appointments were still being booked in notebooks, and customer inquiries were met with generic, unhelpful responses like, "The price is 50 euros."
                 </p>
               </div>
               
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-300 hover:border-white/30">
-                <h3 className="text-2xl font-semibold text-white mb-4 font-headline bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <div className="bg-gradient-to-br from-black/70 to-gray-900/60 backdrop-blur-md rounded-2xl p-8 border border-white/30 shadow-2xl hover:shadow-white/10 transition-all duration-300 hover:border-white/40">
+                <h3 className="text-2xl font-semibold text-white mb-4 font-headline">
                   The Solution
                 </h3>
-                <p className="text-lg text-white/90 leading-relaxed font-paragraph">
+                <p className="text-lg text-white leading-relaxed font-paragraph font-semibold">
                   Florian saw an opportunity to change this. Through trial and error, countless conversations, and a relentless drive to solve these problems, SparkAI was created. Today, we're proud to help businesses around the world optimize their communication and automate repetitive tasks, so they can focus on what truly matters.
                 </p>
               </div>

@@ -13,10 +13,10 @@ export default function FounderMessage() {
             <div className="flex items-center justify-end gap-4">
               <div className="relative h-[520px] w-80 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
                 <Image
-                  src="/florian.png"
+                  src="/florian-porto.jpg"
                   alt="Florian - Founder & CEO of SparkAI"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
                   priority
                 />
               </div>
@@ -31,41 +31,41 @@ export default function FounderMessage() {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white/20 border border-white/30 rounded-2xl p-8 shadow-xl backdrop-blur-md relative overflow-hidden">
+              <div className="bg-black/60 border border-white/30 rounded-2xl p-8 shadow-xl backdrop-blur-md relative overflow-hidden">
                 {/* Transparent glass overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-white/10 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/50 to-black/50 rounded-2xl"></div>
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                 
                 <div className="relative z-10">
                   <div className="text-white leading-relaxed space-y-4 text-sm">
-                    <p className="font-medium">
+                    <p className="font-semibold">
                       Hi, I'm Florian, a young entrepreneur from the vibrant city of Prishtina, Kosovo. In early 2024, SparkAI was born from a simple yet powerful idea: to reimagine how businesses communicate and operate.
                     </p>
                     
-                    <p>
+                    <p className="font-medium">
                       It all started with curiosity. As we approached businesses, we noticed the challenges they faced in managing communication effectively. At the same time, the world was witnessing the rise of AI technologies like ChatGPT, and we saw an opportunity to make a difference.
                     </p>
                     
-                    <p>
+                    <p className="font-medium">
                       From day one, we built SparkAI with the end user in mind. But what truly shaped our journey was working hand-in-hand with businesses. Through countless conversations, trials, and iterations, we refined our system to deliver functionalities that truly meet their needs.
                     </p>
                     
-                    <p>
+                    <p className="font-medium">
                       At SparkAI, we believe that every message matters. Communication isn't just about words—it's how businesses build trust, foster partnerships, and write their own stories. That's why we're committed to more than just technology. We're here to provide personalized care and exceptional service in every partnership we form.
                     </p>
                     
-                    <p>
+                    <p className="font-medium">
                       This is more than a platform—it's a promise to help businesses connect, grow, and succeed.
                     </p>
                     
-                    <p className="font-medium">
+                    <p className="font-semibold">
                       Let's write the future of communication together.
                     </p>
                     
                     <div className="mt-6 pt-4 border-t border-white/30">
-                      <p className="text-white/90 font-medium">Cheers,</p>
-                      <p className="text-white font-semibold">Florian</p>
+                      <p className="text-white font-semibold">Cheers,</p>
+                      <p className="text-white font-bold">Florian</p>
                     </div>
                   </div>
                 </div>

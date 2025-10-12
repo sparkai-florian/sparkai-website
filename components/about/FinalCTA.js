@@ -46,24 +46,24 @@ export default function FinalCTA() {
           </div>
 
           {/* Right side - CTA */}
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 relative shadow-2xl">
+          <div className="bg-black/50 backdrop-blur-xl border border-white/30 rounded-2xl p-8 relative shadow-2xl">
             <div className="text-center">
               <h3 className="text-xl md:text-2xl font-bold mb-6 text-white drop-shadow-lg font-headline">
                 Start Your Transformation Journey
               </h3>
               
               <div className="space-y-4 mb-6">
-                <div className="flex items-center gap-3 text-sm text-gray-100">
+                <div className="flex items-center gap-3 text-sm text-white">
                   <div className="w-2 h-2 bg-[#d4ff00] rounded-full shadow-lg"></div>
-                  <span className="font-paragraph">Free consultation call</span>
+                  <span className="font-paragraph font-semibold">Free consultation call</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-100">
+                <div className="flex items-center gap-3 text-sm text-white">
                   <div className="w-2 h-2 bg-[#d4ff00] rounded-full shadow-lg"></div>
-                  <span className="font-paragraph">Personalized communication strategy</span>
+                  <span className="font-paragraph font-semibold">Personalized communication strategy</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-100">
+                <div className="flex items-center gap-3 text-sm text-white">
                   <div className="w-2 h-2 bg-[#d4ff00] rounded-full shadow-lg"></div>
-                  <span className="font-paragraph">Custom solution roadmap</span>
+                  <span className="font-paragraph font-semibold">Custom solution roadmap</span>
                 </div>
               </div>
               
