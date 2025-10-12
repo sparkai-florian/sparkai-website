@@ -4,22 +4,27 @@
 // ================================
 
 import Head from "next/head";
+import Layout from "@/components/layout/Layout";
+import PageTransition from "@/components/layout/PageTransition";
 import PartnersSection from "../components/partners/PartnersSection";
 
 export default function PartnersPage() {
   return (
     <>
-      <Head>
-        <title>Partners • SparkAI</title>
-        <meta
-          name="description"
-          content="Platforms and tools that power SparkAI chatbots and automations."
-        />
-      </Head>
-      {/* Place between your <Header/> and <Footer/> in your layout */}
-      <main>
-        <PartnersSection />
-      </main>
+      <Layout>
+        <Head>
+          <title>Partners • SparkAI</title>
+          <meta
+            name="description"
+            content="Platforms and tools that power SparkAI chatbots and automations."
+          />
+        </Head>
+        <PageTransition>
+          <main className="bg-white dark:bg-black">
+            <PartnersSection />
+          </main>
+        </PageTransition>
+      </Layout>
     </>
   );
 }
