@@ -137,7 +137,7 @@ export default function HeroSection() {
               variants={fadeInUp}
             >
                 <motion.a
-                href="#book"
+                href="/book-a-call"
                 className="relative z-10 inline-block text-white bg-[#ec3481] px-5 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 hover:opacity-90 font-subheadline"
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(236, 52, 129, 0.4)" }}
                 whileTap={{ scale: 0.95 }}

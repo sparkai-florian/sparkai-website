@@ -58,7 +58,7 @@ export default function Header() {
         {/* Right: CTA button */}
         <div className="hidden md:flex">
           <Link
-            href="#book"
+            href="/book-a-call"
             className="bg-[#ec3481] text-white px-5 py-2 rounded-lg font-semibold shadow transition-all duration-200 hover:bg-[#ec3481]/90 font-subheadline group overflow-hidden"
           >
             <span className="block transition-transform duration-200 group-hover:scale-110">
@@ -97,7 +97,7 @@ export default function Header() {
 
             {/* CTA also in mobile menu */}
             <Link
-              href="#book"
+              href="/book-a-call"
               className="mt-4 bg-[#ec3481] text-white px-5 py-2 rounded-lg font-semibold shadow transition-all duration-200 hover:bg-[#ec3481]/90 font-subheadline group overflow-hidden"
             >
               <span className="block transition-transform duration-200 group-hover:scale-110">

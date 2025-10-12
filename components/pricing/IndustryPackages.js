@@ -42,31 +42,6 @@ const packages = [
     ],
     color: '#FF7F11',
   },
-  {
-    industry: 'Law Firms',
-    packageName: 'Case Connect',
-    setupFee: '€799',
-    features: [
-      'Digital Business Hub (FAQ, services, hours, contact info)',
-      'Client Intake & Lead Qualification',
-      'Appointment Booking & Scheduling',
-      'CRM & Case Management Integration',
-      'Multilingual Support',
-    ],
-    color: '#002855',
-  },
-  {
-    industry: 'Travel Agencies',
-    packageName: 'Book Smart',
-    setupFee: '€799',
-    features: [
-      'Digital Business Hub (FAQ, destinations, offers, hours)',
-      'Lead Generation → Google Sheets',
-      'Booking & Reservation Management',
-      'Payment Integration with Stripe',
-    ],
-    color: '#00B4D8',
-  },
 ];
 
 export default function IndustryPackages() {
@@ -79,7 +54,7 @@ export default function IndustryPackages() {
           Choose the perfect package for your industry. Each package includes setup and monthly maintenance with all features included.
         </p>
         {/* Royal Industry Packages */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {packages.map((pkg) => (
             <div 
               key={pkg.industry} 
