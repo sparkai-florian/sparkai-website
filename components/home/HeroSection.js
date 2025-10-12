@@ -8,12 +8,28 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const [showChatDropdown, setShowChatDropdown] = useState(false);
+  const [chatbotUrl, setChatbotUrl] = useState("https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1759931411611");
   const heroRef = useRef(null);
 
   const industryOptions = [
-    { name: "Aesthetic Clinics", color: "#FF6F91", route: "/solutions/healthcare" },
-    { name: "E-Commerce", color: "#FF7F11", route: "/solutions/e_commerce" },
-    { name: "Fashion Retail", color: "#8E44AD", route: "/solutions/fashion_store" },
+    { 
+      name: "Aesthetic Clinics", 
+      color: "#FF6F91", 
+      route: "/solutions/healthcare",
+      chatbotUrl: "https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1759931745026"
+    },
+    { 
+      name: "E-Commerce", 
+      color: "#FF7F11", 
+      route: "/solutions/e_commerce",
+      chatbotUrl: "https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1753121357698"
+    },
+    { 
+      name: "Fashion Retail", 
+      color: "#8E44AD", 
+      route: "/solutions/fashion_store",
+      chatbotUrl: "https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1742856410341"
+    },
   ];
 
   // Animation variants
@@ -155,7 +171,10 @@ export default function HeroSection() {
                     {industryOptions.map((option, index) => (
                       <button
                         key={index}
-                        onClick={() => setShowChatDropdown(false)}
+                        onClick={() => {
+                          setChatbotUrl(option.chatbotUrl);
+                          setShowChatDropdown(false);
+                        }}
                         className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center gap-3"
                       >
                         <div
@@ -322,7 +341,8 @@ export default function HeroSection() {
       transition={{ duration: 0.3 }}
     >
       <iframe
-        src="https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1759931411611"
+        key={chatbotUrl}
+        src={chatbotUrl}
         className="w-full h-full border-none"
         allow="camera; microphone; clipboard-read; clipboard-write"
         title="SparkAI Chatbot Demo"
