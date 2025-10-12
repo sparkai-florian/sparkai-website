@@ -5,6 +5,7 @@ import PricingHero from '@/components/pricing/PricingHero';
 import IndustryPackages from '@/components/pricing/IndustryPackages';
 import PricingSection from '@/components/services/PricingSection';
 import FinalCTA from '@/components/pricing/FinalCTA';
+import PageTransition from '@/components/layout/PageTransition';
 
 export default function PricingPage() {
   return (
@@ -17,12 +18,14 @@ export default function PricingPage() {
         />
       </Head>
       <Layout>
-        <main className="bg-black text-white">
-            <PricingHero />
-            <IndustryPackages />
-            <PricingSection />
-            <FinalCTA />
-        </main>
+        <PageTransition>
+          <main className="bg-black text-white">
+              <PricingHero />
+              <IndustryPackages />
+              <PricingSection />
+              <FinalCTA />
+          </main>
+        </PageTransition>
       </Layout>
       
     </>

@@ -2,6 +2,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/layout/Layout';
+import PageTransition from '../components/layout/PageTransition';
 import { InlineWidget } from 'react-calendly';
 import { Calendar, Clock, CheckCircle, Video, PartyPopper } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -110,8 +111,9 @@ export default function BookACall() {
         />
       </Head>
       <Layout>
-        {/* Success Message Overlay */}
-        <AnimatePresence>
+        <PageTransition>
+          {/* Success Message Overlay */}
+          <AnimatePresence>
           {showSuccessMessage && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: -100 }}
@@ -361,6 +363,7 @@ export default function BookACall() {
             </div>
           </section>
         </main>
+        </PageTransition>
       </Layout>
     </>
   );

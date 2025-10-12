@@ -1,4 +1,5 @@
 import Layout from '../components/layout/Layout';
+import PageTransition from '../components/layout/PageTransition';
 import HeroSection from '../components/about/HeroSection';
 import Differentiators from '../components/about/Differentiators';
 import FinalCTA from '../components/about/FinalCTA';
@@ -11,14 +12,16 @@ import Values from '../components/about/Values';
 export default function Home() {
   return (
     <Layout>
-      <HeroSection />
-      <SparkAIStory />
-      <Differentiators />
-      <FounderMessage />
-      <TestimonialSection />
-      <Milestones />
-      <Values />
-      <FinalCTA />
+      <PageTransition>
+        <HeroSection />
+        <SparkAIStory />
+        <Differentiators />
+        <FounderMessage />
+        <TestimonialSection />
+        <Milestones />
+        <Values />
+        <FinalCTA />
+      </PageTransition>
     </Layout>
   );
 }

@@ -1,4 +1,5 @@
 import Layout from "../components/layout/Layout";
+import PageTransition from '../components/layout/PageTransition';
 import BookingCTA from '../components/contact/BookingCTA';
 import ContactForm from '../components/contact/ContactForm';
 import ContactHero from '../components/contact/ContactHero';
@@ -11,12 +12,14 @@ import SupportHours from '../components/contact/SupportHours';
 export default function ContactPage() {
   return (
     <Layout>
-      <ContactHero />
-      <ContactForm />
-      <DirectInfo />
-      <SocialLinks />
-      <MapSection />
-      <BookingCTA />
+      <PageTransition>
+        <ContactHero />
+        <ContactForm />
+        <DirectInfo />
+        <SocialLinks />
+        <MapSection />
+        <BookingCTA />
+      </PageTransition>
     </Layout>
   );
 }

@@ -6,6 +6,7 @@ import ServicesHero from '@/components/services/ServicesHero';
 import AutomationDevelopment from '@/components/services/AutomationDevelopment';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Layout from '@/components/layout/Layout';
+import PageTransition from '@/components/layout/PageTransition';
 
 // 🧠 Dynamically load ChatbotDevelopment with SSR disabled
 const ChatbotDevelopment = dynamic(
@@ -22,12 +23,14 @@ export default function ServicesPage() {
         <meta name="description" content="Discover our powerful chatbot and automation development services" />
       </Head>
 
-      <main className="bg-black text-white">
-        <ServicesHero />
-        <ChatbotDevelopment />
-        <AutomationDevelopment />
-        <ServicesCTA />
-      </main>
+      <PageTransition>
+        <main className="bg-black text-white">
+          <ServicesHero />
+          <ChatbotDevelopment />
+          <AutomationDevelopment />
+          <ServicesCTA />
+        </main>
+      </PageTransition>
       </Layout>
     </>
   );
