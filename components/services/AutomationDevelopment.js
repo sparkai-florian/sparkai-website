@@ -209,23 +209,6 @@ export default function AutomationDevelopment() {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-20 text-center">
-          <div className="inline-flex flex-col items-center gap-4 p-8 rounded-3xl bg-white/5 border border-white/10">
-            <p className="text-lg text-gray-300">
-              Need a custom automation solution?
-            </p>
-            <a 
-              href="/contact" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 transition-all duration-300 hover:scale-105"
-            >
-              <span>Let's Talk About Your Needs</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

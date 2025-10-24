@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { Newspaper, Rocket, Clock, Bell, Sparkles } from 'lucide-react';
@@ -136,84 +135,7 @@ export default function BlogIndex() {
               ))}
             </motion.div>
 
-            {/* Newsletter Signup */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12"
-            >
-              <h3 className="text-2xl font-bold mb-4 font-headline">
-                Get Notified When We Launch
-              </h3>
-              <p className="text-gray-300 mb-6 font-paragraph">
-                Be the first to read our articles and get exclusive insights delivered to your inbox.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ec3481] font-paragraph"
-                />
-                <motion.button 
-                  className="px-8 py-3 bg-gradient-to-r from-[#ec3481] to-[#2139ff] text-white font-semibold rounded-xl font-paragraph relative overflow-hidden"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(236, 52, 129, 0.4)"
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  animate={{
-                    boxShadow: [
-                      "0 0 20px rgba(236, 52, 129, 0.3)",
-                      "0 0 40px rgba(33, 57, 255, 0.5)",
-                      "0 0 20px rgba(236, 52, 129, 0.3)",
-                    ]
-                  }}
-                  transition={{
-                    boxShadow: {
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }
-                  }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0"
-                    animate={{
-                      x: ["-200%", "200%"]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatDelay: 1,
-                      ease: "linear"
-                    }}
-                  />
-                  <span className="relative z-10">Notify Me</span>
-                </motion.button>
-              </div>
-            </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Link
-                href="/"
-                className="px-8 py-4 bg-white text-black font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 font-paragraph inline-block"
-              >
-                Back to Home
-              </Link>
-              <Link
-                href="/contact"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-paragraph inline-block"
-              >
-                Contact Us
-              </Link>
-            </motion.div>
 
             {/* Decorative Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">

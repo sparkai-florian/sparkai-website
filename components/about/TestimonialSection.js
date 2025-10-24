@@ -1,43 +1,57 @@
 // components/about/TestimonialSection.js
 "use client";
 
-import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import { ChatBubbleLeftRightIcon, StarIcon } from '@heroicons/react/24/solid';
 
 export default function TestimonialSection() {
   return (
     <section className="w-full py-20 bg-black">
       <div className="w-[85%] mx-auto px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
+          {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">A Word from Our Customers</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-headline">A Word from Our Customers</h2>
+            <p className="text-xl text-gray-400 font-subheadline">See what our clients say about their experience with SparkAI</p>
           </div>
 
-          <div className="bg-gradient-to-r from-[#2B00FF]/10 to-[#00D4FF]/10 rounded-3xl p-12 border border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#2B00FF]/20 to-[#00D4FF]/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[#f6db4b]/20 to-[#2B00FF]/20 rounded-full blur-2xl"></div>
-            
-            <div className="relative z-10">
-              <div className="text-center mb-8">
-                <div className="flex justify-center mb-4">
-                  <div 
-                    className="w-16 h-16 rounded-xl flex items-center justify-center"
-                    style={{ backgroundColor: '#d4ff0020' }}
-                  >
-                    <ChatBubbleLeftRightIcon className="w-8 h-8" style={{ color: '#d4ff00' }} />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-semibold text-white mb-2">Client Testimonial</h3>
-                <p className="text-gray-400">Satisfied Customer</p>
+          {/* Testimonial Card */}
+          <div className="bg-gray-900 p-12 rounded-2xl border border-transparent bg-clip-padding relative backdrop-blur-md" style={{
+            backgroundImage: 'linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(135deg, #d4ff00, #2139ff)',
+            backgroundOrigin: 'border-box',
+            backgroundClip: 'padding-box, border-box',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+          }}>
+            {/* Quote Icon */}
+            <div className="flex justify-center mb-8">
+              <div 
+                className="w-20 h-20 rounded-2xl flex items-center justify-center"
+                style={{ backgroundColor: '#d4ff0020' }}
+              >
+                <ChatBubbleLeftRightIcon className="w-10 h-10" style={{ color: '#d4ff00' }} />
               </div>
+            </div>
+
+            {/* Client Info */}
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-white mb-2 font-headline">Client Testimonial</h3>
+              <p className="text-gray-400 font-paragraph">Satisfied Customer</p>
               
-              <div className="max-w-4xl mx-auto">
-                <blockquote className="text-xl text-white/90 leading-relaxed mb-8 italic">
-                  "As a company, we had been looking for a practical and effective solution to respond to our clients online with instant and professional answers. Luckily, Florian presented the innovative and energy-saving idea of a chatbot, which could be customized and adjusted to our needs. Surprisingly, the system not only surpassed our expectations but also led to increased traffic, more appointments, and less wasted time for our staff, allowing them to focus more on productivity.
-                </blockquote>
-                <blockquote className="text-xl text-white/90 leading-relaxed mb-8 italic">
-                  Florian has a problem-solving mindset—he is responsible, helpful, and highly innovative. He is undoubtedly a future-thinker, ensuring that the company's demands are met and never leaving without finding a solution. I strongly recommend him!"
-                </blockquote>
+              {/* Star Rating */}
+              <div className="flex justify-center mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon key={i} className="w-6 h-6" style={{ color: '#d4ff00' }} />
+                ))}
               </div>
+            </div>
+            
+            {/* Testimonial Content */}
+            <div className="max-w-5xl mx-auto">
+              <blockquote className="text-lg text-white/90 leading-relaxed mb-6 font-paragraph italic">
+                "As a company, we had been looking for a practical and effective solution to respond to our clients online with instant and professional answers. Luckily, Florian presented the innovative and energy-saving idea of a chatbot, which could be customized and adjusted to our needs. Surprisingly, the system not only surpassed our expectations but also led to increased traffic, more appointments, and less wasted time for our staff, allowing them to focus more on productivity."
+              </blockquote>
+              <blockquote className="text-lg text-white/90 leading-relaxed font-paragraph italic">
+                "Florian has a problem-solving mindset—he is responsible, helpful, and highly innovative. He is undoubtedly a future-thinker, ensuring that the company's demands are met and never leaving without finding a solution. I strongly recommend him!"
+              </blockquote>
             </div>
           </div>
         </div>

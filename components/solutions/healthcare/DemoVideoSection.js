@@ -8,10 +8,10 @@ const DemoVideoSection = () => {
         {/* Video */}
         <div className="w-full md:w-1/2">
           <video
-            src="/aidemo.mp4"
+            src="/videos/aesthetic-booking-appoinetment-english-with-music-short.mp4"
             controls
             className="w-full rounded-xl shadow-lg"
-            style={{ aspectRatio: '16 / 9', objectFit: 'cover' }}
+            style={{ aspectRatio: '9 / 16', objectFit: 'contain', maxHeight: '600px' }}
           />
         </div>
 

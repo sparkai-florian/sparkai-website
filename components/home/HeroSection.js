@@ -1,36 +1,13 @@
 // components/home/HeroSection.js
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { Circle, ChevronDown } from "lucide-react";
+import { Circle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
-  const [showChatDropdown, setShowChatDropdown] = useState(false);
-  const [chatbotUrl, setChatbotUrl] = useState("https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1759931411611");
   const heroRef = useRef(null);
-
-  const industryOptions = [
-    { 
-      name: "Aesthetic Clinics", 
-      color: "#FF6F91", 
-      route: "/solutions/healthcare",
-      chatbotUrl: "https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1759931745026"
-    },
-    { 
-      name: "E-Commerce", 
-      color: "#FF7F11", 
-      route: "/solutions/e_commerce",
-      chatbotUrl: "https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1753121357698"
-    },
-    { 
-      name: "Fashion Retail", 
-      color: "#8E44AD", 
-      route: "/solutions/fashion_store",
-      chatbotUrl: "https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1742856410341"
-    },
-  ];
 
   // Animation variants
   const containerVariants = {
@@ -70,16 +47,6 @@ export default function HeroSection() {
       transition: { duration: 0.5, ease: "easeOut" },
     },
   };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (showChatDropdown && !event.target.closest(".dropdown-container")) {
-        setShowChatDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showChatDropdown]);
 
   const heroData = {
     key: "main",
@@ -145,48 +112,6 @@ export default function HeroSection() {
                 Book My Free Consultation Today
               </motion.a>
 
-              <div className="relative dropdown-container">
-                <motion.button
-                  onClick={() => setShowChatDropdown(!showChatDropdown)}
-                  className="relative z-10 inline-flex items-center gap-2 text-white bg-[#2139ff] px-5 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 hover:opacity-90 font-subheadline"
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(33, 57, 255, 0.4)" }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>Chat with AI</span>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      showChatDropdown ? "rotate-180" : ""
-                    }`}
-                  />
-                </motion.button>
-
-                {showChatDropdown && (
-                  <motion.div 
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-50"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {industryOptions.map((option, index) => (
-                      <button
-                        key={index}
-                        onClick={() => {
-                          setChatbotUrl(option.chatbotUrl);
-                          setShowChatDropdown(false);
-                        }}
-                        className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center gap-3"
-                      >
-                        <div
-                          className="w-3 h-3 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: option.color }}
-                        />
-                        <span className="text-gray-800 font-medium font-paragraph">{option.name}</span>
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </div>
             </motion.div>
 
             {/* Bullets + Platforms card */}
@@ -341,8 +266,7 @@ export default function HeroSection() {
       transition={{ duration: 0.3 }}
     >
       <iframe
-        key={chatbotUrl}
-        src={chatbotUrl}
+        src="https://app.chatgptbuilder.io/webchat/?p=1166608&ref=1759931411611"
         className="w-full h-full border-none"
         allow="camera; microphone; clipboard-read; clipboard-write"
         title="SparkAI Chatbot Demo"
