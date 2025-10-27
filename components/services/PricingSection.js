@@ -20,8 +20,8 @@ export default function PricingSection() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 rounded-3xl p-12 border border-white/20 shadow-2xl backdrop-blur-sm relative overflow-hidden">
             {/* Background Effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#d4ff00]/10 to-[#2139ff]/10 opacity-50"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4ff00] to-[#2139ff]"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#00FFA3]/10 to-[#2139ff]/10 opacity-50"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00FFA3] to-[#2139ff]"></div>
             
             <div className="relative z-10">
               {/* Pricing Header */}
@@ -45,19 +45,19 @@ export default function PricingSection() {
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-[#d4ff00] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-[#00FFA3] rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-4 h-4 text-black" />
                     </div>
                     <span className="text-white font-paragraph">Unlimited contacts and messages</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-[#d4ff00] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-[#00FFA3] rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-4 h-4 text-black" />
                     </div>
                     <span className="text-white font-paragraph">24/7 ongoing support</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-[#d4ff00] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-[#00FFA3] rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-4 h-4 text-black" />
                     </div>
                     <span className="text-white font-paragraph">Light system changes included</span>
@@ -66,19 +66,19 @@ export default function PricingSection() {
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-[#d4ff00] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-[#00FFA3] rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-4 h-4 text-black" />
                     </div>
                     <span className="text-white font-paragraph">Analytics and reporting</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-[#d4ff00] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-[#00FFA3] rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-4 h-4 text-black" />
                     </div>
                     <span className="text-white font-paragraph">No setup fees</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-[#d4ff00] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-[#00FFA3] rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-4 h-4 text-black" />
                     </div>
                     <span className="text-white font-paragraph">Multi-platform integration</span>

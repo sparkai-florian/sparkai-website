@@ -15,7 +15,7 @@ const packages = [
       'Google Review & Feedback Automation',
       'Multilingual Support',
     ],
-    color: '#00E0C6',
+    color: '#00FFD5',
   },
   {
     industry: 'Commerce',
@@ -30,7 +30,7 @@ const packages = [
       'After-Care Support Automation',
       'Multilingual Support',
     ],
-    color: '#7209B7',
+    color: '#8A00FF',
   },
   {
     industry: 'Hybrid',

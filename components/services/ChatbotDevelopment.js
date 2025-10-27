@@ -139,13 +139,13 @@ const ChatbotDevelopment = () => {
         </div>
 
         {/* Industry-Specific Solutions */}
-        <div className="w-[80%] mx-auto">
+        <div className="w-[85%] mx-auto">
           <h3 className="text-2xl font-bold mb-8 text-center font-headline">Industry-Specific Solutions</h3>
           
           {/* Static Grid */}
           <div className="flex justify-center items-start gap-12">
             {services.map((service, index) => (
-              <div key={index} className="group cursor-pointer" style={{ width: '280px' }}>
+              <div key={index} className="group cursor-pointer" style={{ width: '350px' }}>
                 {/* Service name above image */}
                 <div className="mb-4">
                   <h4 className="text-white text-xl font-bold text-center">
@@ -155,7 +155,7 @@ const ChatbotDevelopment = () => {
                 
                 {/* Service image with thin gradient border */}
                 <Link href={service.link}>
-                  <div className="relative w-[280px] h-[280px] rounded-2xl overflow-hidden shadow-2xl p-0.5 bg-gradient-to-br from-[#d4ff00] to-[#213efa] transition-transform duration-300 hover:scale-105">
+                  <div className="relative w-[350px] h-[350px] rounded-2xl overflow-hidden shadow-2xl p-0.5 bg-gradient-to-br from-[#d4ff00] to-[#213efa] transition-transform duration-300 hover:scale-105">
                     <img
                       src={service.image}
                       alt={service.name}
