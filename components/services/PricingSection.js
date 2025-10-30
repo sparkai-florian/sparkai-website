@@ -30,7 +30,7 @@ export default function PricingSection() {
                   Complete AI Solution
                 </h3>
                 <div className="flex items-center justify-center gap-4 mb-6">
-                  <span className="text-6xl font-black text-white font-headline">€99</span>
+                  <span className="text-6xl font-black text-white font-headline">€199</span>
                   <div className="text-left">
                     <div className="text-gray-300 font-paragraph">per month</div>
                     <div className="text-sm text-gray-400 font-paragraph">billed monthly</div>

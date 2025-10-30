@@ -5,7 +5,7 @@ const maintenancePlans = [
   {
     industry: 'Aesthetic Clinics',
     packageName: 'SparkAI Clinic Pro',
-    monthlyFee: '€99/month',
+    monthlyFee: '€199/month',
     color: '#FF6F91',
   },
   {
@@ -17,19 +17,19 @@ const maintenancePlans = [
   {
     industry: 'E-Commerce',
     packageName: 'SparkAI E-Com Pro',
-    monthlyFee: '€99/month',
+    monthlyFee: '€199/month',
     color: '#FF7F11',
   },
   {
     industry: 'Law Firms',
     packageName: 'SparkAI Legal Pro',
-    monthlyFee: '€99/month',
+    monthlyFee: '€199/month',
     color: '#002855',
   },
   {
     industry: 'Travel Agencies',
     packageName: 'SparkAI Travel Pro',
-    monthlyFee: '€99/month',
+    monthlyFee: '€199/month',
     color: '#00B4D8',
   },
 ];
